@@ -75,18 +75,18 @@ Route::get('/onlineDiagnosticReport', function () {
 
 //------------------------Backend All Routes--------------------------
 Route::get('/dashboard', function () {
-    return view('Backend.page.dashboard.dashboard');
+    return view('backend.page.dashboard.dashboard');
 })->name("dashboard");
 
 //website information view and update
 Route::get('/websiteInformation', function () {
-    return view('Backend.page.websiteInformation.websiteInformation');
+    return view('backend.page.websiteInformation.websiteInformation');
 })->name("websiteInformation");
 Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"]);
 
 //department CRUD
 Route::get('/departmentCreate', function () {
-    return view('Backend.page.department.createDepartment');
+    return view('backend.page.department.createDepartment');
 })->name("departmentCreate");
 Route::post("/createDepartment", [DepartmentController::class, "DepartmentCreate"]);
 Route::get('/allDepartment', [DepartmentController::class, "AllDepartment"])->name("allDepartment");
@@ -98,7 +98,7 @@ Route::get('/departmentDelete/{id}', [DepartmentController::class, "DepartmentDe
 
 //doctor crud
 Route::get('/doctor', function () {
-    return view('Backend.page.doctor.insertDoctor');
+    return view('backend.page.doctor.insertDoctor');
 })->name("doctor");
 Route::post("/insertDoctor", [DoctorController::class, "DoctorInsert"]);
 Route::get('/allDoctor', [DoctorController::class, "AllDoctor"])->name("allDoctor");

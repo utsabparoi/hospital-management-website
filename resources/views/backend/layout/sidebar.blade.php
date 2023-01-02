@@ -35,7 +35,7 @@
 
     <ul class="nav nav-list" style="top: 0px;">
         <li class="active">
-            <a href="{{ route("dashboard") }}">
+            <a href="{{ route('dashboard') }}">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> Dashboard </span>
             </a>
@@ -53,13 +53,23 @@
         </li>
 
         <li class="">
-            <a href="{{ route("websiteInformation") }}">
+            <a href="{{ route('websiteInformation') }}">
+                <i class="menu-icon fa fa-info-circle"></i>
+                <span class="menu-text"> Slider List </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
+        <li class="">
+            <a href="{{ route('websiteInformation') }}">
                 <i class="menu-icon fa fa-info-circle"></i>
                 <span class="menu-text"> Site Information </span>
             </a>
 
             <b class="arrow"></b>
         </li>
+
 
         <li class="">
             <a href="#" class="dropdown-toggle">
@@ -73,7 +83,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="{{ route("departmentCreate") }}">
+                    <a href="{{ route('departmentCreate') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Create Department
                     </a>
@@ -82,7 +92,7 @@
                 </li>
 
                 <li class="">
-                    <a href="{{ route("allDepartment") }}">
+                    <a href="{{ route('allDepartment') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Department List
                     </a>
@@ -104,7 +114,7 @@
 
             <ul class="submenu">
                 <li class="">
-                    <a href="{{ route("doctor") }}">
+                    <a href="{{ route('doctor') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Insert Doctor Information
                     </a>
@@ -113,7 +123,7 @@
                 </li>
 
                 <li class="">
-                    <a href="{{ route("allDoctor") }}">
+                    <a href="{{ route('allDoctor') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Doctor List
                     </a>
