@@ -1,0 +1,518 @@
+<!-- Left Sticky Box For Desktop Start -->
+<div id="myID" class="bottomMenu hide">
+    <div class="left-sticky-box-new animated slideInDown">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row">
+                    <a href="tel:10602">
+                        <div class="col-md-2">
+                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wmsbdykq.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                            <!--<img src="images/icons/24hour.png" alt="">-->
+                        </div>
+                        <div class="col-md-10 mt-5 pt-2">
+                            <p style="margin-top: 13px;margin-left: 30px;">Hopeline 10602</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: -30px; margin-left: 15px;">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-2">
+                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uDilo5.json" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                        <!--<img src="images/icons/chat-icon.png" alt="">-->
+                    </div>
+                    <div class="col-md-10">
+                        <p style="margin-top: 15px; margin-left: -50px;">Chat With Us</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="left-sticky-box">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="row">
+                <a href="tel:10602">
+                    <div class="col-md-2">
+                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wmsbdykq.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                        <!--<img src="images/icons/24hour.png" alt="">-->
+                    </div>
+                    <div class="col-md-10 mt-5 pt-2">
+                        <p style="margin-top: 13px;margin-left: 30px;">Hopeline 10602</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: -30px; margin-left: 15px;">
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-2">
+                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uDilo5.json" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                    <!--<img src="images/icons/chat-icon.png" alt="">-->
+                </div>
+                <div class="col-md-10">
+                    <p style="margin-top: 15px; margin-left: -50px;">Chat With Us</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Left Sticky Box For Desktop Ends -->
+
+<!-- Left Sticky Box For Mobile Starts -->
+<div class="left-sticky-box-mb">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="row">
+                <a href="tel:10602">
+                    <div class="col-md-2">
+                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wmsbdykq.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                        <!--<img src="images/icons/24hour.png" alt="">-->
+                    </div>
+                    <div class="col-md-10">
+                        <p>Hopeline 10602</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-2">
+                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uDilo5.json" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                    <!--<img src="images/icons/chat-icon.png" alt="">-->
+                </div>
+                <div class="col-md-10">
+                    <p>Chat With Us</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Left Sticky Box Mobile Ends -->
+
+
+<!-- Preloader -->
+<div class="preloader"></div>
+<div class="top-bar">
+
+</div>
+
+<div class="sticky-new-header-inner">
+
+    <!-- Header Top Starts -->
+    <div class="header-top-two">
+        <div class="auto-container">
+            <div class="inner-container">
+                <div class="top-left">
+                    <ul class="contact-list clearfix">
+                        <li class="top-addrs">
+                            <!-- <i class="flaticon-hospital-1"></i> -->
+                            <lord-icon src="https://cdn.lordicon.com/zzcjjxew.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
+                            </lord-icon>
+                            152/2/N Road, Panthapath, Dhaka
+                            <br>Dhaka 1200, Bangladesh.
+                        </li>
+                        <li class="top-img">
+                            <img src="{{ asset('frontend/images/hopeline1.png') }}" alt="" title="">
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="top-right"> -->
+                <!-- <ul class="social-icon-one">
+                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                <li><a href="#"><span class="fab fa-skype"></span></a></li>
+                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                            </ul> -->
+                <!-- <div class="btn-box">
+                                <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-three"><span class="btn-title">Appointment</span></a>
+                            </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Header top ends -->
+
+
+    <!-- header start -->
+    <header class="header">
+        <div class="container">
+            <div class="row ">
+                <div class="header-item item-left">
+                    <a href="/">
+                        <div class="logo">
+                            <!-- <img src="images/logo/icon-logo.png" class="" alt="" title="">  -->
+                            <!-- class="rotate" -->
+                            <!-- <img src="images/logo/icon-name.png" class="not-rotate" alt="" title=""> -->
+
+                            <!-- <img src="images/logo/aah-logo.png" class="rotate" alt="" title=""> -->
+                            <img src="{{ asset('frontend/images/logo/new-logo.png') }}" class="" alt="" title="">
+                            <p class="logo-text">we create hope</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- menu start here -->
+                <div class="header-item item-center">
+                    <div class="menu-overlay">
+                    </div>
+                    <nav class="menu">
+                        <div class="mobile-menu-head">
+                            <div class="go-back"><i class="fa fa-angle-left"></i></div>
+                            <div class="current-menu-title"></div>
+                            <div class="mobile-menu-close">&times;</div>
+                        </div>
+                        <ul class="menu-main">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/consultants">Consultants</a>
+                            </li>
+                            <!-- <li class="menu-item-has-children">
+                                    <a href="#">About us <i class="fas fa-angle-down"></i></a>
+                                    <div class="sub-menu single-column-menu">
+                                        <ul>
+                                            <li><a href="#">Who We Are</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Mission, Vision, Values</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Board of Directors</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Message from CEO</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Management</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Corporate Facilities & Services</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Contact Us</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li> -->
+                            <li class="menu-item-has-children">
+                                <a href="/allFacilities">Facilities <i class="fa fa-angle-down"></i></a>
+                                <div class="sub-menu mega-menu mega-menu-column-4">
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleFacilities">ATM</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Bed Category</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Cafeteria</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Car Parking</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Discharge Protocol</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">In-Patient Services</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleFacilities">Medical Records</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Mortuary</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Pharmacy</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Prayer Room</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">In-Patient Visiting Hour</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">ROP Clinic</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleFacilities">Optical Shop</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Ambulance Service</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Blood Bank</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Central Sterile Supply Department (CSSD)</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Day Care</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleFacilities">Food & Beverage (F&B)</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Gift Corner</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Laundry Service</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleFacilities">Vaccination Center</a>
+                                                <hr>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="/allDepartment">Departments <i class="fa fa-angle-down"></i></a>
+                                <div class="sub-menu mega-menu mega-menu-column-4">
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleDepartment">Vascular Surgery</a>
+                                                <hr>
+                                            </li>
+
+                                            <li><a href="/singleDepartment">Thoracic Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Pain Clinic</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Psychiatry</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Accident and Emergency</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Anaesthesiology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Cardiac Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Cardiology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Child Development Center</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Critical Care</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleDepartment">Dental and Maxillofacial Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Endocrinology and Diabetology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Dermatology and Venereology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Dietetics and Nutrition</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">ENT, Head and Neck Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Gastroenterology and Hepatology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">General and Laparoscopic Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Haematology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Internal Medicine</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleDepartment">Laboratory Medicine</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Neonatology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Nephrology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Neurology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Neurosurgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Obstetrics and Gynaecology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Oncology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Ophthalmology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Orthopaedics and Trauma</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="list-item text-center">
+                                        <ul>
+                                            <li><a href="/singleDepartment">Paediatrics</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Paediatric Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Physical Medicine and Rehabilitation</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Plastic, Reconstructive and Cosmetic Surgery</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Radiology and Imaging</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Respiratory Medicine</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">TRANSFUSION MEDICINE</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Urology and Andrology</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="/singleDepartment">Vaccination</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- <li class="menu-item-has-children">
+                                    <a href="#">Concern <i class="fas fa-angle-down"></i></a>
+                                    <div class="sub-menu single-column-menu">
+                                        <ul>
+                                            <li><a href="#">Asgar
+                                                    Ali Medical College</a>
+                                                <hr>
+                                            </li>
+                                            <li><a href="#">Fazlur Rahman Nursing Institute</a>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li> -->
+                            <li class="menu-item-has-children">
+                                <a href="#">Online Services <i class="fas fa-angle-down"></i></a>
+                                <div class="sub-menu single-column-menu">
+                                    <ul>
+                                        <li><a href="/onlineAppointment">Online Appointment</a>
+                                            <hr>
+                                        </li>
+                                        <li><a href="/onlinePayment">Online Payment</a>
+                                            <hr>
+                                        </li>
+                                        <li><a href="/onlineRegistration">Online Registration</a>
+                                            <hr>
+                                        </li>
+                                        <li><a href="/onlineDiagnosticReport">Online Diagnostics Report</a>
+                                            <hr>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="/allHealthPackage">Health Package <i class="fas fa-angle-down"></i></a>
+                                <div class="sub-menu single-column-menu">
+                                    <ul>
+                                        <li><a href="/singleHealthPackage">Regular Health Package</a>
+                                            <hr>
+                                        </li>
+                                        <li><a href="/singleHealthPackage">Home Health Package</a>
+                                            <hr>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                            <li>
+                                <a href="/about">About Us</a>
+                            </li>
+                            <!-- Small Device Search Bar -->
+                            <div class="rou-sc">
+                                <div class="round-btn" id="show-search-box">
+                                    <i class="fa fa-search"></i>
+                                </div>
+
+                                <form id="hidden-search-box" class="navbar-form hidden-search-box" role="search">
+                                    <div class="traingle"></div>
+                                    <div class="input-group add-on">
+                                        <input class="form-control addon-text-box" placeholder="Search" name="s" type="text">
+                                        <button type="submit" class="input-group-btn addon-btn">
+                                            <i class="fa fa-search flip-icon"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+
+
+
+                <!-- menu end here -->
+                <div class="header-item item-right">
+
+                    <div class="mobile-menu-trigger">
+                        <span></span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+</div>
