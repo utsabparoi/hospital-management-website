@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class WebsiteInformationController extends Controller
 {
+    function WebsiteInformation(){
+        return view('backend.page.websiteInformation.websiteInformation');
+    }
     function WebsiteInformationUpdate(Request $request){
         $favicon= $request->input("Favicon");
         $name = $request->input("Name");

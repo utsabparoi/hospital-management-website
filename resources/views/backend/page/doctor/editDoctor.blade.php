@@ -78,7 +78,9 @@
                                                                 :</label>
                                                             <div class="col-md-5 col-sm-5">
                                                                 <select name="doctorDepartment" id="doctorDepartment" class="form-control">
-                                                                    <option value="{{$doctor->doctor_department}}">{{$doctor->doctor_department}}</option>
+                                                                    @foreach($department as $departments)
+                                                                    <option value="{{$departments->department_name}}" @if($departments->department_name == $doctor->doctor_department) selected @endif>{{$departments->department_name}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -97,13 +99,13 @@
                                                             <label class="control-label col-sm-3 col-sm-3">Patient Visit Time<sup class="text-danger">*</sup>
                                                                 :</label>
                                                             <div class="col-md-2 col-sm-2">
-                                                                <input class="form-control name" type="time" id="patientVisitStartTime" name="patientVisitStartTime">
+                                                                <input class="form-control name" type="time" id="patientVisitStartTime" name="patientVisitStartTime" value="{{$doctor->doctor_visit_start_time}}">
                                                             </div>
                                                             <div align="center" class="col-md-1 col-sm-1">
                                                                 To
                                                             </div>
                                                             <div class="col-md-2 col-sm-2">
-                                                                <input class="form-control name" type="time" id="patientVisitEndTime" name="patientVisitEndTime">
+                                                                <input class="form-control name" type="time" id="patientVisitEndTime" name="patientVisitEndTime" value="{{$doctor->doctor_visit_end_time}}">
                                                             </div>
                                                         </div>
 
@@ -112,7 +114,7 @@
                                                             <label class="control-label col-sm-3 col-sm-3 align-left">Description<sup class="text-danger">*</sup>
                                                                 :</label>
                                                             <div class="col-md-12 col-sm-12">
-                                                                <textarea class="form-control slug ckeditor" id="doctorDescription" type="text" name="doctorDescription" required="">{{$doctor->doctor_image}}</textarea>
+                                                                <textarea class="form-control slug ckeditor" id="doctorDescription" type="text" name="doctorDescription" required="">{{$doctor->doctor_description}}</textarea>
                                                             </div>
                                                         </div>
 
@@ -151,22 +153,19 @@
                             <script>
 
                                 function UpdateDoctor() {
+                                    let doctorId = {{$doctor->id}};
                                     let doctorName = document.getElementById("doctorName").value;
                                     let doctorImage = document.getElementById("doctorImage").files[0];
                                     let doctorDepartment = document.getElementById("doctorDepartment").value;
                                     let doctorPosition = document.getElementById("doctorPosition").value;
                                     let visitStartTime = document.getElementById("patientVisitStartTime").value;
                                     let visitEndTime = document.getElementById("patientVisitEndTime").value;
-                                    let doctorVisitTime = visitStartTime+" To "+visitEndTime;
                                     let doctorDescription = CKEDITOR.instances['doctorDescription'].getData();
                                     let status = document.getElementById("status").checked;
 
 
                                     if(doctorName === ""){
                                         alert("Write a Doctor Name")
-                                    }
-                                    else if(doctorImage == null){
-                                        alert("Choose an Image")
                                     }
                                     else if(doctorDepartment === ""){
                                         alert("Choose Department");
@@ -184,13 +183,15 @@
                                         alert("Write Description");
                                     }
                                     else {
-                                        let post_url = "/insertDoctor";
+                                        let post_url = "/doctorUpdate";
                                         let allData = new FormData();
+                                        allData.append("DoctorId", doctorId);
                                         allData.append("DoctorName", doctorName);
                                         allData.append("DoctorImage", doctorImage);
                                         allData.append("DoctorDepartment", doctorDepartment);
                                         allData.append("DoctorPosition", doctorPosition);
-                                        allData.append("DoctorVisitTime", doctorVisitTime);
+                                        allData.append("DoctorVisitStartTime", visitStartTime);
+                                        allData.append("DoctorVisitEndTime", visitEndTime);
                                         allData.append("DoctorDescription", doctorDescription);
                                         allData.append("Status", status);
 
@@ -207,8 +208,8 @@
                                                     alert("Doctor name exist, Please check name");
                                                 }
                                                 else{
-                                                    alert("New Doctor Inserted");
-                                                    location.href = "/allDoctor";
+                                                    alert("Update Successfully");
+                                                    location.reload();
                                                 }
                                             }
                                         ).catch(

@@ -79,15 +79,11 @@ Route::get('/dashboard', function () {
 })->name("dashboard");
 
 //website information view and update
-Route::get('/websiteInformation', function () {
-    return view('backend.page.websiteInformation.websiteInformation');
-})->name("websiteInformation");
+Route::get('/websiteInformation', [WebsiteInformationController::class, "WebsiteInformation"])->name("websiteInformation");
 Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"]);
 
 //department CRUD
-Route::get('/departmentCreate', function () {
-    return view('backend.page.department.createDepartment');
-})->name("departmentCreate");
+Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate");
 Route::post("/createDepartment", [DepartmentController::class, "DepartmentCreate"]);
 Route::get('/allDepartment', [DepartmentController::class, "AllDepartment"])->name("allDepartment");
 Route::get('/editDepartment/{id}', [DepartmentController::class, "EditDepartment"])->name("editDepartment");
@@ -95,11 +91,8 @@ Route::post('/departmentUpdate', [DepartmentController::class, "DepartmentUpdate
 Route::post('/departmentStatusChange', [DepartmentController::class, "DepartmentStatusChange"]);
 Route::get('/departmentDelete/{id}', [DepartmentController::class, "DepartmentDelete"]);
 
-
 //doctor crud
-Route::get('/doctor', function () {
-    return view('backend.page.doctor.insertDoctor');
-})->name("doctor");
+Route::get('/doctor', [DoctorController::class, "DoctorInsertForm"])->name("doctor");
 Route::post("/insertDoctor", [DoctorController::class, "DoctorInsert"]);
 Route::get('/allDoctor', [DoctorController::class, "AllDoctor"])->name("allDoctor");
 Route::get('/editDoctor/{id}', [DoctorController::class, "EditDoctor"])->name("editDoctor");
