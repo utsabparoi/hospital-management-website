@@ -154,7 +154,7 @@
 <script src="{{asset('frontend/diagnosticReport/assets/vendor/LinkJS/LINQ_JS_MIN.js')}}"></script>
 
 <script>
-    document.write("<script type='text/javascript' src='{{asset('frontend/diagnosticReport/assets/scripts/login.js?v=')}}" + Date.now() + "'><\/script>");
+    document.write("<script type='text/javascript' src='{{asset('frontend/diagnosticReport/assets/scripts/user.js?v=')}}" + Date.now() + "'><\/script>");
 
 </script>
 

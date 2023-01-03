@@ -132,6 +132,15 @@
                 </li>
             </ul>
         </li>
+
+        <li class="">
+            <a href="{{ route('user') }}">
+                <i class="menu-icon fa fa-user"></i>
+                <span class="menu-text"> User </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
     </ul><!-- /.nav-list -->
 
     <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
