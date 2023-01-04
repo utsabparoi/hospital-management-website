@@ -1,17 +1,11 @@
 <?php
 
-<<<<<<< HEAD
 use App\Http\Controllers\backend\DepartmentController;
 use App\Http\Controllers\backend\DoctorController;
 use App\Http\Controllers\backend\WebsiteInformationController;
 use App\Http\Controllers\backend\SliderController;
-=======
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\DepartmentController;
-use App\Http\Controllers\Backend\DoctorController;
-use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\Backend\WebsiteInformationController;
->>>>>>> a3a9b400428e909d76a041ad6602c6488d9d8e37
+use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
