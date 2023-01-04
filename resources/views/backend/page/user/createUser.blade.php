@@ -170,7 +170,6 @@
                         alert("New User Created");
                         location.href = "/user";
                     }
-
                 }
             ).catch(
                 function (error) {

@@ -13,7 +13,7 @@ class UserController extends Controller
     }
 
     function User(){
-        $allUser = UserModel::all();
+        $allUser = UserModel::paginate(5);
         return view('backend.page.user.user', compact('allUser'));
     }
 

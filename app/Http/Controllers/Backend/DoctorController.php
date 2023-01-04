@@ -43,7 +43,7 @@ class DoctorController extends Controller
     }
 
     function AllDoctor(){
-       $doctor = DoctorModel::paginate(5);
+       $doctor = DoctorModel::paginate(3);
        return view('backend.page.doctor.allDoctor', compact('doctor'));
     }
 

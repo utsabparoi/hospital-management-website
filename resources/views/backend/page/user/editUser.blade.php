@@ -146,7 +146,7 @@
                 alert("Write password");
             }
             else {
-                let post_url = "/createUser";
+                let post_url = "/updateUser";
                 let allData = new FormData();
                 allData.append("UserId", userId);
                 allData.append("Name", name);

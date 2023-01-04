@@ -86,7 +86,7 @@ Route::get('/user',[UserController::class, "User"])->name("user");
 Route::get('/createUserForm',[UserController::class, "CreateUserForm"])->name("createUserForm");
 Route::post('/createUser',[UserController::class, "CreateUser"])->name("createUser");
 Route::get('/editUserForm/{id}',[UserController::class, "EditUserForm"])->name("editUserFrom");
-Route::post('/createUser',[UserController::class, "UserUpdate"])->name("userUpdate");
+Route::post('/updateUser',[UserController::class, "UserUpdate"])->name("userUpdate");
 Route::get('/userDelete/{id}',[UserController::class, "UserDelete"])->name("deleteUser");
 
 //website information view and update
@@ -110,3 +110,7 @@ Route::get('/editDoctor/{id}', [DoctorController::class, "EditDoctor"])->name("e
 Route::post('/doctorUpdate', [DoctorController::class, "DoctorUpdate"])->middleware("AdminLogin");
 Route::post('/doctorStatusChange', [DoctorController::class, "DoctorStatusChange"])->middleware("AdminLogin");
 Route::get('/doctorDelete/{id}', [DoctorController::class, "DoctorDelete"])->middleware("AdminLogin");
+
+
+//health package
+

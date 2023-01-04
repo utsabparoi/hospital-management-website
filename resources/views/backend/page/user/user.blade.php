@@ -82,7 +82,9 @@
 
                                     </tbody>
                                 </table>
-
+                                <div align="center">
+                                    {{$allUser->links()}}
+                                </div>
                             </div>
                         </div>
                     </div>
