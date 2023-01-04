@@ -1,9 +1,17 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\backend\DepartmentController;
 use App\Http\Controllers\backend\DoctorController;
 use App\Http\Controllers\backend\WebsiteInformationController;
 use App\Http\Controllers\backend\SliderController;
+=======
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\DepartmentController;
+use App\Http\Controllers\Backend\DoctorController;
+use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\WebsiteInformationController;
+>>>>>>> a3a9b400428e909d76a041ad6602c6488d9d8e37
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,38 +83,44 @@ Route::get('/onlineDiagnosticReport', function () {
 
 
 //------------------------Backend All Routes--------------------------
-Route::get('/dashboard', function () {
-    return view('backend.page.dashboard.dashboard');
-})->name("dashboard");
+Route::get('/dashboard',[DashboardController::class, "Dashboard"])->name("dashboard")->middleware("AdminLogin");
+
+//user
+Route::get('/loginForm',[UserController::class, "LoginForm"])->name("loginForm");
+Route::post('/login',[UserController::class, "Login"]);
+Route::get('/logout',[UserController::class, "Logout"]);
+Route::get('/user',[UserController::class, "User"])->name("user");
+Route::get('/createUserForm',[UserController::class, "CreateUserForm"])->name("createUserForm");
+Route::post('/createUser',[UserController::class, "CreateUser"])->name("createUser");
+Route::get('/editUserForm/{id}',[UserController::class, "EditUserForm"])->name("editUserFrom");
+Route::post('/updateUser',[UserController::class, "UserUpdate"])->name("userUpdate");
+Route::get('/userDelete/{id}',[UserController::class, "UserDelete"])->name("deleteUser");
 
 //website information view and update
-Route::get('/websiteInformation', function () {
-    return view('backend.page.websiteInformation.websiteInformation');
-})->name("websiteInformation");
-Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"]);
+Route::get('/websiteInformation', [WebsiteInformationController::class, "WebsiteInformation"])->name("websiteInformation")->middleware("AdminLogin");
+Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"])->middleware("AdminLogin");
 
 // Slide List Route In Addmin Pannel
 Route::resource('sliders', SliderController::class);
 
 //department CRUD
-Route::get('/departmentCreate', function () {
-    return view('backend.page.department.createDepartment');
-})->name("departmentCreate");
-Route::post("/createDepartment", [DepartmentController::class, "DepartmentCreate"]);
-Route::get('/allDepartment', [DepartmentController::class, "AllDepartment"])->name("allDepartment");
-Route::get('/editDepartment/{id}', [DepartmentController::class, "EditDepartment"])->name("editDepartment");
-Route::post('/departmentUpdate', [DepartmentController::class, "DepartmentUpdate"]);
-Route::post('/departmentStatusChange', [DepartmentController::class, "DepartmentStatusChange"]);
-Route::get('/departmentDelete/{id}', [DepartmentController::class, "DepartmentDelete"]);
-
+Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate")->middleware("AdminLogin");
+Route::post("/createDepartment", [DepartmentController::class, "DepartmentCreate"])->middleware("AdminLogin");
+Route::get('/allDepartment', [DepartmentController::class, "AllDepartment"])->name("allDepartment")->middleware("AdminLogin");
+Route::get('/editDepartment/{id}', [DepartmentController::class, "EditDepartment"])->name("editDepartment")->middleware("AdminLogin");
+Route::post('/departmentUpdate', [DepartmentController::class, "DepartmentUpdate"])->middleware("AdminLogin");
+Route::post('/departmentStatusChange', [DepartmentController::class, "DepartmentStatusChange"])->middleware("AdminLogin");
+Route::get('/departmentDelete/{id}', [DepartmentController::class, "DepartmentDelete"])->middleware("AdminLogin");
 
 //doctor crud
-Route::get('/doctor', function () {
-    return view('backend.page.doctor.insertDoctor');
-})->name("doctor");
-Route::post("/insertDoctor", [DoctorController::class, "DoctorInsert"]);
-Route::get('/allDoctor', [DoctorController::class, "AllDoctor"])->name("allDoctor");
-Route::get('/editDoctor/{id}', [DoctorController::class, "EditDoctor"])->name("editDoctor");
-Route::post('/doctorUpdate', [DoctorController::class, "DoctorUpdate"]);
-Route::post('/doctorStatusChange', [DoctorController::class, "DoctorStatusChange"]);
-Route::get('/doctorDelete/{id}', [DoctorController::class, "DoctorDelete"]);
+Route::get('/doctor', [DoctorController::class, "DoctorInsertForm"])->name("doctor")->middleware("AdminLogin");
+Route::post("/insertDoctor", [DoctorController::class, "DoctorInsert"])->middleware("AdminLogin");
+Route::get('/allDoctor', [DoctorController::class, "AllDoctor"])->name("allDoctor")->middleware("AdminLogin");
+Route::get('/editDoctor/{id}', [DoctorController::class, "EditDoctor"])->name("editDoctor")->middleware("AdminLogin");
+Route::post('/doctorUpdate', [DoctorController::class, "DoctorUpdate"])->middleware("AdminLogin");
+Route::post('/doctorStatusChange', [DoctorController::class, "DoctorStatusChange"])->middleware("AdminLogin");
+Route::get('/doctorDelete/{id}', [DoctorController::class, "DoctorDelete"])->middleware("AdminLogin");
+
+
+//health package
+

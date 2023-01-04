@@ -1,5 +1,5 @@
 /*!
- 
+
  * Licensed: Copy
  */
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
     $.cookie("contentWidth", 'container-fluid', {
         expires: 7
     });
-    
+
     $.cookie("fontsize", '14px', {
         expires: 7
     });
@@ -166,8 +166,8 @@ $(document).ready(function () {
     /* chat btn floating script */
     $('.chat-btn ').on('click', function () {
         if ($(this).hasClass('active') != true) {
-           
-            
+
+
             var thiscb = $(this);
             thiscb.addClass('active');
             thiscb.next().addClass('active');
@@ -180,7 +180,7 @@ $(document).ready(function () {
             }
             var ename = $("#user_name").text();
             var ID = $("#_urlChatID").val() + "#config.disableDeepLinking=true&config.disableAEC=true";
-          
+
                 const domain = 'meet.jit.si';
                 const options = {
                    roomName: ID,
@@ -188,9 +188,9 @@ $(document).ready(function () {
                     height: 388,
                     parentNode: document.querySelector('#_vid_chat_123'),
                     userInfo: {
-                       
+
                         displayName: ename
-                        
+
                     }
                     ,
 
@@ -208,7 +208,7 @@ $(document).ready(function () {
                         TILE_VIEW_MAX_COLUMNS: 1,
                         SHOW_JITSI_WATERMARK: false,
                         SHOW_WATERMARK_FOR_GUESTS: false,
-                        startWithVideoMuted: false, 
+                        startWithVideoMuted: false,
                         SHOW_CHROME_EXTENSION_BANNER: false,
                         TOOLBAR_ALWAYS_VISIBLE: false,
                         VIDEO_LAYOUT_FIT: 'width',
@@ -219,14 +219,14 @@ $(document).ready(function () {
                         //filmStripOnly: true,
                         MOBILE_APP_PROMO: false
                     }
-                
+
 
 
                 };
                  api = new JitsiMeetExternalAPI(domain, options);
                  api.executeCommand('toggleTileView');
-                       
-       
+
+
 
         }
 
@@ -259,7 +259,7 @@ $(document).ready(function () {
 
     if ($(window).height() > 767) {
         /* mail-row height */
-        $('.login-row-height').css('height', $(window).outerHeight() - $('.header').outerHeight() - $('.footer').outerHeight() - 50);
+        $('.user-row-height').css('height', $(window).outerHeight() - $('.header').outerHeight() - $('.footer').outerHeight() - 50);
         $('.compose-row-height').css('height', $(window).outerHeight() - $('.header-container').outerHeight() - $('.footer').outerHeight() - 170);
         $('.mail-row-height').css('height', $(window).outerHeight() - $('.header-container').outerHeight() - $('.mail-header').outerHeight() - $('.footer').outerHeight() - 30);
         $('.file-row').css('min-height', $(window).outerHeight() - $('.header-container').outerHeight() - $('.mail-header').outerHeight() - $('.footer').outerHeight() - 30);
@@ -376,7 +376,7 @@ $(window).on('resize', function () {
 
     if ($(window).height() > 767) {
         /* mail-row height */
-        $('.login-row-height').css('height', $(window).outerHeight() - $('.header').outerHeight() - $('.footer').outerHeight() - 50);
+        $('.user-row-height').css('height', $(window).outerHeight() - $('.header').outerHeight() - $('.footer').outerHeight() - 50);
         $('.compose-row-height').css('height', $(window).outerHeight() - $('.header-container').outerHeight() - $('.footer').outerHeight() - 170);
         $('.mail-row-height').css('height', $(window).outerHeight() - $('.header-container').outerHeight() - $('.mail-header').outerHeight() - $('.footer').outerHeight() - 30);
         $('.file-row').css('min-height', $(window).outerHeight() - $('.header-container').outerHeight() - $('.mail-header').outerHeight() - $('.footer').outerHeight() - 30);

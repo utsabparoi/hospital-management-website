@@ -281,7 +281,7 @@
                         <img class="nav-user-photo" src="{{asset('Backend/images/avatars/user.jpg')}}" alt="Jason's Photo" />
                         <span class="user-info">
 									<small>Welcome,</small>
-                                    @php echo session('loginAdminSessionUser'); @endphp
+                                    {{ session('AdminLoginSession') }}
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>

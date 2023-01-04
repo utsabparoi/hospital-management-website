@@ -45,6 +45,7 @@
                                                 <div class="widget-main">
 
                                                     <form  class="form-horizontal" >
+                                                        @csrf
                                                         <input type="hidden" name="_token" id="name">
                                                         <!--Department Name -->
                                                         <div class="form-group">
@@ -71,10 +72,9 @@
                                                                 :</label>
                                                             <div class="col-md-5 col-sm-5">
                                                                 <select name="doctorDepartment" id="doctorDepartment" class="form-control">
-                                                                        <option value="">Choose Department</option>
-                                                                        <option value="Medicine">Medicine</option>
-                                                                        <option value="Medicine">Surgery</option>
-                                                                        <option value="Medicine">ENT</option>
+                                                                    @foreach($department as $departments)
+                                                                        <option value="{{$departments->department_name}}">{{$departments->department_name}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -151,9 +151,8 @@
                                     let doctorImage = document.getElementById("doctorImage").files[0];
                                     let doctorDepartment = document.getElementById("doctorDepartment").value;
                                     let doctorPosition = document.getElementById("doctorPosition").value;
-                                    let visitStartTime = document.getElementById("patientVisitStartTime").value;
-                                    let visitEndTime = document.getElementById("patientVisitEndTime").value;
-                                    let doctorVisitTime = visitStartTime+" To "+visitEndTime;
+                                    let doctorVisitStartTime = document.getElementById("patientVisitStartTime").value;
+                                    let doctorVisitEndTime = document.getElementById("patientVisitEndTime").value;
                                     let doctorDescription = CKEDITOR.instances['doctorDescription'].getData();
                                     let status = document.getElementById("status").checked;
 
@@ -170,10 +169,10 @@
                                     else if(doctorPosition === ""){
                                         alert("Write Position");
                                     }
-                                    else if(visitStartTime === ""){
+                                    else if(doctorVisitStartTime === ""){
                                         alert("Give Visit Start Time");
                                     }
-                                    else if(visitEndTime === ""){
+                                    else if(doctorVisitEndTime === ""){
                                         alert("Give Visit End Time");
                                     }
                                     else if(doctorDescription === ""){
@@ -186,7 +185,8 @@
                                         allData.append("DoctorImage", doctorImage);
                                         allData.append("DoctorDepartment", doctorDepartment);
                                         allData.append("DoctorPosition", doctorPosition);
-                                        allData.append("DoctorVisitTime", doctorVisitTime);
+                                        allData.append("DoctorVisitStartTime", doctorVisitStartTime);
+                                        allData.append("DoctorVisitEndTime", doctorVisitEndTime);
                                         allData.append("DoctorDescription", doctorDescription);
                                         allData.append("Status", status);
 

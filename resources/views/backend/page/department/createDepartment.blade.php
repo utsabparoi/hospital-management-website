@@ -45,6 +45,7 @@
                                             <div class="widget-main">
 
                                                 <form  class="form-horizontal" >
+                                                    @csrf
                                                     <input type="hidden" name="_token" id="name">
                                                     <!--Department Name -->
                                                     <div class="form-group">

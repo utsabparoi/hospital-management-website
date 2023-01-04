@@ -120,34 +120,9 @@
 
                                         </tbody>
                                     </table>
-                                    <span class="pull-right" style="margin-right: 1px">
-                                        <ul class="pagination">
-                                            <li class="  disabled ">
-                                                <a class=""
-                                                   href="">← First</a>
-                                            </li>
-
-                                            <li class="  disabled ">
-                                                <a class="" href=""><i
-                                                        class="fa fa-angle-double-left"></i></a>
-                                            </li>
-                                            <li class="active"><span>1</span></li>
-
-                                            <li class="  disabled ">
-                                                <a class="" href=""><i
-                                                        class="fa fa-angle-double-right"></i></a>
-                                            </li>
-                                            <li class="  disabled ">
-                                                <a class=""
-                                                   href= "">Last →</a>
-                                            </li>
-                                        </ul>
-
-                                    </span>
-
-
-
-
+                                    <div align="center">
+                                        {{$allDepartment->links()}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

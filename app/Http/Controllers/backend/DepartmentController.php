@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class DepartmentController extends Controller
 {
+    function DepartmentCreateForm(){
+        return view('backend.page.department.createDepartment');
+    }
     function DepartmentCreate(Request $request){
         $name = $request->input('DepartmentName');
         $description = $request->input('DepartmentDescription');
@@ -34,13 +37,13 @@ class DepartmentController extends Controller
     }
 
     function AllDepartment(){
-        $allDepartment = DepartmentModel::paginate(5);
-        return view('Backend.page.department.allDepartment', compact('allDepartment'));
+        $allDepartment = DepartmentModel::paginate(3);
+        return view('backend.page.department.allDepartment', compact('allDepartment'));
     }
 
     function EditDepartment($id){
         $department = DepartmentModel::find($id);
-        return view('Backend.page.department.editDepartment', compact('department'));
+        return view('backend.page.department.editDepartment', compact('department'));
     }
 
     function DepartmentUpdate(Request $request){

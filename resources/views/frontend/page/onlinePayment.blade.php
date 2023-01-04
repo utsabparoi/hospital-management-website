@@ -71,7 +71,7 @@
             <img src="{{asset('frontend/Pportal/assets/images/new-Logo.png')}}" style="height:60px;float:right;" alt="Asgar Ali Hospital" />
         </div>
         <!-- start: LOGIN BOX -->
-        <!--<div class="box-login row">-->
+        <!--<div class="box-user row">-->
 
 
         <div class="container-fluid container-fullw bg-white">
@@ -674,7 +674,7 @@
 <!-- start: CLIP-TWO JAVASCRIPTS -->
 <script src="OtherProject/Pportal/assets/js/mainedf6.js?ver<%=DateTime.Now.Ticks.ToString()%>"></script>
 <!-- start: JavaScript Event Handlers for this page -->
-<!--<script src="assets/js/login.js"></script>-->
+<!--<script src="assets/js/user.js"></script>-->
 <script src="OtherProject/Pportal/vendors/Capcha/jquery.captcha.basic.minedf6.js?ver<%=DateTime.Now.Ticks.ToString()%>"></script>
 <!--<script src="DoctorAppointment.js?ver<%=DateTime.Now.Ticks.ToString()%>"></script>-->
 
