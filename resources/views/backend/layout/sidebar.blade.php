@@ -53,7 +53,7 @@
         </li>
 
         <li class="">
-            <a href="{{ route('websiteInformation') }}">
+            <a href="{{ route('sliders.index') }}">
                 <i class="menu-icon fa fa-info-circle"></i>
                 <span class="menu-text"> Slider List </span>
             </a>
