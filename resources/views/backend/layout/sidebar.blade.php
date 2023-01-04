@@ -134,6 +134,24 @@
         </li>
 
         <li class="">
+            <a href="{{ route('diagnosticTest') }}">
+                <i class="menu-icon fa fa-check-circle"></i>
+                <span class="menu-text"> Diagnostic Test </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
+        <li class="">
+            <a href="{{ route('healthPackage') }}">
+                <i class="menu-icon fa fa-dot-circle-o"></i>
+                <span class="menu-text"> Health Package </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
+        <li class="">
             <a href="{{ route('user') }}">
                 <i class="menu-icon fa fa-user"></i>
                 <span class="menu-text"> User </span>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DoctorController;
+use App\Http\Controllers\Backend\HealthPackageController;
+use App\Http\Controllers\Backend\HealthTestController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\WebsiteInformationController;
 use Illuminate\Support\Facades\Route;
@@ -112,5 +114,17 @@ Route::post('/doctorStatusChange', [DoctorController::class, "DoctorStatusChange
 Route::get('/doctorDelete/{id}', [DoctorController::class, "DoctorDelete"])->middleware("AdminLogin");
 
 
-//health package
+//diagnostic test
+Route::get('/diagnosticTest',[HealthTestController::class, "HealthTest"])->name("diagnosticTest");
+Route::get('/insertTestForm',[HealthTestController::class, "HealthTestInsertForm"])->name("insertTestForm");
+Route::post('/testStatusChange', [HealthTestController::class, "TestStatusChange"]);
+Route::get('/editTest/{id}',[HealthTestController::class, "EditTest"])->name("editTest");
+Route::post('/updateTest',[HealthTestController::class, "TestUpdate"]);
+Route::post('/insertTest',[HealthTestController::class, "HealthTestInsert"]);
+Route::get('/testDelete/{id}', [HealthTestController::class, "TestDelete"]);
 
+//health package
+Route::get('/healthPackage',[HealthPackageController::class, "HealthPackage"])->name("healthPackage");
+Route::get('/insertHealthPackageForm',[HealthPackageController::class, "HealthPackageInsertForm"])->name("insertHealthPackageForm");
+Route::post('/insertPackage',[HealthPackageController::class, "HealthPackageInsert"]);
+Route::get('/healthPackageDelete/{id}', [HealthPackageController::class, "HealthPackageDelete"]);
