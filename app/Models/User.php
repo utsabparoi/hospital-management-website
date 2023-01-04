@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*
+     |--------------------------------------------------------------------------
+     | GET TABLE NAME
+     |--------------------------------------------------------------------------
+    */
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
 }

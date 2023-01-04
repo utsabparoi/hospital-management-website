@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Backend\DepartmentController;
-use App\Http\Controllers\Backend\DoctorController;
-use App\Http\Controllers\Backend\WebsiteInformationController;
+use App\Http\Controllers\backend\DepartmentController;
+use App\Http\Controllers\backend\DoctorController;
+use App\Http\Controllers\backend\WebsiteInformationController;
+use App\Http\Controllers\backend\SliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,6 +84,9 @@ Route::get('/websiteInformation', function () {
     return view('backend.page.websiteInformation.websiteInformation');
 })->name("websiteInformation");
 Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"]);
+
+// Slide List Route In Addmin Pannel
+Route::resource('sliders', SliderController::class);
 
 //department CRUD
 Route::get('/departmentCreate', function () {
