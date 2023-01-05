@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\HealthPackageAvailableTestModel;
 use App\Models\HealthTestModel;
 use Illuminate\Http\Request;
 
@@ -62,8 +63,11 @@ class HealthTestController extends Controller
         $discount = $request->input('TestDiscount');
         $description = $request->input('TestDescription');
         $status = $request->input('Status');
+        $test_name = HealthTestModel::where("id", "=", $testId)->first()->test_name;
         $checkExistingTest = HealthTestModel::where("id", "!=", $testId)->where("test_name", "=", $testName)->count();
         if($checkExistingTest < 1){
+            HealthPackageAvailableTestModel::where("test_name", "=", $test_name)->update(["test_name" => $testName]);
+            HealthPackageAvailableTestModel::where("test_name", "=", $test_name)->update(["test_name" => $testName]);
             HealthTestModel::where("id", "=", $testId)
                     ->update(["test_name" => $testName, "test_cost" => $cost, "test_discount" => $discount, "test_details" => $description, "status" => $status]);
             return 1;
