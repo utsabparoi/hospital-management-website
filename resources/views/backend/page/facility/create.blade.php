@@ -12,7 +12,7 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Create New Slider</li>
+                <li class="active">Create New Facility</li>
             </ul><!-- /.breadcrumb -->
 
             <div class="nav-search" id="nav-search">
@@ -41,8 +41,8 @@
 
                                             <span class="widget-toolbar">
                                                 <!--------------- Slider List---------------->
-                                                <a href="{{ route('sliders.index') }}" class="">
-                                                    <i class="fa fa-list"></i> Slider <span class="hide-in-sm">List</span>
+                                                <a href="{{ route('facilities.index') }}" class="">
+                                                    <i class="fa fa-list"></i> Facility <span class="hide-in-sm">List</span>
                                                 </a>
                                             </span>
                                         </div>
@@ -51,7 +51,7 @@
                                         <div class="widget-body">
                                             <div class="widget-main">
 
-                                                <form action="{{ route('sliders.store') }}" id="Form" method="post" enctype="multipart/form-data">
+                                                <form action="{{ route('facilities.store') }}" id="Form" method="post" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="widget-body">
@@ -62,18 +62,19 @@
 
                                                             <div class="row px-3">
 
-                                                                <!-- Name -->
+                                                                <!-- Title -->
                                                                 <div class="col-sm-12 col-md-6 ">
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Name <span class="label-required"></span>
+                                                                            Title <span class="label-required"></span>
                                                                         </span>
                                                                         <input type="text" class="form-control @error('title') has-error @enderror"
-                                                                            name="name" id="name" value="{{ old('name') }}">
+                                                                            name="title" id="title" value="{{ old('title') }}">
 
                                                                     </div>
                                                                 </div>
-                                                                {{-- Image --}}
+
+                                                                <!-- Image -->
                                                                 <div class="col-sm-12 col-md-6 ">
                                                                     <div class="col-sm-12 col-md-6 input-group width-100">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
@@ -89,6 +90,14 @@
                                                                 </div>
 
 
+                                                                <!-- Description -->
+                                                                <div class="col-sm-12 col-md-6 ">
+                                                                    <div class="input-group width-100 mb-1">
+                                                                        <span class="input-group-addon width-30" style="text-align: left">Description</span>
+                                                                        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Description">{{ old('description') }}</textarea>
+                                                                    </div>
+                                                                </div>
+
                                                                 {{-- Status --}}
                                                                 <div class="col-sm-12 col-md-6 ">
                                                                     <div class="form-group">
@@ -103,6 +112,7 @@
                                                                 </div>
 
                                                             </div>
+
 
 
                                                             <div class="col-xs-12">

@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\DepartmentController;
 use App\Http\Controllers\backend\DoctorController;
 use App\Http\Controllers\backend\WebsiteInformationController;
 use App\Http\Controllers\backend\SliderController;
+use App\Http\Controllers\backend\FacilityController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\UserController;
 use Illuminate\Support\Facades\Route;
@@ -98,8 +99,12 @@ Route::get('/userDelete/{id}',[UserController::class, "UserDelete"])->name("dele
 Route::get('/websiteInformation', [WebsiteInformationController::class, "WebsiteInformation"])->name("websiteInformation")->middleware("AdminLogin");
 Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"])->middleware("AdminLogin");
 
-// Slide List Route In Addmin Pannel
+// Slider List Route In Addmin Pannel
 Route::resource('sliders', SliderController::class);
+Route::post('/sliderStatusChange', [SliderController::class, "SliderStatusChange"]);
+
+//Facility Route
+Route::resource('facilities', FacilityController::class);
 
 //department CRUD
 Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate")->middleware("AdminLogin");

@@ -134,4 +134,16 @@ class SliderController extends Controller
             throw $th;
         }
     }
+
+    function SliderStatusChange(Request $request){
+        $id = $request->input("ID");
+        $status = Slider::where("id", "=", $id )->first()->status;
+        if($status == "true"){
+            Slider::where("id", "=", $id)->update(["status"=>"false"]);
+        }
+        elseif ($status == "false"){
+            Slider::where("id", "=", $id)->update(["status"=>"true"]);
+        }
+        return $status;
+    }
 }

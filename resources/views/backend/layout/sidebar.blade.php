@@ -54,7 +54,7 @@
 
         <li class="">
             <a href="{{ route('sliders.index') }}">
-                <i class="menu-icon fa fa-info-circle"></i>
+                <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"> Slider List </span>
             </a>
 
@@ -134,6 +134,11 @@
         </li>
 
         <li class="">
+<<<<<<< HEAD
+            <a href="{{ route('facilities.index') }}">
+                <i class="menu-icon fa fa-info-circle"></i>
+                <span class="menu-text"> Facilities </span>
+=======
             <a href="{{ route('diagnosticTest') }}">
                 <i class="menu-icon fa fa-check-circle"></i>
                 <span class="menu-text"> Diagnostic Test </span>
@@ -146,6 +151,7 @@
             <a href="{{ route('healthPackage') }}">
                 <i class="menu-icon fa fa-dot-circle-o"></i>
                 <span class="menu-text"> Health Package </span>
+>>>>>>> 2e4019718b923a1dfc7f3c190aff812614dd4dcb
             </a>
 
             <b class="arrow"></b>
@@ -159,6 +165,7 @@
 
             <b class="arrow"></b>
         </li>
+
     </ul><!-- /.nav-list -->
 
     <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
