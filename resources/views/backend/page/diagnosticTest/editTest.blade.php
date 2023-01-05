@@ -9,7 +9,7 @@
                         <i class="ace-icon fa fa-home home-icon"></i>
                         <a href="#">Home</a>
                     </li>
-                    <li class="active">Edit Doctor Information</li>
+                    <li class="active">Edit Test Information</li>
                 </ul><!-- /.breadcrumb -->
 
                 <div class="nav-search" id="nav-search">
@@ -33,7 +33,7 @@
                                         <div class="widget-box">
                                             <div class="widget-header">
                                                 <h4 class="widget-title">
-                                                    <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Edit Doctor Information</span>
+                                                    <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Edit Test Information</span>
                                                 </h4>
                                                 <span class="widget-toolbar">
 
@@ -49,64 +49,29 @@
                                                         <input type="hidden" name="_token" id="name">
                                                         <!--Department Name -->
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-3 col-sm-3">Doctor Name<sup class="text-danger">*</sup>
+                                                            <label class="control-label col-sm-3 col-sm-3">Test Name<sup class="text-danger">*</sup>
                                                                 :</label>
                                                             <div class="col-md-5 col-sm-5">
-                                                                <input class="form-control name" type="text" id="doctorName" name="doctorName" value="{{$doctor->doctor_name}}">
-                                                            </div>
-                                                        </div>
-                                                        <!--Department Image -->
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-3 col-sm-3">Existing Image<sup class="text-danger"></sup> :</label>
-                                                            <div class="col-md-5 col-sm-5">
-                                                                <img src="{{$doctor->doctor_image}}" alt="" width="300px" height="200px">
+                                                                <input class="form-control name" type="text" id="testName" name="testName" value="{{$test->test_name}}">
                                                             </div>
                                                         </div>
 
-                                                        <!--Department Image -->
+
+                                                        <!--Department Name -->
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-3 col-sm-3">Doctor Image<sup class="text-danger">*</sup>
+                                                            <label class="control-label col-sm-3 col-sm-3">Test Cost(BDT)<sup class="text-danger">*</sup>
                                                                 :</label>
                                                             <div class="col-md-5 col-sm-5">
-                                                                <input type="file" class="form-control " name="doctorImage" id="doctorImage">
-                                                                <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                <input class="form-control name" type="number" id="testCost" name="testCost" value="{{$test->test_cost}}">
                                                             </div>
                                                         </div>
 
                                                         <!--Department Name -->
                                                         <div class="form-group">
-                                                            <label class="control-label col-sm-3 col-sm-3">Department<sup class="text-danger">*</sup>
+                                                            <label class="control-label col-sm-3 col-sm-3">Discount(%)<sup class="text-danger">*</sup>
                                                                 :</label>
                                                             <div class="col-md-5 col-sm-5">
-                                                                <select name="doctorDepartment" id="doctorDepartment" class="form-control">
-                                                                    @foreach($department as $departments)
-                                                                    <option value="{{$departments->department_name}}" @if($departments->department_name == $doctor->doctor_department) selected @endif>{{$departments->department_name}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--Department Name -->
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-3 col-sm-3">Position<sup class="text-danger">*</sup>
-                                                                :</label>
-                                                            <div class="col-md-5 col-sm-5">
-                                                                <input class="form-control name" type="text" id="doctorPosition" name="doctorPosition" value="{{$doctor->doctor_position}}">
-                                                            </div>
-                                                        </div>
-
-                                                        <!--Department Name -->
-                                                        <div class="form-group">
-                                                            <label class="control-label col-sm-3 col-sm-3">Patient Visit Time<sup class="text-danger">*</sup>
-                                                                :</label>
-                                                            <div class="col-md-2 col-sm-2">
-                                                                <input class="form-control name" type="time" id="patientVisitStartTime" name="patientVisitStartTime" value="{{$doctor->doctor_visit_start_time}}">
-                                                            </div>
-                                                            <div align="center" class="col-md-1 col-sm-1">
-                                                                To
-                                                            </div>
-                                                            <div class="col-md-2 col-sm-2">
-                                                                <input class="form-control name" type="time" id="patientVisitEndTime" name="patientVisitEndTime" value="{{$doctor->doctor_visit_end_time}}">
+                                                                <input class="form-control name" type="number" id="testDiscount" name="testDiscount" value="{{$test->test_discount}}">
                                                             </div>
                                                         </div>
 
@@ -115,7 +80,7 @@
                                                             <label class="control-label col-sm-3 col-sm-3 align-left">Description<sup class="text-danger">*</sup>
                                                                 :</label>
                                                             <div class="col-md-12 col-sm-12">
-                                                                <textarea class="form-control slug ckeditor" id="doctorDescription" type="text" name="doctorDescription" required="">{{$doctor->doctor_description}}</textarea>
+                                                                <textarea class="form-control slug ckeditor" id="testDescription" type="text" name="testDescription" required="">{{$test->test_details}}</textarea>
                                                             </div>
                                                         </div>
 
@@ -123,7 +88,7 @@
                                                             <label class="control-label col-sm-3 col-sm-3" for="form-field-1-1"> Status </label>
                                                             <div class="col-sm-3 col-xs-8">
                                                                 <label>
-                                                                    <input name="status" class="ace ace-switch" type="checkbox" id="status" @php if($doctor->status == "true"){echo "checked";}  else {echo "";} @endphp >
+                                                                    <input name="status" class="ace ace-switch" type="checkbox" id="status" @php if($test->status == "true"){echo "checked";}  else {echo "";} @endphp >
                                                                     <span class="lbl"></span>
                                                                 </label>
                                                             </div>
@@ -136,8 +101,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-12"></label>
                                                             <div class="col-sm-12 text-center" style="width: 100%">
-                                                                <button type="button" class="btn btn-primary" onclick="UpdateDoctor()">
-                                                                    <i class="fa fa-save"></i> Create
+                                                                <button type="button" class="btn btn-primary" onclick="UpdateTest()">
+                                                                    <i class="fa fa-save"></i> Update
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -153,47 +118,32 @@
 
                             <script>
 
-                                function UpdateDoctor() {
-                                    let doctorId = {{$doctor->id}};
-                                    let doctorName = document.getElementById("doctorName").value;
-                                    let doctorImage = document.getElementById("doctorImage").files[0];
-                                    let doctorDepartment = document.getElementById("doctorDepartment").value;
-                                    let doctorPosition = document.getElementById("doctorPosition").value;
-                                    let visitStartTime = document.getElementById("patientVisitStartTime").value;
-                                    let visitEndTime = document.getElementById("patientVisitEndTime").value;
-                                    let doctorDescription = CKEDITOR.instances['doctorDescription'].getData();
+                                function UpdateTest() {
+                                    let id = "{{$test->id}}";
+                                    let testName = document.getElementById("testName").value;
+                                    let testCost = document.getElementById("testCost").value;
+                                    let testDiscount = document.getElementById("testDiscount").value;
+                                    let testDescription = CKEDITOR.instances['testDescription'].getData();
                                     let status = document.getElementById("status").checked;
 
 
-                                    if(doctorName === ""){
-                                        alert("Write a Doctor Name")
+                                    if(testName === ""){
+                                        alert("Write a Test Name")
                                     }
-                                    else if(doctorDepartment === ""){
-                                        alert("Choose Department");
+                                    else if(testCost === ""){
+                                        alert("Give Cost");
                                     }
-                                    else if(doctorPosition === ""){
-                                        alert("Write Position");
-                                    }
-                                    else if(visitStartTime === ""){
-                                        alert("Give Visit Start Time");
-                                    }
-                                    else if(visitEndTime === ""){
-                                        alert("Give Visit End Time");
-                                    }
-                                    else if(doctorDescription === ""){
+                                    else if(testDescription === ""){
                                         alert("Write Description");
                                     }
                                     else {
-                                        let post_url = "/doctorUpdate";
+                                        let post_url = "/updateTest";
                                         let allData = new FormData();
-                                        allData.append("DoctorId", doctorId);
-                                        allData.append("DoctorName", doctorName);
-                                        allData.append("DoctorImage", doctorImage);
-                                        allData.append("DoctorDepartment", doctorDepartment);
-                                        allData.append("DoctorPosition", doctorPosition);
-                                        allData.append("DoctorVisitStartTime", visitStartTime);
-                                        allData.append("DoctorVisitEndTime", visitEndTime);
-                                        allData.append("DoctorDescription", doctorDescription);
+                                        allData.append("TestId", id);
+                                        allData.append("TestName", testName);
+                                        allData.append("TestCost", testCost);
+                                        allData.append("TestDiscount", testDiscount);
+                                        allData.append("TestDescription", testDescription);
                                         allData.append("Status", status);
 
                                         let configuration = {headers:{"content-type" : "multipart/form-data"},
@@ -206,10 +156,9 @@
                                         axios.post(post_url, allData, configuration).then(
                                             function (response) {
                                                 if(response.data == 0){
-                                                    alert("Doctor name exist, Please check name");
+                                                    alert("Test name exist, Please check name");
                                                 }
                                                 else{
-                                                    alert("Update Successfully");
                                                     location.reload();
                                                 }
                                             }
@@ -225,57 +174,16 @@
                             </script>
 
 
-
-
-                            <script src="https://chunarughat.net/assets/js/jquery-2.1.4.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/jquery.query-object.js"></script>
-
-
-                            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-
                             <!--[endif]-->
                             <script type="text/javascript">
                                 if('ontouchstart' in document.documentElement) document.write("<script src='https://chunarughat.net/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
                             </script>
-
-
-                            <!-- ace scripts -->
-                            <script src="https://chunarughat.net/assets/js/bootstrap.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/sweetalert2.min.js"></script>
 
                             <script type="text/javascript">
                                 function withDefault(value, default_value) {
                                     return value ? value : default_value
                                 }
                             </script>
-
-                            <script src="https://chunarughat.net/assets/js/jquery.dataTables.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/jquery.dataTables.bootstrap.min.js"></script>
-
-                            <script src="https://chunarughat.net/assets/custom_js/custom-datatable.js"></script>
-                            <script src="https://chunarughat.net/assets/custom_js/confirm_delete_dialog.js"></script>
-
-                            <script src="https://chunarughat.net/assets/js/select2.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/jquery-ui.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/bootstrap-datepicker.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/bootstrap-timepicker.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/moment.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/daterangepicker.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/bootstrap-datetimepicker.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/bootstrap-colorpicker.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/export-excel-file.js"></script>
-                            <script src="https://chunarughat.net/assets/js/export-pdf-file.js"></script>
-
-                            <script src="https://chunarughat.net/assets/js/ace-elements.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/ace.min.js"></script>
-                            <script src="https://chunarughat.net/assets/js/fontawesome-iconpicker.js"></script>
-
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.js" integrity="sha512-6rE6Bx6fCBpRXG/FWpQmvguMWDLWMQjPycXMr35Zx/HRD9nwySZswkkLksgyQcvrpYMx0FELLJVBvWFtubZhDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.3/tinymce.min.js" integrity="sha512-DB4Mu+YChAdaLiuKCybPULuNSoFBZ2flD9vURt7PgU/7pUDnwgZEO+M89GjBLvK9v/NaixpswQtQRPSMRQwYIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-                            <script src="https://chunarughat.net/assets/js/menu-auto-activation.js"></script>
-
 
                             <script>
                                 // $(document).on('click','a', function(e){

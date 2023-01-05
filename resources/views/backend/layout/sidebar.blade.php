@@ -134,9 +134,24 @@
         </li>
 
         <li class="">
+<<<<<<< HEAD
             <a href="{{ route('facilities.index') }}">
                 <i class="menu-icon fa fa-info-circle"></i>
                 <span class="menu-text"> Facilities </span>
+=======
+            <a href="{{ route('diagnosticTest') }}">
+                <i class="menu-icon fa fa-check-circle"></i>
+                <span class="menu-text"> Diagnostic Test </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
+        <li class="">
+            <a href="{{ route('healthPackage') }}">
+                <i class="menu-icon fa fa-dot-circle-o"></i>
+                <span class="menu-text"> Health Package </span>
+>>>>>>> 2e4019718b923a1dfc7f3c190aff812614dd4dcb
             </a>
 
             <b class="arrow"></b>
