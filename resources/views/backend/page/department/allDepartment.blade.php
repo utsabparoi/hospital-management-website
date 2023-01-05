@@ -90,7 +90,9 @@
                                                         <!--------------- STATUS EDIT---------------->
                                                 <div>
                                                     <label>
-                                                        <input name="status" class="ace ace-switch" data-id="{{$allDepartments->id}}" onclick="statusChange(this)" type="checkbox" id="status" onclick="statusChange()" @php if($allDepartments->status == "true"){echo "checked";}  else {echo "";} @endphp >
+                                                        <input name="status" class="ace ace-switch" data-id="{{$allDepartments->id}}"
+                                                            onclick="statusChange(this)" type="checkbox" id="status"
+                                                                onclick="statusChange()" @php if($allDepartments->status == "true"){echo "checked";}  else {echo "";} @endphp >
                                                         <span class="lbl"></span>
                                                     </label>
                                                 </div>

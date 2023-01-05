@@ -329,7 +329,7 @@
         })
 
 
-
+        // include swal for delete popup box
         @if(session()->get('message'))
             swal.fire({
                 title: "Success",
@@ -385,7 +385,7 @@
                 type: "Error",
                 timer: 10000
             });
-            @endif
+        @endif
     </script>
     @yield('js')
 </body>

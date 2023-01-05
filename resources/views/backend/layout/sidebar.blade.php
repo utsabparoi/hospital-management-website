@@ -54,7 +54,7 @@
 
         <li class="">
             <a href="{{ route('sliders.index') }}">
-                <i class="menu-icon fa fa-info-circle"></i>
+                <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"> Slider List </span>
             </a>
 
@@ -134,6 +134,15 @@
         </li>
 
         <li class="">
+            <a href="{{ route('facilities.index') }}">
+                <i class="menu-icon fa fa-info-circle"></i>
+                <span class="menu-text"> Facilities </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+
+        <li class="">
             <a href="{{ route('user') }}">
                 <i class="menu-icon fa fa-user"></i>
                 <span class="menu-text"> User </span>
@@ -141,6 +150,7 @@
 
             <b class="arrow"></b>
         </li>
+
     </ul><!-- /.nav-list -->
 
     <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

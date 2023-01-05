@@ -12,7 +12,7 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Create New Slider</li>
+                <li class="active">Create New Facility</li>
             </ul><!-- /.breadcrumb -->
 
             <div class="nav-search" id="nav-search">
@@ -36,13 +36,13 @@
                                     <div class="widget-box">
                                         <div class="widget-header">
                                             <h4 class="widget-title">
-                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Slider</span>
+                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Facility</span>
                                             </h4>
 
                                             <span class="widget-toolbar">
-                                                <!--------------- Slider List---------------->
-                                                <a href="{{ route('sliders.index') }}" class="">
-                                                    <i class="fa fa-list"></i> Slider <span class="hide-in-sm">List</span>
+                                                <!--------------- Facility List---------------->
+                                                <a href="{{ route('facilities.index') }}" class="">
+                                                    <i class="fa fa-list"></i> Facility <span class="hide-in-sm">List</span>
                                                 </a>
                                             </span>
                                         </div>
@@ -51,56 +51,71 @@
                                         <div class="widget-body">
                                             <div class="widget-main">
 
-                                                <form action="{{ route('sliders.store') }}" id="Form" method="post" enctype="multipart/form-data">
+                                                <form action="{{ route('facilities.update',$facility->id) }}" id="Form" method="post" enctype="multipart/form-data">
                                                     @csrf
+                                                    @method('PUT')
 
                                                     <div class="widget-body">
 
-                                                        <div class="pt-2 pr-2">
+                                                        <div class="row pt-2 pr-2">
 
-                                                            <!-- Left side -->
+                                                            <div class="col-sm-12 px-3">
 
-                                                            <div class="row px-3">
-
-                                                                <!-- Name -->
-                                                                <div class="col-sm-12 col-md-6 ">
+                                                                <!-- Edit Title -->
+                                                                <div class="col-sm-12 col-md-6">
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Name <span class="label-required"></span>
+                                                                            Title <span class="label-required"></span>
                                                                         </span>
-                                                                        <input type="text" class="form-control @error('title') has-error @enderror"
-                                                                            name="name" id="name" value="{{ old('name') }}">
-
+                                                                        <input type="text" class="form-control @error('title') has-error @enderror" name="title" id="title" value="{{ old('name',$facility->title) }}">
+                                                                        @error('title')<br>
+                                                                            <span class="text-danger">
+                                                                                {{ $message }}
+                                                                            </span>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
-                                                                {{-- Image --}}
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="col-sm-12 col-md-6 input-group width-100">
+                                                                <!-- Edit Image -->
+                                                                <div class="col-sm-12 col-md-6">
+                                                                    <div class="input-group width-100">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
                                                                             Image
                                                                         </span>
                                                                         <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
-
+                                                                        @error('image')<br>
+                                                                            <span class="text-danger">
+                                                                                {{ $message }}
+                                                                            </span>
+                                                                        @enderror
                                                                     </div>
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Facility "height" must be 680px)</b></small>
                                                                     </div>
                                                                 </div>
 
 
-                                                                {{-- Status --}}
+                                                                <!-- Edit Description -->
                                                                 <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="form-group">
-                                                                        <label class="col-sm-3 col-xs-4 text-left" for="form-field-1-1"> Status </label>
-                                                                        <div class="col-sm-3 col-xs-8">
-                                                                            <label>
-                                                                                <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" checked>
-                                                                                <span class="lbl"></span>
-                                                                            </label>
-                                                                        </div>
+                                                                    <div class="input-group width-100 mb-1">
+                                                                        <span class="input-group-addon width-30" style="text-align: left">Description</span>
+                                                                        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Description">{{ old('description',$facility->description) }}</textarea>
                                                                     </div>
                                                                 </div>
+
+                                                                <!-- Edit Status -->
+                                                                <div class="col-sm-12 col-md-6">
+                                                                    <div class="input-group width-100">
+                                                                        <span class="input-group-addon width-30" style="text-align: left">
+                                                                            Status
+                                                                        </span>
+                                                                        <label style="margin: 5px 0 0 8px">
+                                                                            <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" {{ $facility->status == 1 ? 'checked' : '' }}>
+                                                                            <span class="lbl"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
 
                                                             </div>
 
@@ -112,7 +127,7 @@
                                                                         <div class="col-md-12 text-right pr-2">
                                                                             <button type="submit" class="btn btn-primary btn-sm btn-block"
                                                                                 style="max-width: 150px">
-                                                                                <i class="fa fa-save"></i> Create
+                                                                                <i class="fa fa-save"></i> Update
                                                                             </button>
                                                                         </div>
                                                                     </div>
