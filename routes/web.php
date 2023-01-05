@@ -2,13 +2,14 @@
 
 
 
-use App\Http\Controllers\Backend\HealthPackageController;
-use App\Http\Controllers\Backend\HealthTestController;
+use App\Http\Controllers\backend\HealthPackageController;
+use App\Http\Controllers\backend\HealthTestController;
 use App\Http\Controllers\backend\DepartmentController;
 use App\Http\Controllers\backend\DoctorController;
 use App\Http\Controllers\backend\WebsiteInformationController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\FacilityController;
+use App\Http\Controllers\backend\ArticleandNewsController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\UserController;
 use Illuminate\Support\Facades\Route;
@@ -105,6 +106,9 @@ Route::post('/sliderStatusChange', [SliderController::class, "SliderStatusChange
 
 //Facility Route
 Route::resource('facilities', FacilityController::class);
+
+//Articles and News Route
+Route::resource('articles_and_news', ArticleandNewsController::class);
 
 //department CRUD
 Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate")->middleware("AdminLogin");

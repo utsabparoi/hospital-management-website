@@ -33,6 +33,9 @@
     {{-- sweetalert --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/sweetalert2.min.css') }}">
 
+    <!-- summernote css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.css" integrity="sha512-m52YCZLrqQpQ+k+84rmWjrrkXAUrpl3HK0IO4/naRwp58pyr7rf5PO1DbI2/aFYwyeIH/8teS9HbLxVyGqDv/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- inline styles related to this page -->
 
     <!-- ace settings handler -->
@@ -106,6 +109,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('backend/js/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
+
+    <!-- summernote js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.js" integrity="sha512-6rE6Bx6fCBpRXG/FWpQmvguMWDLWMQjPycXMr35Zx/HRD9nwySZswkkLksgyQcvrpYMx0FELLJVBvWFtubZhDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                placeholder: 'Write Here .....',
+                height: 200
+            });
+        });
+    </script>
 
 
 

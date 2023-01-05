@@ -5,37 +5,36 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Traits\FileSaver;
-use App\Models\backend\Facility;
+use App\Models\backend\ArticleandNews;
 use Intervention\Image\Facades\Image;
 
-class FacilityController extends Controller
+class ArticleandNewsController extends Controller
 {
-    use FileSaver;
     /**
-     * =============================================
-     * INDEX METHOD
-     * =============================================
-     **/
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         try {
-            $data['facilities'] = Facility::orderBy('id','desc')->paginate(20);
-            // $data['table']      = Facility::getTableName();
-            return view('backend/page/facility.index',$data);
+            $data['articles_news'] = ArticleandNews::orderBy('id','desc')->paginate(20);
+            // $data['table']      = ArticleandNews::getTableName();
+            return view('backend/page/articleandnews.index',$data);
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
     }
 
     /**
-     * =============================================
-     * Created Method
-     * =============================================
-     **/
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         try {
-            return view('backend/page/facility.create');
+            return view('backend/page/articleandnews.create');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
@@ -48,22 +47,25 @@ class FacilityController extends Controller
      **/
     public function store(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
+        $this->storeOrUpdate($request);
 
-        try {
-            $this->storeOrUpdate($request);
+        return redirect()->route('articles_and_news.index')->with('success','Article & News Create Success');
+        // try {
+        //     $this->storeOrUpdate($request);
 
-            return redirect()->route('facilities.index')->with('success','Facility Create Success');
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error',$th->getMessage());
-        }
+        //     return redirect()->route('articles_and_news.index')->with('success','Article & News Create Success');
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+        // }
     }
 
     /**
-     * =============================================
-     * Show Method
-     * =============================================
-     **/
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         //
@@ -76,8 +78,8 @@ class FacilityController extends Controller
      **/
     public function edit($id)
     {
-        $facility  = Facility::find($id);
-        return view('backend/page/facility/edit', compact('facility'));
+        $articles_news  = ArticleandNews::find($id);
+        return view('backend/page/articleandnews/edit', compact('articles_news'));
     }
 
     /**
@@ -90,7 +92,7 @@ class FacilityController extends Controller
         try {
             $this->storeOrUpdate($request, $id);
 
-            return redirect()->route('facilities.index')->with('success','Facility Update Success');
+            return redirect()->route('articles_and_news.index')->with('success','Article & News Update Success');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
@@ -104,13 +106,13 @@ class FacilityController extends Controller
     public function destroy($id)
     {
         try {
-            $facility = Facility::find($id);
-            if(file_exists($facility->image)){
-                unlink($facility->image);
+            $articles_news = ArticleandNews::find($id);
+            if(file_exists($articles_news->image)){
+                unlink($articles_news->image);
             }
-            $facility->delete();
+            $articles_news->delete();
 
-            return redirect()->back()->with('success','Facility Deleted Success');
+            return redirect()->back()->with('success','Article & News Deleted Success');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
@@ -128,16 +130,15 @@ class FacilityController extends Controller
         ]);
 
        try {
-        $facility = Facility::updateOrCreate([
+        $articles_news = ArticleandNews::updateOrCreate([
             'id'                    =>$id,
         ],[
             'title'                 =>$request->title,
-            'icon'                  =>$request->icon,
             'description'           =>$request->description,
             'status'                =>$request->status ? 1: 0,
         ]);
 
-        $this->uploadFileWithResize($request->image, $facility, 'image', 'images/facility', 400, 400);
+        $this->uploadFileWithResize($request->image, $articles_news, 'image', 'images/articles_news', 550, 350);
 
 
        } catch (\Throwable $th) {
