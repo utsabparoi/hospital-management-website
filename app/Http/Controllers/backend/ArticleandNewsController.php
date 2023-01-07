@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image;
 
 class ArticleandNewsController extends Controller
 {
+    use FileSaver;
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +20,7 @@ class ArticleandNewsController extends Controller
     {
         try {
             $data['articles_news'] = ArticleandNews::orderBy('id','desc')->paginate(20);
-            // $data['table']      = ArticleandNews::getTableName();
+            $data['table']      = ArticleandNews::getTableName();
             return view('backend/page/articleandnews.index',$data);
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
@@ -47,17 +48,14 @@ class ArticleandNewsController extends Controller
      **/
     public function store(Request $request)
     {
-        dd($request->all());
-        $this->storeOrUpdate($request);
+        // dd($request->all());
+        try {
+            $this->storeOrUpdate($request);
 
-        return redirect()->route('articles_and_news.index')->with('success','Article & News Create Success');
-        // try {
-        //     $this->storeOrUpdate($request);
-
-        //     return redirect()->route('articles_and_news.index')->with('success','Article & News Create Success');
-        // } catch (\Throwable $th) {
-        //     return redirect()->back()->with('error',$th->getMessage());
-        // }
+            return redirect()->route('articles_and_news.index')->with('success','Article & News Create Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**
@@ -134,8 +132,9 @@ class ArticleandNewsController extends Controller
             'id'                    =>$id,
         ],[
             'title'                 =>$request->title,
+            'slug'                  => $request->slug,
             'description'           =>$request->description,
-            'status'                =>$request->status ? 1: 0,
+            'status'                =>!empty($request->status) ? 1 : 0,
         ]);
 
         $this->uploadFileWithResize($request->image, $articles_news, 'image', 'images/articles_news', 550, 350);

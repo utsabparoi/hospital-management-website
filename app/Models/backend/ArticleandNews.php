@@ -19,4 +19,14 @@ class ArticleandNews extends Model
     {
         $query->active();
     }
+
+    /*
+     |--------------------------------------------------------------------------
+     | GET TABLE NAME
+     |--------------------------------------------------------------------------
+    */
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
 }

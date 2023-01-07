@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Traits\FileSaver;
-use App\Models\backend\Facility;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
+use App\Models\backend\Facility;
 
 class FacilityController extends Controller
 {
@@ -20,11 +20,12 @@ class FacilityController extends Controller
     {
         try {
             $data['facilities'] = Facility::orderBy('id','desc')->paginate(20);
-            // $data['table']      = Facility::getTableName();
+            $data['table']      = Facility::getTableName();
             return view('backend/page/facility.index',$data);
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
+
     }
 
     /**
@@ -49,6 +50,9 @@ class FacilityController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $request->validate([
+            'image'          => 'required',
+        ]);
 
         try {
             $this->storeOrUpdate($request);

@@ -100,6 +100,9 @@ Route::get('/userDelete/{id}',[UserController::class, "UserDelete"])->name("dele
 Route::get('/websiteInformation', [WebsiteInformationController::class, "WebsiteInformation"])->name("websiteInformation")->middleware("AdminLogin");
 Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"])->middleware("AdminLogin");
 
+//update-status route
+Route::post('/update-status/{table}', 'Controller@updateStatus')->name('update-status');
+
 // Slider List Route In Addmin Pannel
 Route::resource('sliders', SliderController::class);
 Route::post('/sliderStatusChange', [SliderController::class, "SliderStatusChange"]);

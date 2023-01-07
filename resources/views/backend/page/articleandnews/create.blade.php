@@ -66,12 +66,56 @@
                                                                 <div class="col-sm-12 col-md-6 ">
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Title <span class="label-required"></span>
+                                                                            Title <sup class="text-danger">*</sup><span class="label-required"></span><br>
                                                                         </span>
                                                                         <input type="text" class="form-control @error('title') has-error @enderror"
                                                                             name="title" id="title" value="{{ old('title') }}">
 
                                                                     </div>
+                                                                </div>
+
+                                                                <!-- SLUG -->
+                                                                <div class="col-sm-12 col-md-6 ">
+                                                                    <div class="input-group width-100 mb-1">
+                                                                        <span class="input-group-addon width-30" style="text-align: left">Slug <sup class="text-danger">*</sup></span>
+                                                                        <input type="text" class="form-control" name="slug" id="slug"
+                                                                            value="{{ old('slug') }}" placeholder="Article Slug" required>
+                                                                    </div><br>
+                                                                    @error('slug')
+                                                                        <span class="text-danger">
+                                                                            {{ $message }}
+                                                                        </span>
+                                                                    @enderror
+                                                                </div>
+
+
+                                                                <!-- Description -->
+                                                                <div class="col-sm-12 col-md-6 ">
+                                                                    <div>
+                                                                        <span class="input-group-addon" style="text-align: center">
+                                                                            Description
+                                                                        </span>
+                                                                        <textarea name="description" class="form-control summernote"
+                                                                        placeholder="Article description">{{ old('description') }}</textarea>
+
+                                                                    </div>
+                                                                    @error('description')
+                                                                    <span class="text-danger">
+                                                                        {{ $message }}
+                                                                    </span>
+                                                                    @enderror
+                                                                </div>
+
+                                                                <!-- Date -->
+                                                                <div class="col-sm-12 col-md-6 ">
+                                                                    <div class="input-group width-100 mb-1">
+                                                                        <span class="input-group-addon width-30" style="text-align: left">
+                                                                            Date
+                                                                        </span>
+                                                                        <input type="date" class="form-control @error('date') has-error @enderror"
+                                                                            name="date" id="date" value="{{ old('date') }}">
+
+                                                                    </div><br>
                                                                 </div>
 
                                                                 <!-- Image -->
@@ -86,37 +130,20 @@
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
                                                                         <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
-                                                                    </div>
+                                                                    </div><br>
                                                                 </div>
-
-                                                                <!-- Description -->
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div>
-                                                                        <span class="input-group-addon" style="text-align: center">
-                                                                            Description
-                                                                        </span>
-                                                                        <textarea name="description" class="form-control summernote"
-                                                                            placeholder="Article description">{{ old('description') }}</textarea>
-
-                                                                    </div>
-                                                                    @error('description')
-                                                                        <span class="text-danger">
-                                                                            {{ $message }}
-                                                                        </span>
-                                                                    @enderror
-                                                                </div>
-
 
                                                                 {{-- Status --}}
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="form-group">
-                                                                        <label class="col-sm-3 col-xs-4 text-left" for="form-field-1-1"> Status </label>
-                                                                        <div class="col-sm-3 col-xs-8">
-                                                                            <label>
-                                                                                <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" checked>
-                                                                                <span class="lbl"></span>
-                                                                            </label>
-                                                                        </div>
+
+                                                                <div class="col-sm-12 col-md-6">
+                                                                    <div class="input-group width-100">
+                                                                        <span class="input-group-addon width-30" style="text-align: left">
+                                                                            Status
+                                                                        </span>
+                                                                        <label style="margin: 5px 0 0 8px">
+                                                                            <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" checked>
+                                                                            <span class="lbl"></span>
+                                                                        </label>
                                                                     </div>
                                                                 </div>
 

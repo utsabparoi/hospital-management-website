@@ -85,14 +85,9 @@
                                                     <td><span class="span">{{ $item->name }}</span></td>
                                                     <td class="text-center">
                                                         <!--------------- STATUS---------------->
-                                                        <div>
-                                                            <label>
-                                                                <input name="status" class="ace ace-switch" data-id="{{$item->id}}"
-                                                                    onclick="statusChange(this)" type="checkbox" id="status"
-                                                                        onclick="statusChange()" @php if($item->status == "true"){echo "checked";}  else {echo "";} @endphp >
-                                                                <span class="lbl"></span>
-                                                            </label>
-                                                        </div>
+                                                        <span class="span">
+                                                            <x-status status="{{ $item->status }}" id="{{ $item->id }}" table="{{ $table }}" />
+                                                        </span>
                                                     </td>
                                                     <td class="text-center">
                                                         <div class="btn-group btn-corner @if (file_exists($item->image)) action-span @endif">
@@ -138,7 +133,7 @@
     </div>
     </div>
 
-    <script>
+    {{-- <script>
         function statusChange(element) {
             let slider_id = $(element).attr("data-id");
             let post_url = "/sliderStatusChange";
@@ -159,5 +154,5 @@
             )
 
         }
-    </script>
+    </script> --}}
 @endsection

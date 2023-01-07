@@ -20,7 +20,7 @@ class SliderController extends Controller
     public function index()
     {
         $data['slider']  = Slider::latest()->paginate(20);
-        // $data['table']   = Slider::getTableName();
+        $data['table']   = Slider::getTableName();
         return view('backend/page/slider/index', $data);
     }
 
@@ -108,7 +108,6 @@ class SliderController extends Controller
     {
         $data = Slider::find($id);
 
-
         if(file_exists($data->image))
         {
             unlink($data->image);
@@ -135,15 +134,15 @@ class SliderController extends Controller
         }
     }
 
-    function SliderStatusChange(Request $request){
-        $id = $request->input("ID");
-        $status = Slider::where("id", "=", $id )->first()->status;
-        if($status == "true"){
-            Slider::where("id", "=", $id)->update(["status"=>"false"]);
-        }
-        elseif ($status == "false"){
-            Slider::where("id", "=", $id)->update(["status"=>"true"]);
-        }
-        return $status;
-    }
+    // function SliderStatusChange(Request $request){
+    //     $id = $request->input("ID");
+    //     $status = Slider::where("id", "=", $id )->first()->status;
+    //     if($status == "true"){
+    //         Slider::where("id", "=", $id)->update(["status"=>"false"]);
+    //     }
+    //     elseif ($status == "false"){
+    //         Slider::where("id", "=", $id)->update(["status"=>"true"]);
+    //     }
+    //     return $status;
+    // }
 }

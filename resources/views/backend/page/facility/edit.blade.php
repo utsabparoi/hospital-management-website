@@ -67,7 +67,7 @@
                                                                         <span class="input-group-addon width-30" style="text-align: left">
                                                                             Title <span class="label-required"></span>
                                                                         </span>
-                                                                        <input type="text" class="form-control @error('title') has-error @enderror" name="title" id="title" value="{{ old('name',$facility->title) }}">
+                                                                        <input type="text" class="form-control @error('title') has-error @enderror" name="title" id="title" value="{{ old('title',$facility->title) }}">
                                                                         @error('title')<br>
                                                                             <span class="text-danger">
                                                                                 {{ $message }}
@@ -137,6 +137,14 @@
                                                                             <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" {{ $facility->status == 1 ? 'checked' : '' }}>
                                                                             <span class="lbl"></span>
                                                                         </label>
+                                                                    </div><br>
+                                                                </div>
+
+                                                                {{-- Previous Image --}}
+                                                                <div class="col-sm-12 col-md-6">
+                                                                    <div class="input-group width-100">
+                                                                        <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
+                                                                        <img class="pt-1" src="{{ asset($facility->image) }}" width="300" height="200" style="margin-left: 13px;">
                                                                     </div>
                                                                 </div>
 
@@ -145,7 +153,7 @@
 
 
                                                             <div class="col-xs-12">
-                                                                <!-- Add Page -->
+                                                                <!-- Update Page -->
                                                                 <h5 class="widget-title">
                                                                     <div class="row" style="margin-top: 10px;padding:5px">
                                                                         <div class="col-md-12 text-right pr-2">

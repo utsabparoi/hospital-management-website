@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models\backend;
-// use App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\AutoCreatedUpdated;
@@ -20,4 +19,15 @@ class Slider extends Model
     {
         $query->active();
     }
+
+    /*
+     |--------------------------------------------------------------------------
+     | GET TABLE NAME
+     |--------------------------------------------------------------------------
+    */
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
+
 }
