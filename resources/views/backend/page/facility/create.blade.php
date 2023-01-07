@@ -54,109 +54,115 @@
                                                 <form action="{{ route('facilities.store') }}" id="Form" method="post" enctype="multipart/form-data">
                                                     @csrf
 
-                                                    <div class="widget-body">
+                                                    <div class="row">
 
-                                                        <div class="pt-2 pr-2">
+                                                        <!-- Left side -->
 
-                                                            <!-- Left side -->
+                                                        <div class="col-md-10 col-md-offset-1">
 
-                                                            <div class="row px-3">
+                                                            <!-- Title -->
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Title <sup class="text-danger">*</sup><span class="label-required"></span>
+                                                                    </span>
+                                                                    <input type="text" class="form-control @error('title') has-error @enderror"
+                                                                        name="title" id="title" value="{{ old('title') }}">
 
-                                                                <!-- Title -->
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="input-group width-100 mb-1">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Title <span class="label-required"></span>
-                                                                        </span>
-                                                                        <input type="text" class="form-control @error('title') has-error @enderror"
-                                                                            name="title" id="title" value="{{ old('title') }}">
-
-                                                                    </div>
                                                                 </div>
-
-                                                                <!-- Image -->
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="col-sm-12 col-md-6 input-group width-100">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Image
-                                                                        </span>
-                                                                        <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
-
-                                                                    </div>
-                                                                    <div class="input-group width-100 mb-1">
-                                                                        <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- Icon -->
-                                                                {{-- <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="input-group width-100 mb-1">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">Icon</span>
-                                                                        <div class="d-flex justify-content-between">
-                                                                            <div class="d-inline mr-2">
-                                                                                <input type="radio" name="icon" value="flaticon-5g">
-                                                                                <div class="icon-box flaticon-5g d-inline"></div>
-                                                                            </div>
-                                                                            <div class="d-inline mr-2">
-                                                                                <input type="radio" name="icon" value="flaticon-8k">
-                                                                                <div class="icon-box flaticon-8k d-inline"></div>
-                                                                            </div>
-                                                                            <div class="d-inline mr-2">
-                                                                                <input type="radio" name="icon" value="flaticon-customer-service">
-                                                                                <div class="icon-box flaticon-customer-service d-inline"></div>
-                                                                            </div>
-                                                                            <div class="d-inline mr-2">
-                                                                                <input type="radio" name="icon" value="flaticon-swimming-pool">
-                                                                                <div class="icon-box flaticon-swimming-pool d-inline"></div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div> --}}
-
-                                                                <!-- Description -->
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="input-group width-100 mb-1">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">Description</span>
-                                                                        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Description">{{ old('description') }}</textarea>
-                                                                    </div>
-                                                                </div>
-
-                                                                {{-- Status --}}
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div class="form-group">
-                                                                        <label class="col-sm-3 col-xs-4 text-left" for="form-field-1-1"> Status </label>
-                                                                        <div class="col-sm-3 col-xs-8">
-                                                                            <label>
-                                                                                <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" checked>
-                                                                                <span class="lbl"></span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
                                                             </div>
 
+                                                            <!-- Image -->
+                                                            <div class="firm-group">
+                                                                <div class="col-sm-12 col-md-6 input-group width-100">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Image
+                                                                    </span>
+                                                                    <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
 
+                                                                </div>
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
+                                                                    <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                </div>
+                                                            </div>
 
-                                                            <div class="col-xs-12">
-                                                                <!-- Add Page -->
-                                                                <h5 class="widget-title">
-                                                                    <div class="row" style="margin-top: 10px;padding:5px">
-                                                                        <div class="col-md-12 text-right pr-2">
-                                                                            <button type="submit" class="btn btn-primary btn-sm btn-block"
-                                                                                style="max-width: 150px">
-                                                                                <i class="fa fa-save"></i> Create
-                                                                            </button>
+                                                            <!-- Icon -->
+                                                            {{-- <div class="col-sm-12 col-md-6 ">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">Icon</span>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <div class="d-inline mr-2">
+                                                                            <input type="radio" name="icon" value="flaticon-5g">
+                                                                            <div class="icon-box flaticon-5g d-inline"></div>
+                                                                        </div>
+                                                                        <div class="d-inline mr-2">
+                                                                            <input type="radio" name="icon" value="flaticon-8k">
+                                                                            <div class="icon-box flaticon-8k d-inline"></div>
+                                                                        </div>
+                                                                        <div class="d-inline mr-2">
+                                                                            <input type="radio" name="icon" value="flaticon-customer-service">
+                                                                            <div class="icon-box flaticon-customer-service d-inline"></div>
+                                                                        </div>
+                                                                        <div class="d-inline mr-2">
+                                                                            <input type="radio" name="icon" value="flaticon-swimming-pool">
+                                                                            <div class="icon-box flaticon-swimming-pool d-inline"></div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="space-10"></div>
-                                                                </h5>
+
+                                                                </div>
+                                                            </div> --}}
+
+                                                            <!-- Description -->
+                                                            <div class="form-group">
+                                                                <div>
+                                                                    <span class="input-group-addon" style="text-align: left">
+                                                                        Description
+                                                                    </span>
+                                                                    <textarea name="description" class="form-control summernote"
+                                                                    placeholder="Description">{{ old('description') }}</textarea>
+
+                                                                </div>
+                                                                @error('description')
+                                                                <span class="text-danger">
+                                                                    {{ $message }}
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+
+                                                            {{-- Status --}}
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Status
+                                                                    </span>
+                                                                    <label style="margin: 5px 0 0 8px">
+                                                                        <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" checked>
+                                                                        <span class="lbl"></span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
 
                                                         </div>
+
+
+                                                        <div class="form-group">
+                                                            <!-- Add Page -->
+                                                            <h5 class="widget-title">
+                                                                <div class="row" style="margin-top: 10px;padding:5px">
+                                                                    <div class="col-md-12 text-center pr-2">
+                                                                        <button type="submit" class="btn btn-primary btn-sm btn-block"
+                                                                            style="max-width: 150px">
+                                                                            <i class="fa fa-save"></i> Create
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="space-10"></div>
+                                                            </h5>
+                                                        </div>
+
                                                     </div>
+
                                                 </form>
                                             </div>
                                         </div>

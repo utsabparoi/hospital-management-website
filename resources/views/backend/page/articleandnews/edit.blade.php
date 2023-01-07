@@ -55,120 +55,118 @@
                                                     @csrf
                                                     @method('PUT')
 
-                                                    <div class="widget-body">
+                                                    <div class="row">
 
-                                                        <div class="row pt-2 pr-2">
+                                                        <div class="col-md-10 col-md-offset-1">
 
-                                                            <div class="col-sm-12 px-3">
-
-                                                                <!-- Edit Title -->
-                                                                <div class="col-sm-12 col-md-6">
-                                                                    <div class="input-group width-100 mb-1">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Title <span class="label-required"></span><br>
-                                                                        </span>
-                                                                        <input type="text" class="form-control @error('title') has-error @enderror" name="title" id="title"
-                                                                            value="{{ old('title',$articles_news->title) }}">
-                                                                        @error('title')
-                                                                            <span class="text-danger">
-                                                                                {{ $message }}
-                                                                            </span>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div>
-
-                                                                <!-- SLUG -->
-                                                                <div class="col-sm-12 col-md-6">
-                                                                    <div class="input-group width-100">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">Slug <sup class="text-danger">*</sup></span>
-                                                                        <input type="text" class="form-control" name="slug" id="slug"
-                                                                        value="{{ old('slug', $articles_news->slug) }}" placeholder="Article Slug" required>
-                                                                        </div><br>
-                                                                    @error('slug')
+                                                            <!-- Edit Title -->
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Title <span class="label-required"></span><br>
+                                                                    </span>
+                                                                    <input type="text" class="form-control @error('title') has-error @enderror" name="title" id="title"
+                                                                        value="{{ old('title',$articles_news->title) }}">
+                                                                    @error('title')
                                                                         <span class="text-danger">
                                                                             {{ $message }}
                                                                         </span>
                                                                     @enderror
                                                                 </div>
+                                                            </div>
 
-                                                                <!-- Edit Description -->
-                                                                <div class="col-sm-12 col-md-6 ">
-                                                                    <div>
-                                                                        <span class="input-group-addon" style="text-align: center">
-                                                                            Description
-                                                                        </span>
-                                                                        <textarea name="description" class="form-control summernote"
-                                                                            placeholder="Article description">{{ old('description',$articles_news->description) }}</textarea>
-                                                                    </div>
-                                                                    @error('description')
+                                                            <!-- SLUG -->
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">Slug <sup class="text-danger">*</sup></span>
+                                                                    <input type="text" class="form-control" name="slug" id="slug"
+                                                                    value="{{ old('slug', $articles_news->slug) }}" placeholder="Article Slug" required>
+                                                                    </div><br>
+                                                                @error('slug')
                                                                     <span class="text-danger">
                                                                         {{ $message }}
                                                                     </span>
+                                                                @enderror
+                                                            </div>
+
+                                                            <!-- Edit Description -->
+                                                            <div class="form-group">
+                                                                <div>
+                                                                    <span class="input-group-addon" style="text-align: left">
+                                                                        Description
+                                                                    </span>
+                                                                    <textarea name="description" class="form-control summernote"
+                                                                        placeholder="Article description">{{ old('description',$articles_news->description) }}</textarea>
+                                                                </div>
+                                                                @error('description')
+                                                                <span class="text-danger">
+                                                                    {{ $message }}
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+
+                                                            <!-- Edit Image -->
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12 col-md-6 input-group width-100">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Image
+                                                                    </span>
+                                                                    <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
+                                                                    @error('image')
+                                                                        <span class="text-danger">
+                                                                            {{ $message }}
+                                                                        </span>
                                                                     @enderror
                                                                 </div>
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
+                                                                    <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Articles "height" must be 680px)</b></small>
+                                                                </div><br>
+                                                            </div>
 
-                                                                <!-- Edit Image -->
-                                                                <div class="col-sm-12 col-md-6">
-                                                                    <div class="col-sm-12 col-md-6 input-group width-100">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Image
-                                                                        </span>
-                                                                        <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
-                                                                        @error('image')
-                                                                            <span class="text-danger">
-                                                                                {{ $message }}
-                                                                            </span>
-                                                                        @enderror
-                                                                    </div>
-                                                                    <div class="input-group width-100 mb-1">
-                                                                        <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Articles "height" must be 680px)</b></small>
-                                                                    </div><br>
+                                                            {{-- Previous Image --}}
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100">
+                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
+                                                                    <img class="pt-1" src="{{ asset($articles_news->image) }}" width="300" height="200" style="margin-left: 13px;">
                                                                 </div>
+                                                            </div><br>
 
-
-
-                                                                <!-- Edit Status -->
-                                                                <div class="col-sm-12 col-md-6">
-                                                                    <div class="input-group width-100">
-                                                                        <span class="input-group-addon width-30" style="text-align: left">
-                                                                            Status
-                                                                        </span>
-                                                                        <label style="margin: 5px 0 0 8px">
-                                                                            <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" {{ $articles_news->status == 1 ? 'checked' : '' }}>
-                                                                            <span class="lbl"></span>
-                                                                        </label>
-                                                                    </div><br>
-                                                                </div>
-
-                                                                <div class="col-sm-12 col-md-6">
-                                                                    <div class="input-group width-100">
-                                                                        <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
-                                                                        <img class="pt-1" src="{{ asset($articles_news->image) }}" width="300" height="200" style="margin-left: 13px;">
-                                                                    </div>
-                                                                </div>
-
-
+                                                            <!-- Edit Status -->
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Status
+                                                                    </span>
+                                                                    <label style="margin: 5px 0 0 8px">
+                                                                        <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" {{ $articles_news->status == 1 ? 'checked' : '' }}>
+                                                                        <span class="lbl"></span>
+                                                                    </label>
+                                                                </div><br>
                                                             </div>
 
 
-                                                            <div class="col-xs-12">
-                                                                <!-- Update Page -->
-                                                                <h5 class="widget-title">
-                                                                    <div class="row" style="margin-top: 10px;padding:5px">
-                                                                        <div class="col-md-12 text-right pr-2">
-                                                                            <button type="submit" class="btn btn-primary btn-sm btn-block"
-                                                                                style="max-width: 150px">
-                                                                                <i class="fa fa-save"></i> Update
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="space-10"></div>
-                                                                </h5>
-                                                            </div>
 
                                                         </div>
+
+
+                                                        <div class="form-group">
+                                                            <!-- Update Page -->
+                                                            <h5 class="widget-title">
+                                                                <div class="row" style="margin-top: 10px;padding:5px">
+                                                                    <div class="col-md-12 text-center pr-2">
+                                                                        <button type="submit" class="btn btn-primary btn-sm btn-block"
+                                                                            style="max-width: 150px">
+                                                                            <i class="fa fa-save"></i> Update
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="space-10"></div>
+                                                            </h5>
+                                                        </div>
+
                                                     </div>
+
                                                 </form>
                                             </div>
                                         </div>

@@ -36,7 +36,7 @@
                                     <div class="widget-box">
                                         <div class="widget-header">
                                             <h4 class="widget-title">
-                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Slider</span>
+                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Edit Slider</span>
                                             </h4>
                                             <span class="widget-toolbar">
                                                 <!--------------- Slider List---------------->
@@ -54,14 +54,12 @@
                                                     @csrf
                                                     @method('PUT')
 
-                                                    <div class="widget-body">
+                                                        <div class="row">
 
-                                                        <div class="row pt-2 pr-2">
-
-                                                            <div class="col-sm-12 px-3">
+                                                            <div class="col-md-10 col-md-offset-1">
 
                                                                 <!-- NAME -->
-                                                                <div class="col-sm-12 col-md-6">
+                                                                <div class="form-group">
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
                                                                             Name <span class="label-required"></span>
@@ -75,8 +73,8 @@
                                                                     </div>
                                                                 </div>
 
-
-                                                                <div class="col-sm-12 col-md-6">
+                                                                {{-- Image --}}
+                                                                <div class="form-group">
                                                                     <div class="input-group width-100">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
                                                                             Image
@@ -94,7 +92,14 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-12 col-md-6">
+                                                                {{-- Previous Image --}}
+                                                                <div class="input-group width-100 mb-3">
+                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
+                                                                    <img class="pt-1" src="{{ asset($slider->image) }}" width="300" height="100" style="margin-left: 13px;">
+                                                                </div><br><br>
+
+                                                                {{-- Status --}}
+                                                                <div class="form-group">
                                                                     <div class="input-group width-100">
                                                                         <span class="input-group-addon width-30" style="text-align: left">
                                                                             Status
@@ -106,18 +111,14 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="input-group width-100 mb-3">
-                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image</span>
-                                                                    <img class="pt-1" src="{{ asset($slider->image) }}" width="300" height="100" style="margin-left: 13px;">
-                                                                </div>
                                                             </div>
 
 
-                                                            <div class="col-xs-12">
+                                                            <div class="form-group">
                                                                 <!-- Add Page -->
                                                                 <h5 class="widget-title">
                                                                     <div class="row" style="margin-top: 10px;padding:5px">
-                                                                        <div class="col-md-12 text-right pr-2">
+                                                                        <div class="col-md-12 text-center pr-2">
                                                                             <button type="submit" class="btn btn-primary btn-sm btn-block"
                                                                                 style="max-width: 150px">
                                                                                 <i class="fa fa-save"></i> Update
