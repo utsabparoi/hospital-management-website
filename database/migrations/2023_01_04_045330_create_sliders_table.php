@@ -13,18 +13,20 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->text('image')->nullable();
-            $table->tinyInteger('status')->default(1);
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->timestamps();
+        if(!Schema::hasTable('sliders')){
+            Schema::create('sliders', function (Blueprint $table) {
+                $table->id();
+                $table->string('name')->nullable();
+                $table->text('image')->nullable();
+                $table->tinyInteger('status')->default(1);
+                $table->unsignedBigInteger('created_by')->nullable();
+                $table->unsignedBigInteger('updated_by')->nullable();
+                $table->timestamps();
 
-            // $table->foreign('created_by')->references('id')->on('users');
-            // $table->foreign('updated_by')->references('id')->on('users');
-        });
+                // $table->foreign('created_by')->references('id')->on('users');
+                // $table->foreign('updated_by')->references('id')->on('users');
+            });
+        }
     }
 
     /**

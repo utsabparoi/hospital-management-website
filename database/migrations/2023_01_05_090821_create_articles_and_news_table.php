@@ -13,18 +13,20 @@ class CreateArticlesAndNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles_and_news', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('slug');
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->tinyInteger('status')->default(1);
-            $table->string('date')->nullable();
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('articles_and_news')){
+            Schema::create('articles_and_news', function (Blueprint $table) {
+                $table->id();
+                $table->string('title');
+                $table->string('slug');
+                $table->text('description')->nullable();
+                $table->string('image')->nullable();
+                $table->tinyInteger('status')->default(1);
+                $table->string('date')->nullable();
+                $table->unsignedBigInteger('created_by')->nullable();
+                $table->unsignedBigInteger('updated_by')->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     /**
