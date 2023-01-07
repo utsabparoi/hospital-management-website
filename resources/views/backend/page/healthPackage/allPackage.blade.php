@@ -70,8 +70,9 @@
                                             <thead>
                                             <tr>
                                                 <th width="5%" class="hide-in-sm">Sl</th>
-                                                <th width="35%">Package Name</th>
-                                                <th width="20%">Cost(BDT)</th>
+                                                <th width="20%">Package Name</th>
+                                                <th width="30%">Available Test</th>
+                                                <th width="10%">Cost(BDT)</th>
                                                 <th width="20">Discount</th>
                                                 <th width="5%">Status</th>
                                                 <th width="10%" class="text-center" style="width: 120px">Action</th>
@@ -84,6 +85,11 @@
                                                 <tr>
                                                     <td class="hide-in-sm"><span class="span">@php echo $serialNo; @endphp</span></td>
                                                     <td><span class="span">{{$allPackages->package_name}}</span></td>
+                                                    <td><span class="span">
+                                                            @foreach($allTest->where("package_name", $allPackages->package_name) as $allTests)
+                                                                <span>{{$allTests->test_name}}<br></span>
+                                                            @endforeach
+                                                        </span></td>
                                                     <td><span class="span">{{$allPackages->package_cost}}</span></td>
                                                     <td><span class="span">{{$allPackages->package_discount}}%</span></td>
                                                     <td class="text-center">
@@ -100,7 +106,7 @@
                                                         <!---------------  EDIT---------------->
                                                         <div class="btn-group btn-corner  action-span ">
 
-                                                            <a href="editTest/{{$allPackages->id}}"
+                                                            <a href="healthPackageEdit/{{$allPackages->id}}"
                                                                role="button" class="btn btn-xs btn-success bs-tooltip"
                                                                title="Edit">
                                                                 <i class="fa fa-edit"></i>
@@ -139,7 +145,7 @@
     <script>
         function statusChange(element) {
             let test_id = $(element).attr("data-id");
-            let post_url = "/testStatusChange";
+            let post_url = "/packageStatusChange";
             let allData = new FormData();
             allData.append("ID", test_id);
             let configuration = {headers:{"content-type" : "multipart/form-data"},

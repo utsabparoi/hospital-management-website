@@ -70,8 +70,10 @@
                                             <thead>
                                             <tr>
                                                 <th width="5%" class="hide-in-sm">Sl</th>
-                                                <th width="35%">Image</th>
-                                                <th width="40%">Doctor Name</th>
+                                                <th width=20%">Image</th>
+                                                <th width="20%">Doctor Name</th>
+                                                <th width="15%">Department</th>
+                                                <th width="20%">Visit Time</th>
                                                 <th width="5%">Status</th>
                                                 <th width="10%" class="text-center" style="width: 120px">Action</th>
                                             </tr>
@@ -86,6 +88,22 @@
                                                         <img src="{{$doctors->doctor_image}}" alt="" width="250px" height="100px">
                                                     </td>
                                                     <td><span class="span">{{$doctors->doctor_name}}</span></td>
+                                                    <td><span class="span">{{$doctors->doctor_department}}</span></td>
+                                                    <td><span class="span">
+                                                            {{$doctors->doctor_visit_start_time}}
+                                                            @if($doctors->doctor_visit_start_time < 12)
+                                                                AM
+                                                            @else
+                                                                PM
+                                                            @endif
+                                                            To
+                                                            {{$doctors->doctor_visit_end_time}}
+                                                            @if($doctors->doctor_visit_end_time < 12)
+                                                                AM
+                                                            @else
+                                                                PM
+                                                            @endif
+                                                        </span></td>
                                                     <td class="text-center">
                                                         <!--------------- STATUS EDIT---------------->
                                                         <div>

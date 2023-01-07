@@ -72,9 +72,13 @@
 {{--                                                            <label for="vehicle1"> CSB</label>--}}
                                                             <div class="col-md-5 col-sm-5">
                                                                 @foreach($healthTest as $healthTests)
-                                                                <input type="checkbox" id="" name="" value="{{$healthTests->test_name}}">
-                                                                <label for="">{{$healthTests->test_name}}</label>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                                <input type="checkbox" class="testCheckBox" id="{{$healthTests->test_name}}" value="{{$healthTests->test_name}}">
+                                                                <label for="flexCheckDefault">{{$healthTests->test_name}}</label>&nbsp&nbsp&nbsp&nbsp&nbsp
                                                                 @endforeach
+                                                                <br><br>
+                                                                <div class="print-values">
+                                                                    <p id="checkboxValueList"></p>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -139,10 +143,27 @@
 
 
                             <script>
+                                var checkboxValueList = document.getElementById('checkboxValueList');
+                                var texts = "<span>You have selected: </span>";
+                                var checkedList = [];
+                                var checkboxes = document.querySelectorAll('.testCheckBox');
+                                for(var checkbox of checkboxes){
+                                    checkbox.addEventListener('click', function () {
+                                        if (this.checked === true){
+                                            checkedList.push(this.value);
+                                            checkboxValueList.innerHTML = texts + checkedList.join(',&nbsp&nbsp&nbsp');
+                                        }
+                                        else{
+                                            checkedList = checkedList.filter(e => e !== this.value);
+                                            checkboxValueList.innerHTML = texts + checkedList.join(',&nbsp&nbsp&nbsp');
+                                        }
+                                    })
+                                }
 
                                 function InsertPackage() {
                                     let packageName = document.getElementById("packageName").value;
                                     let packageForWho = document.getElementById("packageForWho").value;
+                                    let check = document.querySelector('input[type="checkbox"]:checked').parentElement.textContent;
                                     let packageCost = document.getElementById("packageCost").value;
                                     let packageDiscount = document.getElementById("packageDiscount").value;
                                     let packageDescription = CKEDITOR.instances['packageDescription'].getData();
@@ -157,6 +178,9 @@
                                     else if(packageCost === ""){
                                         alert("Give Cost");
                                     }
+                                    else if(packageDiscount === ""){
+                                        alert("Write Discount");
+                                    }
                                     else if(packageDescription === ""){
                                         alert("Write Description");
                                     }
@@ -165,6 +189,9 @@
                                         let allData = new FormData();
                                         allData.append("PackageName", packageName);
                                         allData.append("PackageForWho", packageForWho);
+                                        checkedList.forEach((item) => {
+                                            allData.append('Test[]', item);
+                                        });
                                         allData.append("PackageCost", packageCost);
                                         allData.append("PackageDiscount", packageDiscount);
                                         allData.append("PackageDescription", packageDescription);

@@ -132,6 +132,9 @@
                                     else if(testCost === ""){
                                         alert("Give Cost");
                                     }
+                                    else if(testDiscount === ""){
+                                        alert("Write Discount");
+                                    }
                                     else if(testDescription === ""){
                                         alert("Write Description");
                                     }

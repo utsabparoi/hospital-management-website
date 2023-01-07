@@ -145,4 +145,7 @@ Route::get('/testDelete/{id}', [HealthTestController::class, "TestDelete"]);
 Route::get('/healthPackage',[HealthPackageController::class, "HealthPackage"])->name("healthPackage");
 Route::get('/insertHealthPackageForm',[HealthPackageController::class, "HealthPackageInsertForm"])->name("insertHealthPackageForm");
 Route::post('/insertPackage',[HealthPackageController::class, "HealthPackageInsert"]);
+Route::get('/healthPackageEdit/{id}',[HealthPackageController::class, "EditHealthPackage"])->name("healthPackageEdit");
+Route::post('/updatePackage',[HealthPackageController::class, "UpdatePackage"]);
+Route::post('/packageStatusChange', [HealthPackageController::class, "PackageStatusChange"]);
 Route::get('/healthPackageDelete/{id}', [HealthPackageController::class, "HealthPackageDelete"]);
