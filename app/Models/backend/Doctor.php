@@ -5,12 +5,11 @@ namespace App\Models\backend;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\AutoCreatedUpdated;
 
-class ArticleandNews extends Model
+class Doctor extends Model
 {
     use AutoCreatedUpdated;
 
-
-    protected $table = 'articles_and_news';
+    protected $table = 'doctors';
 
     protected $guarded = [];
 

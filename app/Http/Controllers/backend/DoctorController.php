@@ -1,110 +1,160 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\DepartmentModel;
-use App\Models\DoctorModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Traits\FileSaver;
+use App\Models\backend\Doctor;
+use App\Models\DepartmentModel;
+use Intervention\Image\Facades\Image;
 
 class DoctorController extends Controller
 {
-    function DoctorInsertForm(){
-        $department = DepartmentModel::all();
-        return view('backend.page.doctor.insertDoctor', compact('department'));
-    }
-    function DoctorInsert(Request $request){
-        $name = $request->input('DoctorName');
-        $department = $request->input('DoctorDepartment');
-        $position = $request->input('DoctorPosition');
-        $visitStartTime = $request->input('DoctorVisitStartTime');
-        $visitEndTime = $request->input('DoctorVisitEndTime');
-        $description = $request->input('DoctorDescription');
-        $status = $request->input('Status');
-
-        $checkExistingDoctorName = DoctorModel::where("doctor_name", "=", $name)->count();
-        if($checkExistingDoctorName < 1){
-            //upload image
-            $new_doctor_image = $request->file('DoctorImage')->store('public/images');
-            $new_doctor_image_explode = (explode('/', $new_doctor_image))[2];
-            $new_doctor_image_url = "/storage/images/" . $new_doctor_image_explode;
-
-            DoctorModel::insertOrIgnore(
-                [
-                    ['doctor_name'=>$name, 'doctor_image'=>$new_doctor_image_url, 'doctor_department'=>$department, 'doctor_position'=>$position, 'doctor_visit_start_time'=>$visitStartTime, 'doctor_visit_end_time'=>$visitEndTime, 'doctor_description'=>$description, 'status'=>$status,]
-                ]
-            );
-            return 1;
-        }
-        else{
-            return 0;
+    use FileSaver;
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        try {
+            $data['doctors']     = Doctor::orderBy('id','desc')->paginate(20);
+            $data['table']       = Doctor::getTableName();
+            return view('backend/page/doctor.index',$data);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
         }
     }
 
-    function AllDoctor(){
-       $doctor = DoctorModel::paginate(3);
-       return view('backend.page.doctor.allDoctor', compact('doctor'));
-    }
-
-    function DoctorStatusChange(Request $request){
-        $id = $request->input("ID");
-        $status = DoctorModel::where("id", "=", $id )->first()->status;
-        if($status == "true"){
-            DoctorModel::where("id", "=", $id)->update(["status"=>"false"]);
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $data['departments'] = DepartmentModel::orderBy('id','desc')->paginate(20);
+        try {
+            return view('backend/page/doctor.create', $data);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
         }
-        elseif ($status == "false"){
-            DoctorModel::where("id", "=", $id)->update(["status"=>"true"]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        $this->storeOrUpdate($request);
+        return redirect()->route('doctors.index')->with('success','Doctor Info Create Success');
+        // try {
+        //     $this->storeOrUpdate($request);
+        //     return redirect()->route('doctors.index')->with('success','Doctor Info Create Success');
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+        // }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $doctors['departments'] = DepartmentModel::orderBy('id','desc')->paginate(20);
+        $doctors['doctors']        = Doctor::find($id);
+        return view('backend/page/doctor/edit', $doctors);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        try {
+            $this->storeOrUpdate($request, $id);
+
+            return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
         }
-        return $status;
     }
 
-    function EditDoctor($id){
-        $doctor = DoctorModel::find($id);
-        $department = DepartmentModel::all();
-        return view('backend.page.doctor.editDoctor', compact('doctor', 'department'));
-    }
-
-    function DoctorUpdate(Request $request){
-        $doctorId = $request->input('DoctorId');
-        $name = $request->input('DoctorName');
-        $image = $request->input('DoctorImage');
-        $department = $request->input('DoctorDepartment');
-        $position = $request->input('DoctorPosition');
-        $visitStartTime = $request->input('DoctorVisitStartTime');
-        $visitEndTime = $request->input('DoctorVisitEndTime');
-        $description = $request->input('DoctorDescription');
-        $status = $request->input('Status');
-        $checkExistingDoctor = DoctorModel::where("id", "!=", $doctorId)->where("doctor_name", "=", $name)->count();
-        if($checkExistingDoctor < 1){
-            if($image == "undefined"){
-                DoctorModel::where("id", "=", $doctorId)
-                    ->update(["doctor_name" => $name, "doctor_department" => $department, "doctor_position" => $position, "doctor_visit_start_time" => $visitStartTime, "doctor_visit_end_time" => $visitEndTime, "doctor_description" => $description, "status" => $status]);
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        try {
+            $doctors = Doctor::find($id);
+            if(file_exists($doctors->image)){
+                unlink($doctors->image);
             }
-            else{
-                //delete present image
-                $doctorImage = DoctorModel::where("id", "=", $doctorId )->first();
-                $present_image = (explode('/', $doctorImage->doctor_image))[3];
-                Storage::delete("public/images/".$present_image);
+            $doctors->delete();
 
-                //upload new image
-                $new_image = $request->file('DoctorImage')->store('public/images');
-                $new_image_explode = (explode('/', $new_image))[2];
-                $new_image_url = "/storage/images/" . $new_image_explode;
-                DoctorModel::where("id", "=", $doctorId)
-                    ->update(["doctor_name" => $name, "doctor_image" => $new_image_url, "doctor_department" => $department, "doctor_position" => $position, "doctor_visit_start_time" => $visitStartTime, "doctor_visit_end_time" => $visitEndTime, "doctor_description" => $description, "status" => $status]);
-            }
-
-            return 1;
-        }
-        else{
-            return 0;
+            return redirect()->back()->with('success','Doctor info Deleted Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
         }
     }
 
-    function DoctorDelete($id){
-        DoctorModel::where("id", "=", $id)->delete();
-        return redirect(route("allDoctor"));
+    /*
+     |--------------------------------------------------------------------------
+     | STORE OR UPDATE  METHOD
+     |--------------------------------------------------------------------------
+    */
+    public function storeOrUpdate($request, $id = null)
+    {
+        $request->validate([
+            'name'                  => 'required',
+        ]);
+
+       try {
+        $doctors = Doctor::updateOrCreate([
+            'id'                   =>$id,
+        ],[
+            'name'                 => $request->name,
+            'degree'               => $request->degree,
+            'department'           => $request->department,
+            'position'             => $request->position,
+            'visit_start_time'     => $request->visit_start_time,
+            'visit_end_time'       => $request->visit_end_time,
+            'details'              => $request->details,
+            'weekday'              => implode(',', $request->input('weekday')), //inserting to database as string
+            'status'               => $request->status ? 1: 0,
+        ]);
+
+        $this->uploadFileWithResize($request->image, $doctors, 'image', 'images/doctors', 300, 200);
+
+       } catch (\Throwable $th) {
+        throw $th;
+       }
     }
 }

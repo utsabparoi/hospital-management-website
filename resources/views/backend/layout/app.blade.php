@@ -40,6 +40,9 @@
     {{-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> --}}
     <link rel="stylesheet" href="{{ asset('backend/css/jquery-ui.min.css')}}">
 
+    {{-- Select2 --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- inline styles related to this page -->
 
     <!-- ace settings handler -->
@@ -132,6 +135,15 @@
         $(document).ready(function() {
           $( "#datepicker" ).datepicker();
         } );
+    </script>
+
+    {{-- Select2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.multiselect').select2();
+        });
     </script>
 
 

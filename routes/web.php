@@ -126,14 +126,16 @@ Route::post('/departmentStatusChange', [DepartmentController::class, "Department
 Route::get('/departmentDelete/{id}', [DepartmentController::class, "DepartmentDelete"])->middleware("AdminLogin");
 
 //doctor crud
-Route::get('/doctor', [DoctorController::class, "DoctorInsertForm"])->name("doctor")->middleware("AdminLogin");
-Route::post("/insertDoctor", [DoctorController::class, "DoctorInsert"])->middleware("AdminLogin");
-Route::get('/allDoctor', [DoctorController::class, "AllDoctor"])->name("allDoctor")->middleware("AdminLogin");
-Route::get('/editDoctor/{id}', [DoctorController::class, "EditDoctor"])->name("editDoctor")->middleware("AdminLogin");
-Route::post('/doctorUpdate', [DoctorController::class, "DoctorUpdate"])->middleware("AdminLogin");
-Route::post('/doctorStatusChange', [DoctorController::class, "DoctorStatusChange"])->middleware("AdminLogin");
-Route::get('/doctorDelete/{id}', [DoctorController::class, "DoctorDelete"])->middleware("AdminLogin");
+// Route::get('/doctor', [DoctorController::class, "DoctorInsertForm"])->name("doctor")->middleware("AdminLogin");
+// Route::post("/insertDoctor", [DoctorController::class, "DoctorInsert"])->middleware("AdminLogin");
+// Route::get('/allDoctor', [DoctorController::class, "AllDoctor"])->name("allDoctor")->middleware("AdminLogin");
+// Route::get('/editDoctor/{id}', [DoctorController::class, "EditDoctor"])->name("editDoctor")->middleware("AdminLogin");
+// Route::post('/doctorUpdate', [DoctorController::class, "DoctorUpdate"])->middleware("AdminLogin");
+// Route::post('/doctorStatusChange', [DoctorController::class, "DoctorStatusChange"])->middleware("AdminLogin");
+// Route::get('/doctorDelete/{id}', [DoctorController::class, "DoctorDelete"])->middleware("AdminLogin");
 
+// Doctor information route
+Route::resource('doctors', DoctorController::class);
 
 //diagnostic test
 Route::get('/diagnosticTest',[HealthTestController::class, "HealthTest"])->name("diagnosticTest");

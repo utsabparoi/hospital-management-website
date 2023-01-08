@@ -40,14 +40,13 @@
                     </span>
                                             </div>
 
-
                                             <div class="widget-body">
                                                 <div class="widget-main">
 
                                                     <form  class="form-horizontal" >
                                                         @csrf
                                                         <input type="hidden" name="_token" id="name">
-                                                        <!--Department Name -->
+                                                        <!--Doctor Name -->
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3 col-sm-3">Doctor Name<sup class="text-danger">*</sup>
                                                                 :</label>
@@ -55,6 +54,29 @@
                                                                 <input class="form-control name" type="text" id="doctorName" name="doctorName">
                                                             </div>
                                                         </div>
+
+                                                        <!--Doctor Degree -->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3 col-sm-3">Doctor Degree<sup class="text-danger">*</sup>
+                                                                :</label>
+                                                            <div class="col-md-5 col-sm-5">
+                                                                <input class="form-control name" type="text" id="doctorName" name="doctorName">
+                                                            </div>
+                                                        </div>
+                                                        {{-- <div class="form-group">
+                                                            <label class="control-label col-sm-3 col-sm-3">Doctor Degree<sup class="text-danger">*</sup>
+                                                                :</label>
+                                                            <div class="col-md-5 col-sm-5">
+                                                                <select class="form-control name multiselect" type="text" name="doctorDegree[]" multiple="multiple">
+                                                                    <option value="MBBS">MBBS</option>
+                                                                    <option value="BDS">BDS</option>
+                                                                    <option value="BAMS">BAMS</option>
+                                                                    <option value="MD">MD</option>
+                                                                    <option value="MS">MS</option>
+                                                                    <option value="DNB">DNB</option>
+                                                                </select>
+                                                            </div>
+                                                        </div> --}}
 
                                                         <!--Department Image -->
                                                         <div class="form-group">
@@ -87,6 +109,25 @@
                                                                 <input class="form-control name" type="text" id="doctorPosition" name="doctorPosition">
                                                             </div>
                                                         </div>
+                                                        {{-- Available Weekday --}}
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-3 col-sm-3">Available Weekdays<sup class="text-danger">*</sup>
+                                                                :</label>
+                                                            {{-- <div class="col-md-5 col-sm-5">
+                                                                <input class="form-control name" type="text" id="doctorPosition" name="doctorPosition">
+                                                            </div> --}}
+                                                            <div class="col-md-5 col-sm-5">
+                                                                <select class="form-control name multiselect" type="text" name="doctorDegree[]" multiple="multiple">
+                                                                    <option value="Sat">Saturday</option>
+                                                                    <option value="Sun">Sunday</option>
+                                                                    <option value="Mon">Monday</option>
+                                                                    <option value="Tue">Tuesdays</option>
+                                                                    <option value="Wed">Wednessday</option>
+                                                                    <option value="Thur">Thursday</option>
+                                                                    <option value="Fri">Friday</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
 
                                                         <!--Department Name -->
                                                         <div class="form-group">
@@ -95,7 +136,7 @@
                                                             <div class="col-md-2 col-sm-2">
                                                                 <input class="form-control name" type="time" id="patientVisitStartTime" name="patientVisitStartTime">
                                                             </div>
-                                                            <div align="center" class="col-md-1 col-sm-1">
+                                                            <div class="col-md-1 col-sm-1 text-center">
                                                                 To
                                                             </div>
                                                             <div class="col-md-2 col-sm-2">
@@ -122,9 +163,6 @@
                                                             </div>
                                                         </div>
 
-
-
-
                                                         <!-- Action -->
                                                         <div class="form-group">
                                                             <label class="control-label col-12"></label>
@@ -148,17 +186,22 @@
 
                                 function InsertDoctor() {
                                     let doctorName = document.getElementById("doctorName").value;
+                                    let doctorDegree = document.getElementById("doctorDegree").value;
                                     let doctorImage = document.getElementById("doctorImage").files[0];
                                     let doctorDepartment = document.getElementById("doctorDepartment").value;
                                     let doctorPosition = document.getElementById("doctorPosition").value;
                                     let doctorVisitStartTime = document.getElementById("patientVisitStartTime").value;
                                     let doctorVisitEndTime = document.getElementById("patientVisitEndTime").value;
+                                    let doctorWeekday = document.getElementById("doctorWeekday").value;
                                     let doctorDescription = CKEDITOR.instances['doctorDescription'].getData();
                                     let status = document.getElementById("status").checked;
 
 
                                     if(doctorName === ""){
                                         alert("Write a Doctor Name")
+                                    }
+                                    else if (doctorDegree === "") {
+                                        alert("Write Doctor Degree/Degrees")
                                     }
                                     else if(doctorImage == null){
                                         alert("Choose an Image")
@@ -175,6 +218,12 @@
                                     else if(doctorVisitEndTime === ""){
                                         alert("Give Visit End Time");
                                     }
+                                    else if(doctorVisitEndTime === ""){
+                                        alert("Give Visit End Time");
+                                    }
+                                    else if(doctorWeekday === ""){
+                                        alert("Insert Weekday");
+                                    }
                                     else if(doctorDescription === ""){
                                         alert("Write Description");
                                     }
@@ -182,11 +231,13 @@
                                         let post_url = "/insertDoctor";
                                         let allData = new FormData();
                                         allData.append("DoctorName", doctorName);
+                                        allData.append("doctorDegree", doctorDegree);
                                         allData.append("DoctorImage", doctorImage);
                                         allData.append("DoctorDepartment", doctorDepartment);
                                         allData.append("DoctorPosition", doctorPosition);
                                         allData.append("DoctorVisitStartTime", doctorVisitStartTime);
                                         allData.append("DoctorVisitEndTime", doctorVisitEndTime);
+                                        allData.append("doctorWeekday", doctorWeekday);
                                         allData.append("DoctorDescription", doctorDescription);
                                         allData.append("Status", status);
 

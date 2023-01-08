@@ -102,7 +102,7 @@
             </ul>
         </li>
 
-        <li class="nav-link {{ request()->is('doctor*') ? 'active' : '' }}">
+        {{-- <li class="nav-link {{ request()->is('doctor*') ? 'active' : '' }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-stethoscope" aria-hidden="true"></i>
                 <span class="menu-text"> Doctor </span>
@@ -131,6 +131,13 @@
                     <b class="arrow"></b>
                 </li>
             </ul>
+        </li> --}}
+        <li class="nav-link {{ request()->is('doctors*') ? 'active' : '' }}">
+            <a href="{{ route('doctors.index') }}">
+                <i class="menu-icon fa fa-stethoscope"></i>
+                <span class="menu-text">Doctor Information</span>
+            </a>
+            <b class="arrow"></b>
         </li>
 
         <li class="nav-link {{ request()->is('facilities*') ? 'active' : '' }}">
