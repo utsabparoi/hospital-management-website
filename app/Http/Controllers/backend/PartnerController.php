@@ -6,9 +6,9 @@ use App\Traits\FileSaver;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
-use App\Models\backend\Slider;
+use App\Models\backend\Partner;
 
-class SliderController extends Controller
+class PartnerController extends Controller
 {
     use FileSaver;
 
@@ -19,9 +19,9 @@ class SliderController extends Controller
      **/
     public function index()
     {
-        $data['slider']  = Slider::latest()->paginate(20);
-        $data['table']   = Slider::getTableName();
-        return view('backend/page/slider/index', $data);
+        $data['partner']  = Partner::latest()->paginate(20);
+        $data['table']   = Partner::getTableName();
+        return view('backend/page/partner/index', $data);
     }
 
     /**
@@ -29,12 +29,10 @@ class SliderController extends Controller
      * Created Method
      * =============================================
      **/
-
-
     public function create()
     {
         try {
-            return view('backend/page/slider/create');
+            return view('backend/page/partner/create');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
@@ -55,7 +53,7 @@ class SliderController extends Controller
         try {
             $this->storeOrUpdate($request);
 
-            return redirect()->route('sliders.index')->with('success','Added Success');
+            return redirect()->route('partners.index')->with('success','Added Success');
 
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
@@ -63,50 +61,49 @@ class SliderController extends Controller
         }
     }
 
-    /**
-     * =============================================
-     * SHOW METHOD
-     * =============================================
-     **/
     public function show($id)
     {
-
+        //
     }
 
     /**
-     * =============================================
-     * EDIT METHOD
-     * =============================================
-     **/
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
-        $slider  = Slider::find($id);
-        return view('backend/page/slider/edit', compact('slider'));
+        $partner  = Partner::find($id);
+        return view('backend/page/partner/edit', compact('partner'));
     }
 
     /**
-     * =============================================
-     * UPDATE METHOD
-     * =============================================
-     **/
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         try {
             $this->storeOrUpdate($request,$id);
-            return redirect()->route('sliders.index')->with('success','Updated Success');
+            return redirect()->route('partners.index')->with('success','Updated Success');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
     }
 
     /**
-     * =============================================
-     * DESTROY/DELETE METHOD
-     * =============================================
-     **/
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        $data = Slider::find($id);
+        $data = Partner::find($id);
 
         if(file_exists($data->image))
         {
@@ -121,17 +118,17 @@ class SliderController extends Controller
     {
         // dd($request->all());
         try {
-            $slider = Slider::updateOrCreate([
+            $partner = Partner::updateOrCreate([
                 'id'            => $id,
             ],[
                 'name'          => $request->name,
+                'description'   => $request->description,
                 'status'        => $request->status ? 1 : 0,
             ]);
-            $this->uploadFileWithResize($request->image, $slider, 'image', 'images/slider', 1050, 480);
+            $this->uploadFileWithResize($request->image, $partner, 'image', 'images/partner', 170, 80);
 
         } catch (\Throwable $th) {
             throw $th;
         }
     }
-
 }

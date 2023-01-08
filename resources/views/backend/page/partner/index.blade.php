@@ -12,7 +12,7 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">All Facilities</li>
+                <li class="active">Partner List</li>
             </ul><!-- /.breadcrumb -->
 
             <div class="nav-search" id="nav-search">
@@ -34,11 +34,11 @@
 
                 <!-- header -->
                 <div class="widget-header">
-                    <h4 class="widget-title"> <i class="fa fa-info-circle"></i> All Facilities
+                    <h4 class="widget-title"> <i class="fa fa-info-circle"></i> Partners
                     </h4>
                     <span class="widget-toolbar">
                         <!--------------- CREATE---------------->
-                        <a href="{{ route('facilities.create') }}" class="">
+                        <a href="{{ route('partners.create') }}" class="">
                             <i class="fa fa-plus"></i> Add <span class="hide-in-sm">New</span>
                         </a>
                     </span>
@@ -61,30 +61,30 @@
                                            class="table table-striped table-bordered table-hover new-table">
                                         <thead>
                                         <tr>
-                                            <th width="5%" class="hide-in-sm">Sl</th>
-                                            <th width="30%" class="text-center">Image</th>
-                                            <th width="20%" class="text-center">Title</th>
-                                            <th width="30%" class="text-center">Description</th>
+                                            <th width="5%" class="hide-in-sm text-center">Sl</th>
+                                            <th width="20%" class="text-center">Image</th>
+                                            <th width="25%" class="text-center">Name</th>
+                                            <th width="35%" class="text-center">Description</th>
                                             <th width="5%" class="text-center">Status</th>
                                             <th width="10%" class="text-center" style="width: 120px">Action</th>
                                         </tr>
                                         </thead>
 
                                         <tbody>
-                                            @forelse ($facilities as $item)
+                                            @forelse ($partner as $item)
                                                 <tr>
-                                                    <td class="hide-in-sm"><span class="span">{{ $loop->iteration }}</span></td>
+                                                    <td class="hide-in-sm text-center"><span class="span">{{ $loop->iteration }}</span></td>
                                                     <td class="text-center">
-                                                        @if (file_exists($item->image) && $item->image == './default-facility.webp')
-                                                            <img src="{{ asset('default-facility.webp') }}" alt="{{ $item->name }}"
-                                                                width="300" height="200">
-                                                        @elseif (file_exists($item->image) && $item->image != './default-facility.webp')
+                                                        @if (file_exists($item->image) && $item->image == './default-partner.webp')
+                                                            <img src="{{ asset('default-partner.webp') }}" alt="{{ $item->name }}"
+                                                                width="170" height="80">
+                                                        @elseif (file_exists($item->image) && $item->image != './default-partner.webp')
                                                                 <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
-                                                                    width="300" height="200">
+                                                                    width="170" height="80">
                                                         @endif
                                                     </td>
-                                                    <td><span class="span">{{ $item->title }}</span></td>
-                                                    <td><span class="text"> {{ $item->description }}</span></td>
+                                                    <td><span class="span">{{ $item->name }}</span></td>
+                                                    <td><span class="text"> {!! $item->description !!}</span></td>
                                                     <td class="text-center">
                                                         <!--------------- STATUS---------------->
                                                         <span class="span">
@@ -94,14 +94,14 @@
                                                     <td class="text-center">
                                                         <div class="btn-group btn-corner @if (file_exists($item->image)) action-span @endif">
                                                             <!--------------- EDIT SLIDER---------------->
-                                                                <a href="{{ route('facilities.edit', $item->id) }}" role="button"
+                                                                <a href="{{ route('partners.edit', $item->id) }}" role="button"
                                                                     class="btn btn-xs btn-success bs-tooltip" title="Edit">
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
 
                                                             <!--------------- DELETE SLIDER---------------->
                                                                 <button type="button"
-                                                                    onclick="delete_item(`{{ route('facilities.destroy', $item->id) }}`)"
+                                                                    onclick="delete_item(`{{ route('partners.destroy', $item->id) }}`)"
                                                                     class="btn btn-xs btn-danger bs-tooltip" title="Delete">
                                                                     <i class="fa fa-trash"></i>
                                                                 </button>
@@ -120,7 +120,7 @@
 
                                         </tbody>
                                     </table>
-                                    @include('partials._paginate',['data'=> $facilities])
+                                    @include('partials._paginate',['data'=> $partner])
 
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
     </div>
     </div>
 
-    <script>
+    {{-- <script>
         function statusChange(element) {
             let slider_id = $(element).attr("data-id");
             let post_url = "/sliderStatusChange";
@@ -156,5 +156,5 @@
             )
 
         }
-    </script>
+    </script> --}}
 @endsection

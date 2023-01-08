@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\WebsiteInformationController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\FacilityController;
 use App\Http\Controllers\backend\ArticleandNewsController;
+use App\Http\Controllers\backend\PartnerController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\UserController;
 use Illuminate\Support\Facades\Route;
@@ -105,13 +106,15 @@ Route::post('/update-status/{table}', 'Controller@updateStatus')->name('update-s
 
 // Slider List Route In Addmin Pannel
 Route::resource('sliders', SliderController::class);
-Route::post('/sliderStatusChange', [SliderController::class, "SliderStatusChange"]);
 
 //Facility Route
 Route::resource('facilities', FacilityController::class);
 
 //Articles and News Route
 Route::resource('articles_and_news', ArticleandNewsController::class);
+
+// Partner List Route
+Route::resource('partners', PartnerController::class);
 
 //department CRUD
 Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate")->middleware("AdminLogin");

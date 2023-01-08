@@ -42,7 +42,7 @@
                                             <span class="widget-toolbar">
                                                 <!--------------- Article&News List---------------->
                                                 <a href="{{ route('articles_and_news.index') }}" class="">
-                                                    <i class="fa fa-list"></i> Facility <span class="hide-in-sm">List</span>
+                                                    <i class="fa fa-list"></i> Articles&News <span class="hide-in-sm">List</span>
                                                 </a>
                                             </span>
                                         </div>
@@ -94,7 +94,7 @@
                                                                         Description
                                                                     </span>
                                                                     <textarea name="description" class="form-control summernote"
-                                                                    placeholder="Article description">{{ old('description') }}</textarea>
+                                                                    placeholder="Article description">{!! old('description') !!}</textarea>
 
                                                                 </div>
                                                                 @error('description')
@@ -110,8 +110,8 @@
                                                                     <span class="input-group-addon width-30" style="text-align: left">
                                                                         Date
                                                                     </span>
-                                                                    <input type="date" class="form-control @error('date') has-error @enderror"
-                                                                        name="date" id="date" value="{{ old('date') }}">
+                                                                    <input type="text" class="form-control @error('date') has-error @enderror"
+                                                                        name="date" id="datepicker" value="{{ old('date') }}">
 
                                                                 </div><br>
                                                             </div>
@@ -147,8 +147,6 @@
 
                                                         </div>
 
-
-
                                                         <div class="form-group">
                                                             <!-- Add Page -->
                                                             <h5 class="widget-title">
@@ -169,7 +167,6 @@
                                                 </form>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

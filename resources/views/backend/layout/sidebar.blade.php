@@ -149,8 +149,8 @@
             <b class="arrow"></b>
         </li>
 
-        <li class="nav-link">
-            <a href="#">
+        <li class="nav-link {{ request()->is('partners*') ? 'active' : '' }}">
+            <a href="{{ route('partners.index') }}">
                 <i class="menu-icon fa fa-group"></i>
                 <span class="menu-text"> Parterns </span>
             </a>

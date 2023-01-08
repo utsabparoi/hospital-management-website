@@ -36,7 +36,7 @@
                                     <div class="widget-box">
                                         <div class="widget-header">
                                             <h4 class="widget-title">
-                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Facility</span>
+                                                <i class="fa fa-edit"></i> <span class="hide-in-sm">Edit Facility</span>
                                             </h4>
 
                                             <span class="widget-toolbar">

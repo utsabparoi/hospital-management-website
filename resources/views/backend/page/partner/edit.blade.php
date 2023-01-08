@@ -12,18 +12,9 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Edit Slider</li>
+                <li class="active">Edit Partner</li>
             </ul><!-- /.breadcrumb -->
 
-            <div class="nav-search" id="nav-search">
-                <form class="form-search">
-                <span class="input-icon">
-                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
-                           autocomplete="off" />
-                    <i class="ace-icon fa fa-search nav-search-icon"></i>
-                </span>
-                </form>
-            </div><!-- /.nav-search -->
         </div>
         {{-- main content start from here --}}
         <div class="page-content no-print">
@@ -36,12 +27,12 @@
                                     <div class="widget-box">
                                         <div class="widget-header">
                                             <h4 class="widget-title">
-                                                <i class="fa fa-edit"></i> <span class="hide-in-sm">Edit Slider</span>
+                                                <i class="fa fa-edit"></i> <span class="hide-in-sm">Edit Partner</span>
                                             </h4>
                                             <span class="widget-toolbar">
-                                                <!--------------- Slider List---------------->
-                                                <a href="{{ route('sliders.index') }}" class="">
-                                                    <i class="fa fa-list"></i> Slider <span class="hide-in-sm">List</span>
+                                                <!--------------- Partner List---------------->
+                                                <a href="{{ route('partners.index') }}" class="">
+                                                    <i class="fa fa-list"></i> Partner <span class="hide-in-sm">List</span>
                                                 </a>
                                             </span>
                                         </div>
@@ -50,7 +41,7 @@
                                         <div class="widget-body">
                                             <div class="widget-main">
 
-                                                <form action="{{ route('sliders.update',$slider->id) }}" id="Form" method="post" enctype="multipart/form-data">
+                                                <form action="{{ route('partners.update',$partner->id) }}" id="Form" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     @method('PUT')
 
@@ -64,7 +55,7 @@
                                                                         <span class="input-group-addon width-30" style="text-align: left">
                                                                             Name <span class="label-required"></span>
                                                                         </span>
-                                                                        <input type="text" class="form-control @error('title') has-error @enderror" name="name" id="name" value="{{ old('name',$slider->name) }}">
+                                                                        <input type="text" class="form-control @error('title') has-error @enderror" name="name" id="name" value="{{ old('name',$partner->name) }}">
                                                                         @error('title')<br>
                                                                             <span class="text-danger">
                                                                                 {{ $message }}
@@ -88,15 +79,31 @@
                                                                     </div>
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Partner "height" must be 680px)</b></small>
                                                                     </div>
                                                                 </div>
 
                                                                 {{-- Previous Image --}}
                                                                 <div class="input-group width-100 mb-3">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
-                                                                    <img class="pt-1" src="{{ asset($slider->image) }}" width="300" height="100" style="margin-left: 13px;">
-                                                                </div><br><br>
+                                                                    <img class="pt-1" src="{{ asset($partner->image) }}" width="170" height="80" style="margin-left: 13px;">
+                                                                </div><br>
+
+                                                                <!-- Edit Description -->
+                                                                <div class="form-group">
+                                                                    <div>
+                                                                        <span class="input-group-addon" style="text-align: left">
+                                                                            Description
+                                                                        </span>
+                                                                        <textarea name="description" class="form-control summernote"
+                                                                            placeholder="Description">{{ old('description',$partner->description) }}</textarea>
+                                                                    </div>
+                                                                    @error('description')
+                                                                    <span class="text-danger">
+                                                                        {{ $message }}
+                                                                    </span>
+                                                                    @enderror
+                                                                </div>
 
                                                                 {{-- Status --}}
                                                                 <div class="form-group">
@@ -105,7 +112,7 @@
                                                                             Status
                                                                         </span>
                                                                         <label style="margin: 5px 0 0 8px">
-                                                                            <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" {{ $slider->status == 1 ? 'checked' : '' }}>
+                                                                            <input name="status" class="ace ace-switch ace-switch-6" type="checkbox" {{ $partner->status == 1 ? 'checked' : '' }}>
                                                                             <span class="lbl"></span>
                                                                         </label>
                                                                     </div>

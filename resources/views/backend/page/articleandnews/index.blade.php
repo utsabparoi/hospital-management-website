@@ -34,7 +34,7 @@
 
                 <!-- header -->
                 <div class="widget-header">
-                    <h4 class="widget-title"> <i class="fa fa-info-circle"></i> Articles&News
+                    <h4 class="widget-title"> <i class="fa fa-newspaper-o"></i> Articles&News
                     </h4>
                     <span class="widget-toolbar">
                         <!--------------- CREATE---------------->
@@ -75,10 +75,10 @@
                                                 <tr>
                                                     <td class="hide-in-sm"><span class="span">{{ $loop->iteration }}</span></td>
                                                     <td class="text-center">
-                                                        @if (file_exists($item->image) && $item->image == './default-slider.webp')
-                                                            <img src="{{ asset('default-slider.webp') }}" alt="{{ $item->name }}"
+                                                        @if (file_exists($item->image) && $item->image == './default-articles_news.webp')
+                                                            <img src="{{ asset('default-articles_news.webp') }}" alt="{{ $item->name }}"
                                                                 width="300" height="200">
-                                                        @elseif (file_exists($item->image) && $item->image != './default-slider.webp')
+                                                        @elseif (file_exists($item->image) && $item->image != './default-articles_news.webp')
                                                                 <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
                                                                     width="300" height="200">
                                                         @endif

@@ -36,6 +36,10 @@
     <!-- summernote css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.css" integrity="sha512-m52YCZLrqQpQ+k+84rmWjrrkXAUrpl3HK0IO4/naRwp58pyr7rf5PO1DbI2/aFYwyeIH/8teS9HbLxVyGqDv/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {{-- datapicker-css --}}
+    {{-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> --}}
+    <link rel="stylesheet" href="{{ asset('backend/css/jquery-ui.min.css')}}">
+
     <!-- inline styles related to this page -->
 
     <!-- ace settings handler -->
@@ -119,6 +123,15 @@
                 height: 200
             });
         });
+    </script>
+
+    {{-- Datepicker --}}
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> --}}
+    <script src="{{ asset('/backend/js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $( "#datepicker" ).datepicker();
+        } );
     </script>
 
 
