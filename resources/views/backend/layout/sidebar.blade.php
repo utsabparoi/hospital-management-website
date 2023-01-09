@@ -102,40 +102,26 @@
             </ul>
         </li>
 
-        {{-- <li class="nav-link {{ request()->is('doctor*') ? 'active' : '' }}">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-stethoscope" aria-hidden="true"></i>
-                <span class="menu-text"> Doctor </span>
-
-                <b class="arrow fa fa-angle-down"></b>
-            </a>
-
-            <b class="arrow"></b>
-
-            <ul class="submenu">
-                <li class="nav-link {{ request()->is('doctor*') ? 'active' : '' }}">
-                    <a href="{{ route('doctor') }}">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Insert Doctor Information
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="nav-link {{ request()->is('allDoctor*') ? 'active' : '' }}">
-                    <a href="{{ route('allDoctor') }}">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Doctor List
-                    </a>
-
-                    <b class="arrow"></b>
-                </li>
-            </ul>
-        </li> --}}
         <li class="nav-link {{ request()->is('doctors*') ? 'active' : '' }}">
             <a href="{{ route('doctors.index') }}">
-                <i class="menu-icon fa fa-stethoscope"></i>
+                <i class="menu-icon fa fa-user-md"></i>
                 <span class="menu-text">Doctor Information</span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+
+        <li class="nav-link {{ request()->is('healthPackage*') ? 'active' : '' }}">
+            <a href="{{ route('healthPackage') }}">
+                <i class="menu-icon fa fa-stethoscope"></i>
+                <span class="menu-text">Diagonstic Test</span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+
+        <li class="nav-link {{ request()->is('diagnosticTest*') ? 'active' : '' }}">
+            <a href="{{ route('diagnosticTest') }}">
+                <i class="menu-icon fa fa-archive"></i>
+                <span class="menu-text">Health Package</span>
             </a>
             <b class="arrow"></b>
         </li>
