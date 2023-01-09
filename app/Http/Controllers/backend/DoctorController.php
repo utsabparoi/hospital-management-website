@@ -95,13 +95,17 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-            $this->storeOrUpdate($request, $id);
+        // dd($request->all());
+        $this->storeOrUpdate($request, $id);
 
-            return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error',$th->getMessage());
-        }
+        return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
+        // try {
+        //     $this->storeOrUpdate($request, $id);
+
+        //     return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+        // }
     }
 
     /**
@@ -147,11 +151,11 @@ class DoctorController extends Controller
             'visit_start_time'     => $request->visit_start_time,
             'visit_end_time'       => $request->visit_end_time,
             'details'              => $request->details,
-            'weekday'              => implode(',', $request->input('weekday')), //inserting to database as string
+            'weekday'              => implode(',', (array) $request->input('weekday')), //inserting to database as string
             'status'               => $request->status ? 1: 0,
         ]);
 
-        $this->uploadFileWithResize($request->image, $doctors, 'image', 'images/doctors', 300, 200);
+        $this->uploadFileWithResize($request->image, $doctors, 'image', 'images/doctors', 100, 60);
 
        } catch (\Throwable $th) {
         throw $th;
