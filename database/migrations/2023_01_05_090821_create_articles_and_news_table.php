@@ -17,7 +17,8 @@ class CreateArticlesAndNewsTable extends Migration
             Schema::create('articles_and_news', function (Blueprint $table) {
                 $table->id();
                 $table->string('title');
-                $table->string('slug');
+                $table->string('url');
+                $table->string('icon')->nullable();
                 $table->text('description')->nullable();
                 $table->string('image')->nullable();
                 $table->tinyInteger('status')->default(1);

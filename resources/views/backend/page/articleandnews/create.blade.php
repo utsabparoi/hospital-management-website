@@ -75,15 +75,10 @@
                                                             <!-- SLUG -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">Slug <sup class="text-danger">*</sup></span>
-                                                                    <input type="text" class="form-control" name="slug" id="slug"
-                                                                        value="{{ old('slug') }}" placeholder="Article Slug" required>
-                                                                </div><br>
-                                                                @error('slug')
-                                                                    <span class="text-danger">
-                                                                        {{ $message }}
-                                                                    </span>
-                                                                @enderror
+                                                                    <span class="input-group-addon width-30" style="text-align: left">Url <sup class="text-danger">*</sup></span>
+                                                                        <input class="form-control slug" id="url" type="text" name="url" autocomplete="off"
+                                                                            value="{{ old('url') }}" placeholder="http:// or https://" required />
+                                                                </div>
                                                             </div>
 
 
@@ -129,6 +124,15 @@
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
                                                                     <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
                                                                 </div><br>
+                                                            </div>
+
+                                                            <!-- Icon -->
+                                                            <div class="form-group pr">
+                                                                <div class="input-group width-100  mb-1">
+                                                                    <label>Icon : </label><br>
+                                                                    <input type="text" class="form-control fontawesome width-30" id=""
+                                                                        name="icon" autocomplete="off" value="{{ old('icon') }}" placeholder="Icon" />
+                                                                </div>
                                                             </div>
 
                                                             {{-- Status --}}

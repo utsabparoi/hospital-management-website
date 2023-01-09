@@ -87,7 +87,7 @@ class ArticleandNewsController extends Controller
      **/
     public function update(Request $request, $id)
     {
-        dd($request->all());
+        // dd($request->all());
         try {
             $this->storeOrUpdate($request, $id);
 
@@ -133,7 +133,8 @@ class ArticleandNewsController extends Controller
             'id'                    =>$id,
         ],[
             'title'                 =>$request->title,
-            'slug'                  => $request->slug,
+            'url'                  => $request->url,
+            'icon'                  => $request->icon,
             'description'           =>$request->description,
             'status'                =>!empty($request->status) ? 1 : 0,
         ]);

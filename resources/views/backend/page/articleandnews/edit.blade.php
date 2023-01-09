@@ -63,7 +63,7 @@
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
                                                                     <span class="input-group-addon width-30" style="text-align: left">
-                                                                        Title <span class="label-required"></span><br>
+                                                                        Title <sup class="text-danger">*</sup><span class="label-required"></span><br>
                                                                     </span>
                                                                     <input type="text" class="form-control @error('title') has-error @enderror" name="title" id="title"
                                                                         value="{{ old('title',$articles_news->title) }}">
@@ -78,16 +78,10 @@
                                                             <!-- SLUG -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">Slug <sup class="text-danger">*</sup></span>
-                                                                    <input type="text" class="form-control" name="slug" id="slug"
-                                                                    value="{{ old('slug', $articles_news->slug) }}" placeholder="Article Slug" required>
-                                                                    </div>
-                                                                @error('slug')
-                                                                    <span class="text-danger">
-                                                                        {{ $message }}
-                                                                    </span>
-                                                                @enderror
-                                                            </div>
+                                                                    <span class="input-group-addon width-30" style="text-align: left">Url <sup class="text-danger">*</sup></span>
+                                                                    <input class="form-control slug" id="url" type="text" name="url" autocomplete="off"
+                                                                        value="{{ old('url',$articles_news->url) }}" placeholder="http:// or https://" required />
+                                                            </div><br>
 
                                                             <!-- Edit Image -->
                                                             <div class="form-group">
@@ -132,6 +126,18 @@
                                                                 @enderror
                                                             </div>
 
+                                                            <!-- Icon -->
+                                                            <div class="form-group pr">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    {{-- <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Icon
+                                                                    </span> --}}
+                                                                    <label>Icon : </label><br>
+                                                                    <input class="form-control fontawesome width-30" id="icon" type="text" name="icon" autocomplete="off"
+                                                                        value="{{ old('icon'), $articles_news->icon}}" placeholder="Icon" />
+                                                                </div>
+                                                            </div>
+
                                                             <!-- Edit Status -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
@@ -144,8 +150,6 @@
                                                                     </label>
                                                                 </div><br>
                                                             </div>
-
-
 
                                                         </div>
 

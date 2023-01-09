@@ -14,6 +14,11 @@ class ArticleandNews extends Model
 
     protected $guarded = [];
 
+    public function scopeActive($q)
+    {
+        return $q->where('status',1);
+    }
+
     public function scopeApiQuery($query)
     {
         $query->active();

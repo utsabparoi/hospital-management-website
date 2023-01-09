@@ -11,6 +11,8 @@
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="{{asset('backend/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('backend/font-awesome/4.5.0/css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('backend/css/fontawesome-iconpicker.min.css') }}" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
     <!-- page specific plugin styles -->
 
@@ -127,6 +129,27 @@
             });
         });
     </script>
+
+    {{-- fontawesome --}}
+    <script src="{{ asset('backend/js/fontawesome-iconpicker.js') }}"></script>
+
+    <script>
+        window.FontAwesomeConfig = {
+            searchPseudoElements: true
+        }
+        $(document).ready(function() {
+            $('.fontawesome').iconpicker();
+        });
+        // $("#fontawesome").iconpicker();
+    </script>
+    {{-- <script>
+        $('.date-picker').datepicker({
+            autoclose: true,
+            format:'yyyy-mm-dd',
+            viewMode: "days",
+            minViewMode: "days",
+        })
+    </script> --}}
 
     {{-- Datepicker --}}
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> --}}
