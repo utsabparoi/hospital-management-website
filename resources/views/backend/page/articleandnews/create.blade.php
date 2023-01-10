@@ -81,6 +81,17 @@
                                                                 </div>
                                                             </div>
 
+                                                            <!-- Icon -->
+                                                            <div class="form-group pr">
+                                                                <div class="input-group width-100  mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Icon
+                                                                        <i class="me-1 mr-1"></i>
+                                                                    </span>
+                                                                    <input type="text" class="form-control fontawesome" id=""
+                                                                        name="icon" autocomplete="off" value="{{ old('icon') }}" placeholder="Icon" />
+                                                                </div>
+                                                            </div>
 
                                                             <!-- Description -->
                                                             <div class="form-group">
@@ -123,15 +134,6 @@
                                                                 <div class="input-group width-100 mb-1">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
                                                                     <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
-                                                                </div><br>
-                                                            </div>
-
-                                                            <!-- Icon -->
-                                                            <div class="form-group pr">
-                                                                <div class="input-group width-100  mb-1">
-                                                                    <label>Icon : </label><br>
-                                                                    <input type="text" class="form-control fontawesome width-30" id=""
-                                                                        name="icon" autocomplete="off" value="{{ old('icon') }}" placeholder="Icon" />
                                                                 </div>
                                                             </div>
 

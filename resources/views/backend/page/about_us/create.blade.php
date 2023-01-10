@@ -12,7 +12,7 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Create New Slider</li>
+                <li class="active">Create New AboutUs</li>
             </ul><!-- /.breadcrumb -->
 
             <div class="nav-search" id="nav-search">
@@ -36,13 +36,13 @@
                                     <div class="widget-box">
                                         <div class="widget-header">
                                             <h4 class="widget-title">
-                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Slider</span>
+                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New AboutUs</span>
                                             </h4>
 
                                             <span class="widget-toolbar">
-                                                <!--------------- Slider List---------------->
-                                                <a href="{{ route('sliders.index') }}" class="">
-                                                    <i class="fa fa-list"></i> Slider <span class="hide-in-sm">List</span>
+                                                <!--------------- AboutUs List---------------->
+                                                <a href="{{ route('about_us.index') }}" class="">
+                                                    <i class="fa fa-list"></i> AboutUs <span class="hide-in-sm">List</span>
                                                 </a>
                                             </span>
                                         </div>
@@ -51,7 +51,7 @@
                                         <div class="widget-body">
                                             <div class="widget-main">
 
-                                                <form action="{{ route('sliders.store') }}" id="Form" method="post" enctype="multipart/form-data">
+                                                <form action="{{ route('about_us.store') }}" id="Form" method="post" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="row">
@@ -71,17 +71,7 @@
 
                                                                 </div>
                                                             </div>
-                                                            <!-- Sub-Title -->
-                                                            <div class="form-group">
-                                                                <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
-                                                                        Sub-title <span class="label-required"></span>
-                                                                    </span>
-                                                                    <input type="text" class="form-control @error('subtitle') has-error @enderror"
-                                                                        name="subtitle" id="subtitle" value="{{ old('subtitle') }}">
 
-                                                                </div>
-                                                            </div>
                                                             {{-- Image --}}
                                                             <div class="form-group">
                                                                 <div class="col-sm-12 col-md-6 input-group width-100">
@@ -93,7 +83,7 @@
                                                                 </div>
                                                                 <div class="input-group width-100 mb-1">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                    <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                    <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: AboutUs "height" must be 680px)</b></small>
                                                                 </div>
                                                             </div>
 
@@ -104,7 +94,7 @@
                                                                         Description
                                                                     </span>
                                                                     <textarea name="description" class="form-control summernote"
-                                                                    placeholder="Slider description">{!! old('description') !!}</textarea>
+                                                                    placeholder="AboutUs description">{!! old('description') !!}</textarea>
 
                                                                 </div>
                                                                 @error('description')

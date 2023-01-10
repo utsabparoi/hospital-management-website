@@ -52,14 +52,13 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $this->storeOrUpdate($request);
-        return redirect()->route('doctors.index')->with('success','Doctor Info Create Success');
-        // try {
-        //     $this->storeOrUpdate($request);
-        //     return redirect()->route('doctors.index')->with('success','Doctor Info Create Success');
-        // } catch (\Throwable $th) {
-        //     return redirect()->back()->with('error',$th->getMessage());
-        // }
+
+        try {
+            $this->storeOrUpdate($request);
+            return redirect()->route('doctors.index')->with('success','Doctor Info Create Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**
@@ -96,16 +95,14 @@ class DoctorController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->all());
-        $this->storeOrUpdate($request, $id);
 
-        return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
-        // try {
-        //     $this->storeOrUpdate($request, $id);
+        try {
+            $this->storeOrUpdate($request, $id);
 
-        //     return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
-        // } catch (\Throwable $th) {
-        //     return redirect()->back()->with('error',$th->getMessage());
-        // }
+            return redirect()->route('doctors.index')->with('success','Doctor Info Update Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**

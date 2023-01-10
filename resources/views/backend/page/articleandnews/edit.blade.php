@@ -83,6 +83,19 @@
                                                                         value="{{ old('url',$articles_news->url) }}" placeholder="http:// or https://" required />
                                                             </div><br>
 
+                                                            <!-- Icon -->
+                                                            <div class="form-group pr">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Icon
+                                                                        ( <i class="me-1 mr-1"></i> )
+                                                                    </span>
+
+                                                                    <input class="form-control fontawesome" id="icon" type="text" name="icon" autocomplete="off"
+                                                                        value="{{ old('icon'), $articles_news->icon}}" placeholder="Icon" />
+                                                                </div>
+                                                            </div>
+
                                                             <!-- Edit Image -->
                                                             <div class="form-group">
                                                                 <div class="col-sm-12 col-md-6 input-group width-100">
@@ -124,18 +137,6 @@
                                                                     {{ $message }}
                                                                 </span>
                                                                 @enderror
-                                                            </div>
-
-                                                            <!-- Icon -->
-                                                            <div class="form-group pr">
-                                                                <div class="input-group width-100 mb-1">
-                                                                    {{-- <span class="input-group-addon width-30" style="text-align: left">
-                                                                        Icon
-                                                                    </span> --}}
-                                                                    <label>Icon : </label><br>
-                                                                    <input class="form-control fontawesome width-30" id="icon" type="text" name="icon" autocomplete="off"
-                                                                        value="{{ old('icon'), $articles_news->icon}}" placeholder="Icon" />
-                                                                </div>
                                                             </div>
 
                                                             <!-- Edit Status -->

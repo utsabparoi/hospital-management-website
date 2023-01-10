@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Traits\FileSaver;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Traits\FileSaver;
 use Intervention\Image\Facades\Image;
-use App\Models\backend\Slider;
+use App\Models\backend\AboutUs;
 
-class SliderController extends Controller
+class AboutUsController extends Controller
 {
     use FileSaver;
 
@@ -19,9 +19,9 @@ class SliderController extends Controller
      **/
     public function index()
     {
-        $data['slider']  = Slider::latest()->paginate(20);
-        $data['table']   = Slider::getTableName();
-        return view('backend/page/slider/index', $data);
+        $data['about_us']  = AboutUs::latest()->paginate(20);
+        $data['table']   = AboutUs::getTableName();
+        return view('backend/page/about_us/index', $data);
     }
 
     /**
@@ -34,7 +34,7 @@ class SliderController extends Controller
     public function create()
     {
         try {
-            return view('backend/page/slider/create');
+            return view('backend/page/about_us/create');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
@@ -52,15 +52,19 @@ class SliderController extends Controller
             'image'          => 'required',
         ]);
 
-        try {
-            $this->storeOrUpdate($request);
+        $this->storeOrUpdate($request);
 
-            return redirect()->route('sliders.index')->with('success','Added Success');
+        return redirect()->route('about_us.index')->with('success','Added Success');
 
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error',$th->getMessage());
+        // try {
+        //     $this->storeOrUpdate($request);
 
-        }
+        //     return redirect()->route('about_us.index')->with('success','Added Success');
+
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+
+        // }
     }
 
     /**
@@ -80,8 +84,8 @@ class SliderController extends Controller
      **/
     public function edit($id)
     {
-        $slider  = Slider::find($id);
-        return view('backend/page/slider/edit', compact('slider'));
+        $about_us  = AboutUs::find($id);
+        return view('backend/page/about_us/edit', compact('about_us'));
     }
 
     /**
@@ -93,7 +97,7 @@ class SliderController extends Controller
     {
         try {
             $this->storeOrUpdate($request,$id);
-            return redirect()->route('sliders.index')->with('success','Updated Success');
+            return redirect()->route('about_us.index')->with('success','Updated Success');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
@@ -106,7 +110,7 @@ class SliderController extends Controller
      **/
     public function destroy($id)
     {
-        $data = Slider::find($id);
+        $data = AboutUs::find($id);
 
         if(file_exists($data->image))
         {
@@ -121,15 +125,14 @@ class SliderController extends Controller
     {
 
         try {
-            $slider = Slider::updateOrCreate([
+            $about_us = AboutUs::updateOrCreate([
                 'id'             => $id,
             ],[
                 'title'          => $request->title,
-                'subtitle'       => $request->subtitle,
                 'description'    => $request->description,
                 'status'         => $request->status ? 1 : 0,
             ]);
-            $this->uploadFileWithResize($request->image, $slider, 'image', 'images/slider', 1050, 480);
+            $this->uploadFileWithResize($request->image, $about_us, 'image', 'images/about_us', 450, 300);
 
         } catch (\Throwable $th) {
             throw $th;

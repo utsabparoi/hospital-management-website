@@ -1,17 +1,12 @@
 <?php
 
-namespace App\Models\backend;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use App\Traits\AutoCreatedUpdated;
+use Illuminate\Database\Eloquent\Model as BaseModel;
+use Skycoder\QueryShorter\QueryShorter;
 
-class Slider extends Model
+class Model extends BaseModel
 {
-    use AutoCreatedUpdated;
-
-
-    protected $table = 'sliders';
-
     protected $guarded = [];
 
     /*
@@ -34,5 +29,4 @@ class Slider extends Model
     {
         return with(new static)->getTable();
     }
-
 }

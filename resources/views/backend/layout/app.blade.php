@@ -116,7 +116,7 @@
 
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{ asset('backend/js/sweetalert2.all.min.js') }}"></script>
+    {{-- <script src="{{ asset('backend/js/sweetalert2.all.min.js') }}"></script> --}}
     <script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
 
     <!-- summernote js -->
@@ -449,6 +449,51 @@
             });
         @endif
     </script>
+
+    {{-- <script>
+        $(document).on("click", ".updateStatus", function() {
+
+            let status = $(this).children("i").attr("status");
+            let item_id = $(this).attr("item-id");
+            let url = $(this).attr("item-url");
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    _token: '{!! csrf_token() !!}',
+                    status: status,
+                    item_id: item_id
+                },
+                success: function(resp) {
+                    if (resp['status'] == 0) {
+                        $("#id-" + item_id).html(
+                            "<i class='fa fa-toggle-off text-danger status-icon' status='Inactive' style='font-size: 20px'></i>"
+                        );
+                        swal.fire({
+                            icon: 'success',
+                            title: "Status Inactive Successfully",
+                            type: "success",
+                            timer: 1500
+                        });
+                    } else if (resp['status'] == 1) {
+                        $("#id-" + item_id).html(
+                            "<i class='fa fa-toggle-on text-success status-icon' status='Active' style='font-size: 20px'></i>"
+                        );
+                        swal.fire({
+                            icon: 'success',
+                            title: "Status Active Successfully",
+                            type: "success",
+                            timer: 1500
+                        });
+                    }
+                },
+                error: function() {
+                    alert("Error");
+                }
+            });
+        });
+
+    </script> --}}
     @yield('js')
 </body>
 </html>

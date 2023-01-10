@@ -3,36 +3,7 @@
         try{ace.settings.loadState('sidebar')}catch(e){}
     </script>
 
-{{--    <div class="sidebar-shortcuts" id="sidebar-shortcuts">--}}
-{{--        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">--}}
-{{--            <button class="btn btn-success">--}}
-{{--                <i class="ace-icon fa fa-signal"></i>--}}
-{{--            </button>--}}
-
-{{--            <button class="btn btn-info">--}}
-{{--                <i class="ace-icon fa fa-pencil"></i>--}}
-{{--            </button>--}}
-
-{{--            <button class="btn btn-warning">--}}
-{{--                <i class="ace-icon fa fa-users"></i>--}}
-{{--            </button>--}}
-
-{{--            <button class="btn btn-danger">--}}
-{{--                <i class="ace-icon fa fa-cogs"></i>--}}
-{{--            </button>--}}
-{{--        </div>--}}
-
-{{--        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">--}}
-{{--            <span class="btn btn-success"></span>--}}
-
-{{--            <span class="btn btn-info"></span>--}}
-
-{{--            <span class="btn btn-warning"></span>--}}
-
-{{--            <span class="btn btn-danger"></span>--}}
-{{--        </div>--}}
-{{--    </div><!-- /.sidebar-shortcuts -->--}}
-
+    {{-- Dashboard --}}
     <ul class="nav nav-list" style="top: 0px;">
         <li class="nav-link {{ request()->is('dashboard*') ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" >
@@ -43,6 +14,7 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- WebsiteInformation --}}
         <li class="nav-item">
             <a href="http://{{$WebsiteInformation->website}}" target="_blank">
                 <i class="menu-icon fa fa-link"></i>
@@ -52,6 +24,7 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- Slider List --}}
         <li class="nav-link {{ request()->is('sliders*') ? 'active' : '' }}">
             <a href="{{ route('sliders.index') }}" >
                 <i class="menu-icon fa fa-list"></i>
@@ -61,6 +34,7 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- Site Information --}}
         <li class="nav-link {{ request()->is('websiteInformation*') ? 'active' : '' }}">
             <a href="{{ route('websiteInformation') }}">
                 <i class="menu-icon fa fa-info-circle"></i>
@@ -70,11 +44,11 @@
             <b class="arrow"></b>
         </li>
 
-
+        {{-- Doctor Department --}}
         <li class="nav-link {{ request()->is('department*') ? 'active' : '' }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list-alt" aria-hidden="true"></i>
-                <span class="menu-text"> Department </span>
+                <span class="menu-text"> Doctor Department </span>
 
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -102,6 +76,7 @@
             </ul>
         </li>
 
+        {{-- Doctor Information --}}
         <li class="nav-link {{ request()->is('doctors*') ? 'active' : '' }}">
             <a href="{{ route('doctors.index') }}">
                 <i class="menu-icon fa fa-user-md"></i>
@@ -110,22 +85,25 @@
             <b class="arrow"></b>
         </li>
 
-        <li class="nav-link {{ request()->is('healthPackage*') ? 'active' : '' }}">
-            <a href="{{ route('healthPackage') }}">
+        {{-- Diagonstic Test --}}
+        <li class="nav-link {{ request()->is('diagnosticTest*') ? 'active' : '' }}">
+            <a href="{{ route('diagnosticTest') }}">
                 <i class="menu-icon fa fa-stethoscope"></i>
                 <span class="menu-text">Diagonstic Test</span>
             </a>
             <b class="arrow"></b>
         </li>
 
-        <li class="nav-link {{ request()->is('diagnosticTest*') ? 'active' : '' }}">
-            <a href="{{ route('diagnosticTest') }}">
+        {{-- Health Package --}}
+        <li class="nav-link {{ request()->is('healthPackage*') ? 'active' : '' }}">
+            <a href="{{ route('healthPackage') }}">
                 <i class="menu-icon fa fa-archive"></i>
                 <span class="menu-text">Health Package</span>
             </a>
             <b class="arrow"></b>
         </li>
 
+        {{-- Facilities --}}
         <li class="nav-link {{ request()->is('facilities*') ? 'active' : '' }}">
             <a href="{{ route('facilities.index') }}">
                 <i class="menu-icon fa fa-building"></i>
@@ -134,6 +112,7 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- Articles & News --}}
         <li class="nav-link {{ request()->is('articles_and_news*') ? 'active' : '' }}">
             <a href="{{ route('articles_and_news.index') }}">
                 <i class="menu-icon fa fa-newspaper-o"></i>
@@ -142,6 +121,7 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- Parterns --}}
         <li class="nav-link {{ request()->is('partners*') ? 'active' : '' }}">
             <a href="{{ route('partners.index') }}">
                 <i class="menu-icon fa fa-group"></i>
@@ -150,6 +130,16 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- AboutUs --}}
+        <li class="nav-link {{ request()->is('about_us*') ? 'active' : '' }}">
+            <a href="{{ route('about_us.index') }}">
+                <i class="menu-icon fa fa-group"></i>
+                <span class="menu-text"> About Us </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+
+        {{-- User --}}
         <li class="nav-link {{ request()->is('user*') ? 'active' : '' }}">
             <a href="{{ route('user') }}">
                 <i class="menu-icon fa fa-user"></i>

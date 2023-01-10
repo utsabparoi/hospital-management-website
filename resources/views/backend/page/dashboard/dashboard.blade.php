@@ -1,6 +1,6 @@
 @extends('backend.layout.app')
 @section('title', 'Hospital-Admin')
-@section('content')
+{{-- @section('content')
     <div class="main-content">
     <div class="main-content-inner">
         <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -125,4 +125,211 @@
         </div><!-- /.additional_page-content -->
     </div>
     </div>
+@endsection --}}
+@section('page-header')
+    <i class="fa fa-tachometer"></i> Dashboard
+@stop
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/backend/css/bootstrap-datepicker3.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/backend/css/bootstrap-timepicker.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/backend/css/daterangepicker.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/backend/css/bootstrap-datetimepicker.min.css') }}" />
+@stop
+
+
+@section('content')
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="page-content">
+
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    @include('partials._alert_message')
+
+                    <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+
+                    <br>
+
+                    <div class="col-sm-2">
+                        <div class="well well-lg">
+                            <h2><i class="fa fa-users green"></i> &nbsp;</h2>
+                            <strong class="text-center">Total Patient</strong>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="well well-lg">
+                            <h2><i class="fa fa-user-md blue"></i> &nbsp; </h2>
+                            <strong class="text-center">Total Doctor</strong>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="well well-lg">
+                            <h2><i class="fa fa-list red"></i> &nbsp; </h2>
+                            <strong class="text-center">Departments Of Doctor</strong>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="well well-lg">
+                            <h2><i class="fa fa-dollar orange"></i> &nbsp; </h2>
+                            <strong class="text-center">Health Package</strong>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="well well-lg">
+                            <h2><i class="fa fa-exchange green"></i> &nbsp; </h2>
+                            <strong class="text-center">Partners</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+                <br>
+
+                <div id="chartContainer" style="height: 370px; width: 100%; margin: 0px auto;"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
 @endsection
+
+@section('js')
+
+<script>
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+            // text: "Report"
+        },
+        axisX: {
+            valueFormatString: "MMM"
+        },
+        axisY: {
+            prefix: "$",
+            labelFormatter: addSymbols
+        },
+        toolTip: {
+            shared: true
+        },
+        legend: {
+            cursor: "pointer",
+            itemclick: toggleDataSeries
+        },
+        data: [
+        {
+            type: "column",
+            name: "Actual Sales",
+            showInLegend: true,
+            xValueFormatString: "MMMM YYYY",
+            yValueFormatString: "$#,##0",
+            dataPoints: [
+                { x: new Date(2016, 0), y: 20000 },
+                { x: new Date(2016, 1), y: 30000 },
+                { x: new Date(2016, 2), y: 25000 },
+                { x: new Date(2016, 3), y: 70000, indexLabel: "High Renewals" },
+                { x: new Date(2016, 4), y: 50000 },
+                { x: new Date(2016, 5), y: 35000 },
+                { x: new Date(2016, 6), y: 30000 },
+                { x: new Date(2016, 7), y: 43000 },
+                { x: new Date(2016, 8), y: 35000 },
+                { x: new Date(2016, 9), y:  30000},
+                { x: new Date(2016, 10), y: 40000 },
+                { x: new Date(2016, 11), y: 50000 }
+            ]
+        },
+        {
+            type: "line",
+            name: "Expected Sales",
+            showInLegend: true,
+            yValueFormatString: "$#,##0",
+            dataPoints: [
+                { x: new Date(2016, 0), y: 40000 },
+                { x: new Date(2016, 1), y: 42000 },
+                { x: new Date(2016, 2), y: 45000 },
+                { x: new Date(2016, 3), y: 45000 },
+                { x: new Date(2016, 4), y: 47000 },
+                { x: new Date(2016, 5), y: 43000 },
+                { x: new Date(2016, 6), y: 42000 },
+                { x: new Date(2016, 7), y: 43000 },
+                { x: new Date(2016, 8), y: 41000 },
+                { x: new Date(2016, 9), y: 45000 },
+                { x: new Date(2016, 10), y: 42000 },
+                { x: new Date(2016, 11), y: 50000 }
+            ]
+        },
+        {
+            type: "area",
+            name: "Profit",
+            markerBorderColor: "white",
+            markerBorderThickness: 2,
+            showInLegend: true,
+            yValueFormatString: "$#,##0",
+            dataPoints: [
+                { x: new Date(2016, 0), y: 5000 },
+                { x: new Date(2016, 1), y: 7000 },
+                { x: new Date(2016, 2), y: 6000},
+                { x: new Date(2016, 3), y: 30000 },
+                { x: new Date(2016, 4), y: 20000 },
+                { x: new Date(2016, 5), y: 15000 },
+                { x: new Date(2016, 6), y: 13000 },
+                { x: new Date(2016, 7), y: 20000 },
+                { x: new Date(2016, 8), y: 15000 },
+                { x: new Date(2016, 9), y:  10000},
+                { x: new Date(2016, 10), y: 19000 },
+                { x: new Date(2016, 11), y: 22000 }
+            ]
+        }]
+    });
+    chart.render();
+
+    function addSymbols(e) {
+        var suffixes = ["", "K", "M", "B"];
+        var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
+
+        if(order > suffixes.length - 1)
+            order = suffixes.length - 1;
+
+        var suffix = suffixes[order];
+        return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
+    }
+
+    function toggleDataSeries(e) {
+        if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        } else {
+            e.dataSeries.visible = true;
+        }
+        e.chart.render();
+    }
+
+    }
+    </script>
+
+
+
+
+
+    <script type="text/javascript" src="{{ asset('/backend/custom_js/canvasjs.js') }}"></script>
+
+    <script src="{{ asset('/backend/js/ace-elements.min.js') }}"></script>
+    <script src="{{ asset('/backend/js/ace.min.js') }}"></script>
+
+
+
+@stop
+

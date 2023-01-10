@@ -63,7 +63,8 @@
                                         <tr>
                                             <th width="5%" class="hide-in-sm">Sl</th>
                                             <th width="35%">Image</th>
-                                            <th width="40%">Name</th>
+                                            <th width="20%">Title</th>
+                                            <th width="25%">Description</th>
                                             <th width="5%">Status</th>
                                             <th width="10%" class="text-center" style="width: 120px">Action</th>
                                         </tr>
@@ -75,14 +76,15 @@
                                                     <td class="hide-in-sm"><span class="span">{{ $loop->iteration }}</span></td>
                                                     <td class="text-center">
                                                         @if (file_exists($item->image) && $item->image == './default-slider.webp')
-                                                            <img src="{{ asset('default-slider.webp') }}" alt="{{ $item->name }}"
+                                                            <img src="{{ asset('default-slider.webp') }}" alt="{{ $item->title }}"
                                                                 width="300" height="100">
                                                         @elseif (file_exists($item->image) && $item->image != './default-slider.webp')
-                                                                <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
+                                                                <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
                                                                     width="300" height="100">
                                                         @endif
                                                     </td>
-                                                    <td><span class="span">{{ $item->name }}</span></td>
+                                                    <td><span class="span">{{ $item->title }}</span></td>
+                                                    <td><span class="text"> {!! $item->description !!}</span></td>
                                                     <td class="text-center">
                                                         <!--------------- STATUS---------------->
                                                         <span class="span">

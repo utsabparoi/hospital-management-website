@@ -3,14 +3,13 @@
 namespace App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\AutoCreatedUpdated;
+// use App\Traits\AutoCreatedUpdated;
 
-class Slider extends Model
+class AboutUs extends Model
 {
-    use AutoCreatedUpdated;
+    // use AutoCreatedUpdated;
 
-
-    protected $table = 'sliders';
+    protected $table = 'about_us';
 
     protected $guarded = [];
 
@@ -34,5 +33,4 @@ class Slider extends Model
     {
         return with(new static)->getTable();
     }
-
 }
