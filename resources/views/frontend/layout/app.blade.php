@@ -66,10 +66,12 @@
 <!-- Mega Menu Js -->
 <script src="{{ asset('frontend/js/menu-custom.js') }}"></script>
 <!-- Lord Icon -->
-<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+{{--<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>--}}
+<script src="{{ asset('frontend/js/lord-icon-2.1.0.js') }}"></script>
 
 <!--banner-->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+{{--<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>--}}
+<script src="{{ asset('frontend/js/lottie-player.js') }}"></script>
 
 
 <script>
