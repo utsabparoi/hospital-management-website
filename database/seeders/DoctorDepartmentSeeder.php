@@ -210,7 +210,7 @@ class DoctorDepartmentSeeder extends Seeder
                 [
                     'department_name'           => $item['department_name'],
                     'department_image'     => $item['department_image'],
-                    'department_description'            => $item['department_image'],
+                    'department_description'            => $item['department_description'],
                     'status'          => $item['status'],
                 ]
             );
