@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Facility;
+use App\Models\backend\Facility;
 
 class FacilitySeeder extends Seeder
 {

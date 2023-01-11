@@ -37,7 +37,7 @@ class DepartmentController extends Controller
     }
 
     function AllDepartment(){
-        $allDepartment = DepartmentModel::paginate(3);
+        $allDepartment = DepartmentModel::paginate(20);
         return view('backend.page.department.allDepartment', compact('allDepartment'));
     }
 
