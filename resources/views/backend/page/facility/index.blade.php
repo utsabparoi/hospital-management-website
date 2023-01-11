@@ -120,7 +120,7 @@
 
                                         </tbody>
                                     </table>
-                                    @include('partials._paginate',['data'=> $facilities])
+                                    @include('backend.partials._paginate',['data'=> $facilities])
 
                                 </div>
                             </div>

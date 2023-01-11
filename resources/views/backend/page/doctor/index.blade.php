@@ -119,7 +119,7 @@
 
                                             </tbody>
                                         </table>
-                                        @include('partials._paginate',['data'=> $doctors])
+                                        @include('backend.partials._paginate',['data'=> $doctors])
 
                                     </div>
                                 </div>

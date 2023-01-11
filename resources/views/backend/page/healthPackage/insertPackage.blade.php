@@ -71,7 +71,7 @@
                                                                 :</label>
 {{--                                                            <label for="vehicle1"> CSB</label>--}}
                                                             <div class="col-md-5 col-sm-5">
-                                                                @foreach($healthTest as $healthTests)
+                                                                @foreach($healthTest->where('status', '=', 'true') as $healthTests)
                                                                 <input type="checkbox" class="testCheckBox" id="{{$healthTests->test_name}}" value="{{$healthTests->test_name}}">
                                                                 <label for="flexCheckDefault">{{$healthTests->test_name}}</label>&nbsp&nbsp&nbsp&nbsp&nbsp
                                                                 @endforeach

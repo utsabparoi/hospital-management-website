@@ -107,7 +107,7 @@
         <li class="nav-link {{ request()->is('facilities*') ? 'active' : '' }}">
             <a href="{{ route('facilities.index') }}">
                 <i class="menu-icon fa fa-building"></i>
-                <span class="menu-text"> Facilities </span>
+                <span class="menu-text"> Hospital Facilities </span>
             </a>
             <b class="arrow"></b>
         </li>
@@ -125,7 +125,7 @@
         <li class="nav-link {{ request()->is('partners*') ? 'active' : '' }}">
             <a href="{{ route('partners.index') }}">
                 <i class="menu-icon fa fa-group"></i>
-                <span class="menu-text"> Parterns </span>
+                <span class="menu-text"> Our Parterns </span>
             </a>
             <b class="arrow"></b>
         </li>
@@ -135,6 +135,15 @@
             <a href="{{ route('about_us.index') }}">
                 <i class="menu-icon fa fa-group"></i>
                 <span class="menu-text"> About Us </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+
+        {{-- Social Links --}}
+        <li class="nav-link {{ request()->is('social_links*') ? 'active' : '' }}">
+            <a href="{{ route('social_links.index') }}">
+                <i class="menu-icon fa fa-random"></i>
+                <span class="menu-text"> Social Link </span>
             </a>
             <b class="arrow"></b>
         </li>

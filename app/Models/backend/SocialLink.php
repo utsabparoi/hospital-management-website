@@ -5,12 +5,12 @@ namespace App\Models\backend;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\AutoCreatedUpdated;
 
-class Facility extends Model
+class SocialLink extends Model
 {
     use AutoCreatedUpdated;
 
 
-    protected $table = 'facilities';
+    protected $table = 'social_links';
 
     protected $guarded = [];
 

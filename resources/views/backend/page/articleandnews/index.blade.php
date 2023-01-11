@@ -125,7 +125,7 @@
 
                                         </tbody>
                                     </table>
-                                    @include('partials._paginate',['data'=> $articles_news])
+                                    @include('backend.partials._paginate',['data'=> $articles_news])
 
                                 </div>
                             </div>

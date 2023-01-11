@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\FacilityController;
 use App\Http\Controllers\backend\ArticleandNewsController;
 use App\Http\Controllers\backend\AboutUsController;
 use App\Http\Controllers\backend\PartnerController;
+use App\Http\Controllers\backend\SocialLinkController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\UserController;
 use Illuminate\Support\Facades\Route;
@@ -119,6 +120,9 @@ Route::resource('about_us', AboutUsController::class);
 
 // Partner List Route
 Route::resource('partners', PartnerController::class);
+
+// Partner List Route
+Route::resource('social_links', SocialLinkController::class);
 
 //department CRUD
 Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate")->middleware("AdminLogin");
