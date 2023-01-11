@@ -204,7 +204,7 @@
                                                     alert("Package name exist, Please check name");
                                                 }
                                                 else{
-                                                    location.reload();
+                                                    location.href="{{route('healthPackage')}}";
                                                 }
                                             }
                                         ).catch(

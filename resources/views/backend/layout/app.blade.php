@@ -493,7 +493,7 @@
             });
         });
 
-    </script> --}}
+    </script>
     @yield('js')
 </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Models\backend;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\AutoCreatedUpdated;
+// use App\view\Components\Model;
 
 class Slider extends Model
 {
@@ -14,17 +15,16 @@ class Slider extends Model
 
     protected $guarded = [];
 
-    /*
-     |--------------------------------------------------------------------------
-     | ACTIVE SCOPE
-     |--------------------------------------------------------------------------
-    */
-    public function scopeActive($query)
+    public function scopeActive($q)
     {
-        $query->where('status', 1);
+        return $q->where('status',1);
     }
 
 
+    public function scopeApiQuery($query)
+    {
+        $query->active();
+    }
 
     /*
      |--------------------------------------------------------------------------

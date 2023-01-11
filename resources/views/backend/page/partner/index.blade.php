@@ -120,7 +120,7 @@
 
                                         </tbody>
                                     </table>
-                                    @include('partials._paginate',['data'=> $partner])
+                                    @include('backend.partials._paginate',['data'=> $partner])
 
                                 </div>
                             </div>
@@ -135,26 +135,4 @@
     </div>
     </div>
 
-    {{-- <script>
-        function statusChange(element) {
-            let slider_id = $(element).attr("data-id");
-            let post_url = "/sliderStatusChange";
-            let allData = new FormData();
-            allData.append("ID", slider_id);
-            let configuration = {headers:{"content-type" : "multipart/form-data"},
-                onUploadProgress: function (progressEvent) {
-                    let uploadProgressPercent = Math.round((progressEvent.loaded*100)/progressEvent.total)
-                    document.getElementById("uploadPercent").innerHTML = uploadProgressPercent+'%';
-                }
-            };
-            axios.post(post_url, allData, configuration).then(
-                function (response) {
-                }
-            ).catch(
-                function (error) {
-                }
-            )
-
-        }
-    </script> --}}
 @endsection

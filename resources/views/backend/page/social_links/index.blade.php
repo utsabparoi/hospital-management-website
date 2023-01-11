@@ -12,7 +12,7 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Slider List</li>
+                <li class="active">Social Links</li>
             </ul><!-- /.breadcrumb -->
 
             <div class="nav-search" id="nav-search">
@@ -34,11 +34,11 @@
 
                 <!-- header -->
                 <div class="widget-header">
-                    <h4 class="widget-title"> <i class="fa fa-info-circle"></i> Sliders
+                    <h4 class="widget-title"> <i class="fa fa-newspaper-o"></i> Social Links
                     </h4>
                     <span class="widget-toolbar">
                         <!--------------- CREATE---------------->
-                        <a href="{{ route('sliders.create') }}" class="">
+                        <a href="{{ route('social_links.create') }}" class="">
                             <i class="fa fa-plus"></i> Add <span class="hide-in-sm">New</span>
                         </a>
                     </span>
@@ -62,49 +62,45 @@
                                         <thead>
                                         <tr>
                                             <th width="5%" class="hide-in-sm">Sl</th>
-                                            <th width="35%">Image</th>
-                                            <th width="20%">Title</th>
-                                            <th width="25%">Description</th>
-                                            <th width="5%">Status</th>
+                                            <th width="30%" class="text-center">Name</th>
+                                            <th width="35%" class="text-center">Url</th>
+                                            <th width="10%" class="text-center">Icon</th>
+                                            <th width="10%" class="text-center">Status</th>
                                             <th width="10%" class="text-center" style="width: 120px">Action</th>
                                         </tr>
                                         </thead>
 
                                         <tbody>
-                                            @forelse ($slider as $item)
+                                            @forelse ($links as $item)
                                                 <tr>
                                                     <td class="hide-in-sm"><span class="span">{{ $loop->iteration }}</span></td>
+                                                    <td><span class="span">{{ $item->name }}</span></td>
+                                                    <td><a href="{{ $item->url }}" target="_blank">{{ $item->url }}</a></td>
+                                                    <td class="text-center"><i class="{{ $item->icon }} fa-2x"></i></td>
+                                                    <!--------------- STATUS---------------->
                                                     <td class="text-center">
-                                                        @if (file_exists($item->image) && $item->image == './default-slider.webp')
-                                                            <img src="{{ asset('default-slider.webp') }}" alt="{{ $item->title }}"
-                                                                width="300" height="100">
-                                                        @elseif (file_exists($item->image) && $item->image != './default-slider.webp')
-                                                                <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
-                                                                    width="300" height="100">
-                                                        @endif
-                                                    </td>
-                                                    <td><span class="span">{{ $item->title }}</span></td>
-                                                    <td><span class="text"> {!! $item->description !!}</span></td>
-                                                    <td class="text-center">
-                                                        <!--------------- STATUS---------------->
                                                         <span class="span">
-                                                            <x-status status="{{ $item->status }}" id="{{ $item->id }}" table="{{ $table }}" />
+                                                            {{-- <x-status status="{{ $item->status }}" id="{{ $item->id }}" table="{{ $table }}" /> --}}
+                                                            <x-status :table="$table" :id="$item->id" :status="$item->status" />
                                                         </span>
                                                     </td>
-                                                    <td class="text-center">
-                                                        <div class="btn-group btn-corner @if (file_exists($item->image)) action-span @endif">
-                                                            <!--------------- EDIT SLIDER---------------->
-                                                                <a href="{{ route('sliders.edit', $item->id) }}" role="button"
-                                                                    class="btn btn-xs btn-success bs-tooltip" title="Edit">
-                                                                    <i class="fa fa-edit"></i>
-                                                                </a>
 
-                                                            <!--------------- DELETE SLIDER---------------->
-                                                                <button type="button"
-                                                                    onclick="delete_item(`{{ route('sliders.destroy', $item->id) }}`)"
-                                                                    class="btn btn-xs btn-danger bs-tooltip" title="Delete">
-                                                                    <i class="fa fa-trash"></i>
-                                                                </button>
+                                                    <td class="text-center">
+                                                        <div class="btn-group btn-corner">
+
+                                                            <!--------------- EDIT---------------->
+                                                            <a href="{{ route('social_links.edit', $item->id) }}"
+                                                                role="button" class="btn btn-xs btn-success bs-tooltip"
+                                                                title="Edit">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+
+                                                             <!--------------- DELETE---------------->
+                                                            <button type="button"
+                                                                onclick="delete_item(`{{ route('social_links.destroy', $item->id) }}`)"
+                                                                class="btn btn-xs btn-danger bs-tooltip" title="Delete">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
                                                         </div>
 
                                                     </td>
@@ -120,7 +116,7 @@
 
                                         </tbody>
                                     </table>
-                                    @include('backend.partials._paginate',['data'=> $slider])
+                                    @include('backend.partials._paginate',['data'=> $links])
 
                                 </div>
                             </div>
@@ -134,5 +130,5 @@
         {{-- main content end  --}}
     </div>
     </div>
-
 @endsection
+
