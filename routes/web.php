@@ -1,7 +1,7 @@
 <?php
 
 
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\backend\HealthPackageController;
 use App\Http\Controllers\backend\HealthTestController;
 use App\Http\Controllers\backend\DepartmentController;
@@ -29,9 +29,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 //------------------------Frontend All Routes--------------------------
-Route::get('/', function () {
-    return view('frontend.page.home');
-});
+// Route::get('/', function () {
+//     return view('frontend.page.home');
+// });
+Route::get('/', [HomeController::class,'home'])->name('home');
+
+Route::get('partner', [HomeController::class,'partner'])->name('partner');
+
 Route::get('/consultants', function () {
     return view('frontend.page.consultants');
 });
