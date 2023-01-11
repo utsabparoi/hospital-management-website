@@ -133,7 +133,7 @@
         {{-- AboutUs --}}
         <li class="nav-link {{ request()->is('about_us*') ? 'active' : '' }}">
             <a href="{{ route('about_us.index') }}">
-                <i class="menu-icon fa fa-group"></i>
+                <i class="menu-icon fa fa-info-circle"></i>
                 <span class="menu-text"> About Us </span>
             </a>
             <b class="arrow"></b>
