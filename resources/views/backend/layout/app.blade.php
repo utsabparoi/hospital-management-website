@@ -450,7 +450,7 @@
         @endif
     </script>
 
-    {{-- <script>
+    <script>
         $(document).on("click", ".updateStatus", function() {
 
             let status = $(this).children("i").attr("status");
