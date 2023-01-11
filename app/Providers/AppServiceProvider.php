@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
         Paginator::useBootstrap();
         if ( !app()->runningInConsole() ){
             $WebsiteInformation = WebsiteInformationModel::find(1);
