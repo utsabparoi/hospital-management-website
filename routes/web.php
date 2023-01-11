@@ -162,3 +162,5 @@ Route::get('/healthPackageEdit/{id}',[HealthPackageController::class, "EditHealt
 Route::post('/updatePackage',[HealthPackageController::class, "UpdatePackage"]);
 Route::post('/packageStatusChange', [HealthPackageController::class, "PackageStatusChange"]);
 Route::get('/healthPackageDelete/{id}', [HealthPackageController::class, "HealthPackageDelete"]);
+
+
