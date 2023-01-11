@@ -6,7 +6,7 @@
                 <div class="row">
                     <a href="tel:10602">
                         <div class="col-md-2">
-                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wmsbdykq.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                            <lottie-player src="{{ asset('frontend/package/lf20_wmsbdykq.json') }}" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                             <!--<img src="images/icons/24hour.png" alt="">-->
                         </div>
                         <div class="col-md-10 mt-5 pt-2">
@@ -21,7 +21,7 @@
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-2">
-                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uDilo5.json" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                        <lottie-player src="{{ asset('frontend/package/lf20_uDilo5.json') }}" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
                         <!--<img src="images/icons/chat-icon.png" alt="">-->
                     </div>
                     <div class="col-md-10">
@@ -39,7 +39,7 @@
             <div class="row">
                 <a href="tel:10602">
                     <div class="col-md-2">
-                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wmsbdykq.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                        <lottie-player src="{{ asset('frontend/package/lf20_wmsbdykq.json') }}" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                         <!--<img src="images/icons/24hour.png" alt="">-->
                     </div>
                     <div class="col-md-10 mt-5 pt-2">
@@ -54,7 +54,7 @@
         <div class="col-md-5">
             <div class="row">
                 <div class="col-md-2">
-                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uDilo5.json" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                    <lottie-player src="{{ asset('frontend/package/lf20_uDilo5.json') }}" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
                     <!--<img src="images/icons/chat-icon.png" alt="">-->
                 </div>
                 <div class="col-md-10">
@@ -74,7 +74,7 @@
             <div class="row">
                 <a href="tel:10602">
                     <div class="col-md-2">
-                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wmsbdykq.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                        <lottie-player src="{{ asset('frontend/package/lf20_wmsbdykq.json') }}" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                         <!--<img src="images/icons/24hour.png" alt="">-->
                     </div>
                     <div class="col-md-10">
@@ -89,7 +89,7 @@
         <div class="col-md-5">
             <div class="row">
                 <div class="col-md-2">
-                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uDilo5.json" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                    <lottie-player src="{{ asset('frontend/package/lf20_uDilo5.json') }}" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
                     <!--<img src="images/icons/chat-icon.png" alt="">-->
                 </div>
                 <div class="col-md-10">

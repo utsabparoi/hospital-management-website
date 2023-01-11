@@ -14,7 +14,7 @@
                     <ul class="contact-list clearfix">
                         <li class="top-addrs">
                             <!-- <i class="flaticon-hospital-1"></i> -->
-                            <lord-icon src="https://cdn.lordicon.com/zzcjjxew.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
+                            <lord-icon src="{{ asset('frontend/json/zzcjjxew.json') }}" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
                             </lord-icon>
                             152/2/N Road, Panthapath, Dhaka
                             <br>Dhaka 1200, Bangladesh.

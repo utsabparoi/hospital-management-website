@@ -29,6 +29,11 @@
 <body>
 @yield("content")
 
+
+
+
+
+
 <!-- all js link -->
 <script src="{{ asset('frontend/js/jquery.js') }}"></script>
 <script src="{{ asset('frontend/s/popper.min.js') }}j"></script>
