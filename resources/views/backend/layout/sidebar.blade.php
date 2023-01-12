@@ -130,6 +130,15 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- Client Review --}}
+        <li class="nav-link {{ request()->is('clients_reviews*') ? 'active' : '' }}">
+            <a href="{{ route('clients_reviews.index') }}">
+                <i class="menu-icon fa fa-group"></i>
+                <span class="menu-text"> Clients Review </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+
         {{-- AboutUs --}}
         <li class="nav-link {{ request()->is('about_us*') ? 'active' : '' }}">
             <a href="{{ route('about_us.index') }}">

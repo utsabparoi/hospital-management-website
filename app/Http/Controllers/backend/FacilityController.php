@@ -107,8 +107,8 @@ class FacilityController extends Controller
      **/
     public function destroy($id)
     {
+        $facility = Facility::find($id);
         try {
-            $facility = Facility::find($id);
             if(file_exists($facility->image)){
                 unlink($facility->image);
             }
