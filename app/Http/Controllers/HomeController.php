@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        $data['partner']   = Partner::all();
+        $data['partner']   = Partner::latest()->take(10)->get();
 
         return view('frontend.page.home', $data);
     }

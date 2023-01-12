@@ -82,7 +82,7 @@
     <!-- <![endif]-->
 
     <!--[if IE]>
-    <script src="{{asset('backend/js/jquery-1.11.3.min.js')}}"></script>
+    {{-- <script src="{{asset('backend/js/jquery-1.11.3.min.js')}}"></script> --}}
     <![endif]-->
     <script type="text/javascript">
         if('ontouchstart' in document.documentElement) document.write("<script src='{{asset('backend/js/jquery.mobile.custom.min.js')}}'>"+"<"+"/script>");
@@ -455,7 +455,10 @@
 
             let status = $(this).children("i").attr("status");
             let item_id = $(this).attr("item-id");
+
             let url = $(this).attr("item-url");
+            console.log(status, item_id, url);
+
             $.ajax({
                 type: 'POST',
                 url: url,
@@ -465,6 +468,7 @@
                     item_id: item_id
                 },
                 success: function(resp) {
+                    console.log(reap)
                     if (resp['status'] == 0) {
                         $("#id-" + item_id).html(
                             "<i class='fa fa-toggle-off text-danger status-icon' status='Inactive' style='font-size: 20px'></i>"

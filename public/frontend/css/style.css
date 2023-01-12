@@ -5,7 +5,7 @@ Template Name: asgar ali hospital
 1. Fonts
 2. Reset
 3. Global Settings
-4. Content Elements 
+4. Content Elements
 5. Main Header
 6. Search Popup
 7. Sticky Header
@@ -16,18 +16,18 @@ Template Name: asgar ali hospital
 12. Main Slider
 13. Banner Section Two / Three / Four
 14. Top Features
-15. Features Section 
+15. Features Section
 16. Welcome Section
 17. About Section / Two / Three / Four
 18. Skills Section
 19. Services Section / Two / Three / Four / Five
 20. Service Detail
-21. Why Choose Us 
+21. Why Choose Us
 22. Portfolio Section
 23. Team Section / Two
 24. Doctor Detail Section
 25. Pricing Section
-26. Appointment Section / Two / Three 
+26. Appointment Section / Two / Three
 27. Appointment Form Section
 28. Time Table Section
 29. Fun Fact Section / Two / Three / Four
@@ -54,7 +54,7 @@ Template Name: asgar ali hospital
 50. Terms And Conditions
 **********************************************/
 
-/*** 
+/***
 
 ====================================================================
 		Fonts
@@ -88,7 +88,7 @@ font-family: 'Titillium Web', sans-serif;
 /*** Flaticon css ***/
 @import url(../fonts/flaticon/flaticon.css);
 
-/*** 
+/***
 
 ====================================================================
 	Reset
@@ -108,7 +108,7 @@ html {
   font-size: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
 Global Settings
@@ -365,7 +365,7 @@ li {
   font-weight: 300;
 }
 
-/*** 
+/***
 ==========================
 	Social Icons
 ==========================
@@ -549,7 +549,7 @@ li {
   color: #ffffff;
 }
 
-/*** 
+/***
 ==========================
   Social Icons Colored
 ==========================
@@ -749,7 +749,7 @@ li {
   background-color: #C52F30;
 }
 
-/*** 
+/***
 
 ====================================================================
 Content Elements
@@ -1675,7 +1675,7 @@ hr {
   line-height: 54px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Scroll To Top
@@ -1811,7 +1811,7 @@ hr {
 }
 
 
-/*** 
+/***
 
 ====================================================================
   Main Header
@@ -2414,7 +2414,7 @@ margin-left: 0px;
   border-radius: 50%;
 }
 
-/*** 
+/***
 
 ====================================================================
   Search Popup
@@ -2808,7 +2808,7 @@ margin-left: 0px;
   width: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Sticky Header
@@ -2855,7 +2855,7 @@ margin-left: 0px;
   display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Mobile Header
@@ -2994,7 +2994,7 @@ margin-left: 0px;
   margin-right: 10px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Header Style Two
@@ -3204,7 +3204,7 @@ margin-left: 0px;
   color: #1370b5;
 }
 
-/*** 
+/***
 
 ====================================================================
   Header Style Three
@@ -3291,7 +3291,7 @@ margin-left: 0px;
   display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
   Header Style Four
@@ -3331,7 +3331,7 @@ margin-left: 0px;
   box-shadow: 0 0px 30px rgba(0, 0, 0, .10);
 }
 
-/*** 
+/***
 
 ====================================================================
   Page Title
@@ -3435,7 +3435,7 @@ margin-left: 0px;
   color: #1370b5;
 }
 
-/*** 
+/***
 ====================================================================
 	Section Title
 ====================================================================
@@ -3542,7 +3542,7 @@ margin-left: 0px;
   fill: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
   Main Slider
@@ -3628,7 +3628,7 @@ margin-left: 0px;
 
 
 
-/*** 
+/***
 
 ====================================================================
   Banner Section One
@@ -3805,7 +3805,7 @@ margin-left: 0px;
 }
 
 
-/*** 
+/***
 
 ====================================================================
   Banner Section
@@ -3997,7 +3997,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
 
 .banner-section {}
 
-/*** 
+/***
 
 ====================================================================
   Banner Section Two
@@ -4175,7 +4175,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
   transition-delay: 700ms;
 }
 
-/*** 
+/***
 
 ====================================================================
   Banner Section Three
@@ -4371,7 +4371,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
   display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
   Banner Section Four
@@ -4545,7 +4545,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
   transition-delay: 700ms;
 }
 
-/*** 
+/***
 
 ====================================================================
   Top Features
@@ -4815,7 +4815,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
   transition: all 300ms ease;
 }
 
-/*** 
+/***
 
 ====================================================================
   Features Section
@@ -4901,7 +4901,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
   margin-bottom: 10px;
 }
 
-/*** 
+/***
 
 ====================================================================
     Welcome Section
@@ -4995,7 +4995,7 @@ background: radial-gradient(circle, rgba(186,226,243,1) 16%, rgba(0,96,174,1) 99
   color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 About Section
@@ -5120,7 +5120,7 @@ About Section
   display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
 About Section Two
@@ -5295,7 +5295,7 @@ About Section Two
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
 }
 
-/*** 
+/***
 
 ====================================================================
 About Section Three
@@ -5439,7 +5439,7 @@ About Section Three
   width: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
 About Section Four
@@ -5534,7 +5534,7 @@ About Section Four
   bottom: -5px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Skills Section
@@ -5692,7 +5692,7 @@ About Section Four
   line-height: 30px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Services Section
@@ -5830,7 +5830,7 @@ About Section Four
   cursor: default;
 }
 
-/*** 
+/***
 
 ====================================================================
     Service Section Two
@@ -6007,7 +6007,7 @@ About Section Four
   opacity: .05;
 }
 
-/*** 
+/***
 
 ====================================================================
   Services Section Three
@@ -6115,7 +6115,7 @@ About Section Four
   opacity: .05;
 }
 
-/*** 
+/***
 
 ====================================================================
     Service Section Four
@@ -6284,7 +6284,7 @@ About Section Four
   opacity: .05;
 }
 
-/*** 
+/***
 
 ====================================================================
     Service Section Five
@@ -6436,7 +6436,7 @@ About Section Four
   opacity: .05;
 }
 
-/*** 
+/***
 
 ====================================================================
   Service Detail
@@ -6821,7 +6821,7 @@ About Section Four
   font-weight: 700;
 }
 
-/*** 
+/***
 
 ====================================================================
     Why Choose Us
@@ -6974,7 +6974,7 @@ About Section Four
   display: block;
 }
 
-/*** 
+/***
 
 ====================================================================
 Portfolio Section
@@ -7182,7 +7182,7 @@ Portfolio Section
   border: 1px solid #000000c7;
 }
 
-/*** 
+/***
 
 ====================================================================
   Team Section
@@ -7385,7 +7385,7 @@ Portfolio Section
   font-weight: 400;
 }
 
-/*** 
+/***
 
 ====================================================================
   Team Section Two
@@ -7635,7 +7635,7 @@ Portfolio Section
   background-color: #fcfcfc;
 }
 
-/*** 
+/***
 
 ====================================================================
   Doctor Detail Section
@@ -7756,7 +7756,7 @@ Portfolio Section
   border-bottom: 0;
 }
 
-/*** 
+/***
 
 ====================================================================
     Pricing Section
@@ -7955,7 +7955,7 @@ Portfolio Section
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 }
 
-/*** 
+/***
 
 ====================================================================
   Appointment Section
@@ -8064,7 +8064,7 @@ Portfolio Section
   width: 100%;
 }
 
-/*** 
+/***
 
 ====================================================================
   Appointment Section Two
@@ -8192,7 +8192,7 @@ Portfolio Section
   top: -30px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Appointment Section Three
@@ -8296,7 +8296,7 @@ Portfolio Section
   margin-bottom: 50px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Appointment Form Section
@@ -9347,7 +9347,7 @@ animation-name: fadeInDown;
   transition: all 300ms ease;
 }
 
-/*** 
+/***
 
 ====================================================================
   Testimonial Section
@@ -9568,7 +9568,7 @@ animation-name: fadeInDown;
   margin: 0 -30px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Testimonial Section Two
@@ -9761,7 +9761,7 @@ animation-name: fadeInDown;
   display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
   Testimonial Section Three
@@ -10670,7 +10670,7 @@ animation-name: fadeInDown;
 }
 
 
-/*** 
+/***
 
 ====================================================================
     Styled Pagination
@@ -10741,7 +10741,7 @@ animation-name: fadeInDown;
   margin-top: 80px;
 }
 
-/*** 
+/***
 
 ====================================================================
       Blog Single
@@ -11104,7 +11104,7 @@ animation-name: fadeInDown;
   margin-bottom: 50px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Comment Area
@@ -11223,7 +11223,7 @@ animation-name: fadeInDown;
   transition: all 300ms ease;
 }
 
-/*** 
+/***
 
 ====================================================================
   Comment Form
@@ -11285,7 +11285,7 @@ animation-name: fadeInDown;
   font-weight: 500;
 }
 
-/*** 
+/***
 
 ====================================================================
   Contact Section
@@ -11641,7 +11641,7 @@ form .response .text-info {
   margin-bottom: 0;
 }
 
-/*** 
+/***
 
 ====================================================================
   Map Section
@@ -11683,7 +11683,7 @@ form .response .text-info {
   background-color: #b6b6b6;
 }
 
-/*** 
+/***
 
 ====================================================================
   Clients Section
@@ -11693,11 +11693,11 @@ form .response .text-info {
 
 .clients-section {
   position: relative;
-  /* padding: 55px 0; */
-  padding: 10px 0;
+  padding: 55px 0;
+  /* padding: 10px 0; */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
-  z-index: 1;
-  background-color: #f4f4f4;
+  z-index: -1;
+  background-color: #f2f1f1;
 }
 
 .clients-section .sponsors-outer {
@@ -12299,7 +12299,7 @@ footer .footer-building img {
   padding: 120px 0 0px;
 }
 
-/*** 
+/***
 
 ====================================================================
 Sidebar Page Container
@@ -12776,7 +12776,7 @@ Sidebar Page Container
   color: #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
   Our Shop
@@ -12927,7 +12927,7 @@ Sidebar Page Container
   transition: all 0.3s ease, opacity 0.3s linear 0.15s, bottom 0.3s ease 0.15s;
 }
 
-/*** 
+/***
 
 ====================================================================
   Product Details
@@ -13109,7 +13109,7 @@ Sidebar Page Container
   border-radius: 0;
 }
 
-/*** 
+/***
 
 ====================================================================
   Product Tabs
@@ -13344,7 +13344,7 @@ Sidebar Page Container
   border-color: #f06529;
 }
 
-/*** 
+/***
 
 ====================================================================
       Cart Section
@@ -14220,7 +14220,7 @@ Sidebar Page Container
   border-radius: 5px;
 }
 
-/*** 
+/***
 
 ====================================================================
     Login Section
@@ -14324,7 +14324,7 @@ Sidebar Page Container
   text-decoration: underline;
 }
 
-/*** 
+/***
 
 ====================================================================
       Coming Soon
@@ -14727,7 +14727,7 @@ Sidebar Page Container
   border-radius: 50%;
 }
 
-/*** 
+/***
 
 ====================================================================
   Error Section
@@ -14785,7 +14785,7 @@ Sidebar Page Container
   margin: 0 5px;
 }
 
-/*** 
+/***
 
 ====================================================================
   Terms And Conditions
@@ -15589,7 +15589,7 @@ Sidebar Page Container
 
 
 
-/*** 
+/***
 
 ====================================================================
   Box Layout
@@ -15640,7 +15640,7 @@ Sidebar Page Container
 } */
 
 
-/*** 
+/***
 ============================
 Consultant Page Design
 ============================
@@ -15769,7 +15769,7 @@ Consultant Page Design
 
 
 
-/*** 
+/***
 =============================================
     Medical Departments Area style
 =============================================
@@ -16022,12 +16022,12 @@ Consultant Page Design
 
 
 
-/*** 
+/***
 
 
 
 
-/*** 
+/***
 =============================================
     Facilities appointment area style
 =============================================
@@ -16211,7 +16211,7 @@ Consultant Page Design
 
 
 
-/*** 
+/***
 =============================================
     Testimonial Area style
 =============================================

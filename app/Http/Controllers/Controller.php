@@ -18,7 +18,10 @@ class Controller extends BaseController
     */
     public function updateStatus(Request $request, $table)
     {
+        return 111;
+
         if ($request->ajax()) {
+            return 111;
 
             $request->status == 'Active' ? $status = 0 : $status = 1;
             DB::table($table)->whereId($request->item_id)->update(['status' => $status]);

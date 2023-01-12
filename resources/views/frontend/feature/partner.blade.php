@@ -18,13 +18,14 @@
                     <li class="slide-item">
                         <a href="#">
                             {{-- <h5>{{ $item->name }}</h5> --}}
-                            <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                            <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
+                            style="width: 152px;height: 72px; margin-left: auto; margin-right: auto;">
                         </a>
                     </li>
                 @endforeach
 
             </ul>
-            <ul class="clients-carousel owl-carousel owl-theme">
+            {{-- <ul class="clients-carousel owl-carousel owl-theme">
                 <li class="slide-item"> <a href="#"><img src="{{ asset('frontend/images/clients/Corporate1 (21) (Custom).png') }}" alt=""></a> </li>
                 <li class="slide-item"> <a href="#"><img src="{{ asset('frontend/images/clients/Corporate1 (22) (Custom).png') }}" alt=""></a> </li>
                 <li class="slide-item"> <a href="#"><img src="{{ asset('frontend/images/clients/Corporate1 (23) (Custom).png') }}" alt=""></a> </li>
@@ -45,7 +46,7 @@
                 <li class="slide-item"> <a href="#"><img src="{{ asset('frontend/images/clients/Corporate1 (38) (Custom).png') }}" alt=""></a> </li>
                 <li class="slide-item"> <a href="#"><img src="{{ asset('frontend/images/clients/Corporate1 (39) (Custom).png') }}" alt=""></a> </li>
                 <li class="slide-item"> <a href="#"><img src="{{ asset('frontend/images/clients/Corporate1 (40) (Custom).png') }}" alt=""></a> </li>
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </section>
