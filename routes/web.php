@@ -1,22 +1,23 @@
 <?php
 
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\backend\HealthPackageController;
-use App\Http\Controllers\backend\HealthTestController;
-use App\Http\Controllers\backend\DepartmentController;
+use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\DoctorController;
-use App\Http\Controllers\backend\WebsiteInformationController;
 use App\Http\Controllers\backend\SliderController;
-use App\Http\Controllers\backend\FacilityController;
-use App\Http\Controllers\backend\ArticleandNewsController;
 use App\Http\Controllers\backend\AboutUsController;
 use App\Http\Controllers\backend\PartnerController;
+use App\Http\Controllers\backend\FacilityController;
+use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\DepartmentController;
+use App\Http\Controllers\backend\HealthTestController;
 use App\Http\Controllers\backend\SocialLinkController;
 use App\Http\Controllers\backend\ClientReviewController;
-use App\Http\Controllers\backend\DashboardController;
-use App\Http\Controllers\backend\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\HealthPackageController;
+use App\Http\Controllers\backend\ArticleandNewsController;
+use App\Http\Controllers\backend\WebsiteInformationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,7 +110,8 @@ Route::get('/websiteInformation', [WebsiteInformationController::class, "Website
 Route::post("/websiteInformationUpdate", [WebsiteInformationController::class, "WebsiteInformationUpdate"])->middleware("AdminLogin");
 
 //update-status route
-Route::post('/update-status/{table}', 'Controller@updateStatus')->name('update-status');
+Route::post('/update-status/{table}', [Controller::class, 'updateStatus'])->name('update-status');
+
 
 // Slider List Route In Addmin Pannel
 Route::resource('sliders', SliderController::class);

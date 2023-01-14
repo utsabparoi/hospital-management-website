@@ -64,14 +64,14 @@
                                                     <td class="text-center">
                                                         @if (file_exists($item->image) && $item->image == './default-articles_news.webp')
                                                             <img src="{{ asset('default-articles_news.webp') }}" alt="{{ $item->name }}"
-                                                                width="300" height="200">
+                                                                width="79" height="78">
                                                         @elseif (file_exists($item->image) && $item->image != './default-articles_news.webp')
                                                                 <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
-                                                                    width="300" height="200">
+                                                                    width="79" height="78">
                                                         @endif
                                                     </td>
                                                     <td><span class="span">{{ $item->name }}</span></td>
-                                                    <td><span class="span">{{ $item->age }}</span></td>
+                                                    <td class="text-center"><span class="span">{{ $item->age }}</span></td>
                                                     <td><span class="text"> {!! $item->review !!}</span></td>
                                                     <td class="text-center">
                                                         <!--------------- STATUS---------------->

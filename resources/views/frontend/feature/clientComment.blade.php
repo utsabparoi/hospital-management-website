@@ -14,118 +14,26 @@
             <div class="col-md-12">
                 <div class="testimonial-carousel">
                     <!--Start single testimonial item-->
-                    <div class="single-testimonial-item text-center">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <img src="{{ asset('frontend/images/testimonial/t1.jpg') }}" alt="Awesome Image">
+                    @foreach ($review as $item)
+                        <div class="single-testimonial-item text-center">
+                            <div class="img-box">
+                                <div class="img-holder">
+                                    <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
+                                        style="width: 152px;height: 72px; margin-left: auto; margin-right: auto;">
+                                </div>
+                                <div class="quote-box">
+                                    <i class="fas fa-quote-left" aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div class="quote-box">
-                                <i class="fas fa-quote-left" aria-hidden="true"></i>
+                            <div class="text-holder">
+                                <p>{!! $item->review !!}</p>
                             </div>
-                        </div>
-                        <div class="text-holder">
-                            <p>রোগের নামঃ ভিট্রিয়াস হেমোরেজ ইন বোথ আইস বয়সঃ ৫৫ বছর ডাক্তারের ব্যবহার ও চিকিৎসায় আমরা মুগ্ধ। হাসপাতালে সকলের জন্য দোয়া করছি। </p>
-                        </div>
-                        <div class="name">
-                            <h3>হাফেজা বেগম </h3>
-                            <span>বয়সঃ ৫৫ বছর </span>
-                        </div>
-                    </div>
-                    <!--End single testimonial item-->
-                    <!--Start single testimonial item-->
-                    <div class="single-testimonial-item text-center">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <img src="{{ asset('frontend/images/testimonial/t2.jpg') }}" alt="Awesome Image">
-                            </div>
-                            <div class="quote-box">
-                                <i class="fas fa-quote-left" aria-hidden="true"></i>
+                            <div class="name">
+                                <h3>{{ $item->name }}</h3>
+                                <span>Age: {{ $item->age }} Years</span>
                             </div>
                         </div>
-                        <div class="text-holder">
-                            <p>রোগ: লিম্ফোমা (নন হজ্‌ম্‌কিন) বয়স: ৪০ বছর আমি আল্লাহর অশেষ রহমতে ভালো আছি এবং হাসপাতালের ডাক্তারসহ সকলের প্রতি কৃতজ্ঞ।</p>
-                        </div>
-                        <div class="name">
-                            <h3>মোঃ কাশেম</h3>
-                            <span>বয়স: ৪০ বছর</span>
-                        </div>
-                    </div>
-                    <!--End single testimonial item-->
-                    <!--Start single testimonial item-->
-                    <div class="single-testimonial-item text-center">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <img src="{{ asset('frontend/images/testimonial/t3.jpg') }}" alt="Awesome Image">
-                            </div>
-                            <div class="quote-box">
-                                <i class="fas fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <p>রোগ: ইসকেমিক হার্ট ডিজিজ বয়স: ৫৮ বছর ডাক্তার, নার্সসহ সকলের আন্তরিক সেবায় আমি কৃতজ্ঞ এবং হাসপাতালের ভালোর জন্য দোয়া করি।</p>
-                        </div>
-                        <div class="name">
-                            <h3>মোঃ মোছলেম উদ্দিন ভূঁইয়া</h3>
-                            <span>বয়স: ৫৮ বছর </span>
-                        </div>
-                    </div>
-                    <!--End single testimonial item-->
-                    <!--Start single testimonial item-->
-                    <div class="single-testimonial-item text-center">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <img src="{{ asset('frontend/images/testimonial/t4.jpg') }}" alt="Awesome Image">
-                            </div>
-                            <div class="quote-box">
-                                <i class="fas fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <p>রোগ: শ্বেতী (Vitiligo) বয়স: ৭ বছর আমার মেয়ে শ্বেতী রোগ থেকে ভালো হয়ে যাওয়ায় আমরা হাসপাতাল ও ডাক্তারের প্রতি কৃতজ্ঞ। - মেয়ের মা</p>
-                        </div>
-                        <div class="name">
-                            <h3>সৌমি তাহসিন</h3>
-                            <span>বয়স: ৭ বছর</span>
-                        </div>
-                    </div>
-                    <!--End single testimonial item-->
-                    <!--Start single testimonial item-->
-                    <div class="single-testimonial-item text-center">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <img src="{{ asset('frontend/images/testimonial/t3.jpg') }}" alt="Awesome Image">
-                            </div>
-                            <div class="quote-box">
-                                <i class="fas fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <p>রোগ: ইসকেমিক হার্ট ডিজিজ বয়স: ৫৮ বছর ডাক্তার, নার্সসহ সকলের আন্তরিক সেবায় আমি কৃতজ্ঞ এবং হাসপাতালের ভালোর জন্য দোয়া করি।</p>
-                        </div>
-                        <div class="name">
-                            <h3>মোঃ মোছলেম উদ্দিন ভূঁইয়া</h3>
-                            <span>বয়স: ৫৮ বছর </span>
-                        </div>
-                    </div>
-                    <!--End single testimonial item-->
-                    <!--Start single testimonial item-->
-                    <div class="single-testimonial-item text-center">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <img src="{{ asset('frontend/images/testimonial/t2.jpg') }}" alt="Awesome Image">
-                            </div>
-                            <div class="quote-box">
-                                <i class="fas fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="text-holder">
-                            <p>রোগ: লিম্ফোমা (নন হজ্‌ম্‌কিন) বয়স: ৪০ বছর আমি আল্লাহর অশেষ রহমতে ভালো আছি এবং হাসপাতালের ডাক্তারসহ সকলের প্রতি কৃতজ্ঞ।</p>
-                        </div>
-                        <div class="name">
-                            <h3>মোঃ কাশেম</h3>
-                            <span>বয়স: ৪০ বছর</span>
-                        </div>
-                    </div>
+                    @endforeach
                     <!--End single testimonial item-->
                 </div>
             </div>

@@ -6,6 +6,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Spatie\DbDumper\Databases\MySql;
+use Illuminate\Support\Facades\DB;
 
 trait FileSaver
 {
@@ -41,7 +42,7 @@ trait FileSaver
     }
 
 
-    
+
     public function uploadBase64FileWithResize($file, $base_directory, $model, $database_field_name, $width, $height)
     {
         if ($file) {

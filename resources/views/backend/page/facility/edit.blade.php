@@ -100,29 +100,17 @@
                                                                 </div>
                                                             </div>
                                                             <!-- Edit Icon -->
-                                                            {{-- <div class="form-group ">
+                                                            <div class="form-group pr">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">Icon</span>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <div class="d-inline mr-2">
-                                                                            <input type="radio" @if ($facility->icon == 'flaticon-5g') checked @endif name="icon" value="flaticon-5g">
-                                                                            <div class="icon-box flaticon-5g d-inline"></div>
-                                                                        </div>
-                                                                        <div class="d-inline mr-2">
-                                                                            <input type="radio" @if ($facility->icon == 'flaticon-8k') checked @endif name="icon" value="flaticon-8k">
-                                                                            <div class="icon-box flaticon-8k d-inline"></div>
-                                                                        </div>
-                                                                        <div class="d-inline mr-2">
-                                                                            <input type="radio" @if ($facility->icon == 'flaticon-customer-service') checked @endif name="icon" value="flaticon-customer-service">
-                                                                            <div class="icon-box flaticon-customer-service d-inline"></div>
-                                                                        </div>
-                                                                        <div class="d-inline mr-2">
-                                                                            <input type="radio" @if ($facility->icon == 'flaticon-swimming-pool') checked @endif name="icon" value="flaticon-swimming-pool">
-                                                                            <div class="icon-box flaticon-swimming-pool d-inline"></div>
-                                                                        </div>
-                                                                    </div>
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Icon
+                                                                        ( <i class="me-1 mr-1"></i> )
+                                                                    </span>
+
+                                                                    <input class="form-control fontawesome" id="icon" type="text" name="icon" autocomplete="off"
+                                                                        value="{{ old('icon'), $facility->icon}}" placeholder="Icon" />
                                                                 </div>
-                                                            </div> --}}
+                                                            </div>
 
                                                             <!-- Edit Description -->
                                                             <div class="form-group">

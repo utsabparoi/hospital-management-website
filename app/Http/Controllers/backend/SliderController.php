@@ -4,14 +4,12 @@ namespace App\Http\Controllers\backend;
 
 use App\Traits\FileSaver;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Intervention\Image\Facades\Image;
 use App\Models\backend\Slider;
+use App\Http\Controllers\Controller;
 
 class SliderController extends Controller
 {
     use FileSaver;
-
     /**
      * =============================================
      * INDEX METHOD
@@ -52,15 +50,19 @@ class SliderController extends Controller
             'image'          => 'required',
         ]);
 
-        try {
-            $this->storeOrUpdate($request);
+        $this->storeOrUpdate($request);
 
-            return redirect()->route('sliders.index')->with('success','Added Success');
+        return redirect()->route('sliders.index')->with('success','Added Success');
 
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error',$th->getMessage());
+        // try {
+        //     $this->storeOrUpdate($request);
 
-        }
+        //     return redirect()->route('sliders.index')->with('success','Added Success');
+
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+
+        // }
     }
 
     /**
@@ -91,12 +93,14 @@ class SliderController extends Controller
      **/
     public function update(Request $request, $id)
     {
-        try {
-            $this->storeOrUpdate($request,$id);
-            return redirect()->route('sliders.index')->with('success','Updated Success');
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error',$th->getMessage());
-        }
+        $this->storeOrUpdate($request,$id);
+        return redirect()->route('sliders.index')->with('success','Updated Success');
+        // try {
+        //     $this->storeOrUpdate($request,$id);
+        //     return redirect()->route('sliders.index')->with('success','Updated Success');
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+        // }
     }
 
     /**
@@ -119,7 +123,7 @@ class SliderController extends Controller
 
     private function storeOrUpdate($request, $id = null)
     {
-
+        // dd($request->all());
         try {
             $slider = Slider::updateOrCreate([
                 'id'             => $id,
@@ -129,6 +133,7 @@ class SliderController extends Controller
                 'description'    => $request->description,
                 'status'         => $request->status ? 1 : 0,
             ]);
+
             $this->uploadFileWithResize($request->image, $slider, 'image', 'images/slider', 1050, 480);
 
         } catch (\Throwable $th) {

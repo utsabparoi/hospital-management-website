@@ -82,7 +82,7 @@
     <!-- <![endif]-->
 
     <!--[if IE]>
-    {{-- <script src="{{asset('backend/js/jquery-1.11.3.min.js')}}"></script> --}}
+    <script src="{{asset('backend/js/jquery-1.11.3.min.js')}}"></script>
     <![endif]-->
     <script type="text/javascript">
         if('ontouchstart' in document.documentElement) document.write("<script src='{{asset('backend/js/jquery.mobile.custom.min.js')}}'>"+"<"+"/script>");
@@ -468,7 +468,7 @@
                     item_id: item_id
                 },
                 success: function(resp) {
-                    console.log(reap)
+                    console.log(resp)
                     if (resp['status'] == 0) {
                         $("#id-" + item_id).html(
                             "<i class='fa fa-toggle-off text-danger status-icon' status='Inactive' style='font-size: 20px'></i>"

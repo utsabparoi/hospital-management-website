@@ -54,7 +54,7 @@
                                                             <!-- Name -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Name <sup class="text-danger">*</sup><span class="label-required"></span><br>
                                                                     </span>
                                                                     <input type="text" class="form-control @error('name') has-error @enderror"
@@ -66,7 +66,7 @@
                                                             <!-- Age -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Age <sup class="text-danger">*</sup><span class="label-required"></span><br>
                                                                     </span>
                                                                     <input type="number" class="form-control @error('age') has-error @enderror"
@@ -78,7 +78,7 @@
                                                             <!-- Designation -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Designation
                                                                     </span>
                                                                     <input type="text" class="form-control @error('designation') has-error @enderror"
@@ -107,14 +107,14 @@
                                                             <!-- Image -->
                                                             <div class="form-group">
                                                                 <div class="col-sm-12 col-md-6 input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Image
                                                                     </span>
                                                                     <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
 
                                                                 </div>
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
+                                                                    <span class="input-group-addon width-20" style="background-color: transparent !important; border:none !important;"></span>
                                                                     <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
                                                                 </div>
                                                             </div>
@@ -123,7 +123,7 @@
 
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Status
                                                                     </span>
                                                                     <label style="margin: 5px 0 0 8px">

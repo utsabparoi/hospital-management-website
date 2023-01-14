@@ -72,6 +72,7 @@
 
                                         <tbody>
                                             @forelse ($slider as $item)
+                                            {{-- @dd($item) --}}
                                                 <tr>
                                                     <td class="hide-in-sm"><span class="span">{{ $loop->iteration }}</span></td>
                                                     <td class="text-center">

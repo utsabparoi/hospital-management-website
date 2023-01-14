@@ -50,15 +50,18 @@ class PartnerController extends Controller
             'image'          => 'required',
         ]);
 
-        try {
-            $this->storeOrUpdate($request);
+        $this->storeOrUpdate($request);
 
-            return redirect()->route('partners.index')->with('success','Added Success');
+        return redirect()->route('partners.index')->with('success','Added Success');
+        // try {
+        //     $this->storeOrUpdate($request);
 
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('error',$th->getMessage());
+        //     return redirect()->route('partners.index')->with('success','Added Success');
 
-        }
+        // } catch (\Throwable $th) {
+        //     return redirect()->back()->with('error',$th->getMessage());
+
+        // }
     }
 
     public function show($id)

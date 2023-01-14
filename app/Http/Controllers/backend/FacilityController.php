@@ -50,9 +50,9 @@ class FacilityController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $request->validate([
-            'image'          => 'required',
-        ]);
+        // $request->validate([
+        //     'image'          => 'required',
+        // ]);
 
         try {
             $this->storeOrUpdate($request);

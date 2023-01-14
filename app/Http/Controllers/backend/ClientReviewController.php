@@ -141,7 +141,7 @@ class ClientReviewController extends Controller
                 'review'        => $request->review,
                 'status'        => $request->status ? 1 : 0,
             ]);
-            $this->uploadFileWithResize($request->image, $reviews, 'image', 'images/client_review', 300, 200);
+            $this->uploadFileWithResize($request->image, $reviews, 'image', 'images/client_review', 79, 78);
 
         } catch (\Throwable $th) {
             throw $th;
