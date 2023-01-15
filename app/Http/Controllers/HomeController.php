@@ -1,8 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\backend\Partner;
+
+use App\Models\backend\AboutUs;
+use App\Models\backend\ArticleandNews;
 use App\Models\backend\ClientReview;
+use App\Models\backend\Doctor;
+use App\Models\backend\Facility;
+use App\Models\backend\Partner;
+use App\Models\backend\Slider;
+use App\Models\backend\SocialLink;
 
 use Illuminate\Http\Request;
 
@@ -10,7 +17,12 @@ class HomeController extends Controller
 {
     public function home(){
         $data['partner']   = Partner::where('status', '1')->take(7)->get();
-        $data['review']    = ClientReview::latest()->take(5)->get();
+        $data['review']    = ClientReview::where('status', '1')->take(5)->get();
+        // $data['aboutus']   = AboutUs::where('status', '1')->get();
+        // $data['artciles']   = ArticleandNews::where('status', '1')->get();
+        // $data['doctor']   = Doctor::where('status', '1')->get();
+        // $data['facility']   = Facility::where('status', '1')->get();
+        // $data['slider']   = Slider::where('status', '1')->get();
 
         return view('frontend.page.home', $data);
     }

@@ -19,7 +19,7 @@
                             <div class="img-box">
                                 <div class="img-holder">
                                     <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
-                                        style="width: 152px;height: 72px; margin-left: auto; margin-right: auto;">
+                                        style="width: 79px;height: 78px; margin-left: auto; margin-right: auto;">
                                 </div>
                                 <div class="quote-box">
                                     <i class="fas fa-quote-left" aria-hidden="true"></i>

@@ -125,7 +125,7 @@
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
-                                                                    <img class="pt-1" src="{{ asset($review->image) }}" width="300" height="200" style="margin-left: 13px;">
+                                                                    <img class="pt-1" src="{{ asset($review->image) }}" width="200" height="200" style="margin-left: 13px;">
                                                                 </div>
                                                             </div>
 
