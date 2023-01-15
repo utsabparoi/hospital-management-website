@@ -64,8 +64,8 @@
                                             <th width="5%" class="hide-in-sm">Sl</th>
                                             <th width="25%" class="text-center">Image</th>
                                             <th width="20%" class="text-center">Title</th>
-                                            <th width="10%" class="text-center">Url</th>
-                                            <th width="5%" class="text-center">Icon</th>
+                                            <th width="15%" class="text-center">Url</th>
+                                            {{-- <th width="5%" class="text-center">Icon</th> --}}
                                             <th width="20%" class="text-center">Description</th>
                                             <th width="5%" class="text-center">Status</th>
                                             <th width="10%" class="text-center" style="width: 120px">Action</th>
@@ -87,7 +87,7 @@
                                                     </td>
                                                     <td><span class="span">{{ $item->title }}</span></td>
                                                     <td><a href="{{ $item->url }}" target="_blank">{{ $item->url }}</a></td>
-                                                    <td class="text-center"><i class="{{ $item->icon }} fa-2x"></i></td>
+                                                    {{-- <td class="text-center"><i class="{{ $item->icon }} fa-2x"></i></td> --}}
                                                     <td><span class="text"> {!! $item->description !!}</span></td>
                                                     <td class="text-center">
                                                         <!--------------- STATUS---------------->

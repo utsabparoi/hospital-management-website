@@ -84,7 +84,7 @@
                                                             </div><br>
 
                                                             <!-- Icon -->
-                                                            <div class="form-group pr">
+                                                            {{-- <div class="form-group pr">
                                                                 <div class="input-group width-100 mb-1">
                                                                     <span class="input-group-addon width-30" style="text-align: left">
                                                                         Icon
@@ -94,7 +94,7 @@
                                                                     <input class="form-control fontawesome" id="icon" type="text" name="icon" autocomplete="off"
                                                                         value="{{ old('icon'), $articles_news->icon}}" placeholder="Icon" />
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
 
                                                             <!-- Edit Image -->
                                                             <div class="form-group">
@@ -115,7 +115,7 @@
                                                                 </div>
                                                             </div>
 
-                                                            {{-- Previous Image --}}
+                                                            Previous Image
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>

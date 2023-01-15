@@ -82,7 +82,7 @@
                                                             </div>
 
                                                             <!-- Icon -->
-                                                            <div class="form-group pr">
+                                                            {{-- <div class="form-group pr">
                                                                 <div class="input-group width-100  mb-1">
                                                                     <span class="input-group-addon width-30" style="text-align: left">
                                                                         Icon
@@ -91,7 +91,7 @@
                                                                     <input type="text" class="form-control fontawesome" id=""
                                                                         name="icon" autocomplete="off" value="{{ old('icon') }}" placeholder="Icon" />
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
 
                                                             <!-- Description -->
                                                             <div class="form-group">

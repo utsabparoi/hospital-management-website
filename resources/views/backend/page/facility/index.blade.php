@@ -62,9 +62,9 @@
                                         <thead>
                                         <tr>
                                             <th width="5%" class="hide-in-sm">Sl</th>
-                                            <th width="30%" class="text-center">Image</th>
+                                            <th width="25%" class="text-center">Image</th>
                                             <th width="20%" class="text-center">Title</th>
-                                            <th width="30%" class="text-center">Description</th>
+                                            <th width="35%" class="text-center">Description</th>
                                             <th width="5%" class="text-center">Status</th>
                                             <th width="10%" class="text-center" style="width: 120px">Action</th>
                                         </tr>
@@ -77,10 +77,10 @@
                                                     <td class="text-center">
                                                         @if (file_exists($item->image) && $item->image == './default-facility.webp')
                                                             <img src="{{ asset('default-facility.webp') }}" alt="{{ $item->name }}"
-                                                                width="300" height="200">
+                                                                width="200" height="200">
                                                         @elseif (file_exists($item->image) && $item->image != './default-facility.webp')
                                                                 <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
-                                                                    width="300" height="200">
+                                                                    width="200" height="200">
                                                         @endif
                                                     </td>
                                                     <td><span class="span">{{ $item->title }}</span></td>
