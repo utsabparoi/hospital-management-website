@@ -49,10 +49,10 @@ Route::get('/allFacilities', function () {
 });
 Route::get('/singleFacilities', function () {
     return view('frontend.page.singleFacilities');
-});
-Route::get('/allDepartment', function () {
+})->name('singleFacility');
+Route::get('/departments', function () {
     return view('frontend.page.allDepartment');
-});
+})->name('department');
 Route::get('/singleDepartment', function () {
     return view('frontend.page.singleDepartment');
 });
@@ -74,15 +74,6 @@ Route::get('/onlineRegistration', function () {
 Route::get('/onlineDiagnosticReport', function () {
     return view('frontend.page.onlineDiagnosticReport');
 });
-
-
-
-
-
-
-
-
-
 
 
 

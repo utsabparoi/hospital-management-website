@@ -23,7 +23,7 @@ class HomeController extends Controller
         // $data['aboutus']   = AboutUs::where('status', '1')->get();
         // $data['artciles']   = ArticleandNews::where('status', '1')->get();
         // $data['doctor']   = Doctor::where('status', '1')->get();
-        $data['facilities']   = Facility::where('status', '1')->take(15)->get();
+        $data['facilities']   = Facility::where('status', '1')->take(24)->get();
         // dd($data);
         // $data['slider']   = Slider::where('status', '1')->get();
 

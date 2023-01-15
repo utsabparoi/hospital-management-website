@@ -60,7 +60,7 @@
 
 
         <!-- Slide Item -->
-        <div class="slide-item" id="vdo-slider">
+        {{-- <div class="slide-item" id="vdo-slider">
             <div class="auto-container">
                 <div class="content-outer">
                     <div class="content-box">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Slide Item -->
         <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/test/4.jpg" )}});">
             <div class="auto-container">

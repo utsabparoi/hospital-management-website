@@ -24,7 +24,7 @@
                                             <!--Start single item-->
                                             <div class="col-md-4">
                                                 <div class="single-item">
-                                                    <a href="services.php">
+                                                    <a href="{{ route('singleFacility')}}">
                                                         <div class="icon-holder">
                                                             <div class="icon-box">
                                                                 <div class="icon">
