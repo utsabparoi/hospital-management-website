@@ -13,16 +13,19 @@ class HealthPackage extends Migration
      */
     public function up()
     {
-        Schema::create("health_package", function (Blueprint $table){
-            $table-> bigIncrements("id");
-            $table -> string('package_name');
-            $table -> string('patient');
-            $table -> string('package_cost');
-            $table -> string('package_discount');
-            $table -> string('package_details');
-            $table -> string('status');
-            $table -> timestamps();
-        });
+        if(!Schema::hasTable('health_package')){
+            Schema::create("health_package", function (Blueprint $table){
+                $table-> bigIncrements("id");
+                $table -> string('package_name');
+                $table -> string('package_category');
+                $table -> string('patient');
+                $table -> string('package_cost');
+                $table -> string('package_discount');
+                $table -> string('package_details');
+                $table -> string('status');
+                $table -> timestamps();
+            });
+        }
     }
 
     /**
@@ -32,6 +35,6 @@ class HealthPackage extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('health_package');
     }
 }

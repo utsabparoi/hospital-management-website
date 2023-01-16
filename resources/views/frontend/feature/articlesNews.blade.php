@@ -11,21 +11,28 @@
             <!-- <span class="divider text-center"></span> -->
         </div>
 
-        {{-- <div class="row">
+        <div class="row">
             <!--Start single item-->
             <div class="col-md-12">
                 <div class="testimonial-carousel">
                     <!--Start single testimonial item-->
                     @foreach ($articles as $item)
                         <div class="single-testimonial-item text-center">
-                            <div class="image-box">
-                                <figure class="image"><a href="news-details.php"><img src="{{ asset($item->image) }}" alt=""></a></figure>
-                                <a href="news-details.php" class="date">{{ $item->date }}</a>
-                            </div>
-                            <div class="lower-content">
-                                <h6><a href="news-details.php">{{ $item->title }}</a></h6>
-                                <div class="text">{!! Str::limit(strip_tags($item->description), 110) !!}</div>
-                                <br>
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="news-details.php">
+                                            <img src="{{ asset($item->image) }}" alt="">
+                                        </a>
+                                    </figure><br>
+                                </div>
+                                <div class="lower-content">
+                                    <h6><a href="news-details.php">{{ $item->title }}</a></h6>
+                                    <div class="text">{!! Str::limit(strip_tags($item->description), 110) !!}</div>
+                                    <span href="news-details.php" class="date">
+                                        <strong>Post Date: </strong>{{ $item->date }}
+                                    </span>
+                                </div>
                                 <a class="readmore" href="#">Read More</a>
                             </div>
                         </div>
@@ -35,8 +42,8 @@
             </div>
             <!--End single item-->
 
-        </div> --}}
-        <div class="row">
+        </div>
+        {{-- <div class="row">
             <!-- News Block -->
             @foreach ($articles as $item)
                 <div class="news-block col-lg-3 col-md-6 col-sm-12">
@@ -62,7 +69,7 @@
                 </div>
             @endforeach
 
-        </div>
+        </div> --}}
     </div>
 </section>
 <!--End News Section Two -->

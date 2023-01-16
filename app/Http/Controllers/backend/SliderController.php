@@ -89,14 +89,12 @@ class SliderController extends Controller
      **/
     public function update(Request $request, $id)
     {
-        $this->storeOrUpdate($request,$id);
-        return redirect()->route('sliders.index')->with('success','Updated Success');
-        // try {
-        //     $this->storeOrUpdate($request,$id);
-        //     return redirect()->route('sliders.index')->with('success','Updated Success');
-        // } catch (\Throwable $th) {
-        //     return redirect()->back()->with('error',$th->getMessage());
-        // }
+        try {
+            $this->storeOrUpdate($request,$id);
+            return redirect()->route('sliders.index')->with('success','Updated Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**
