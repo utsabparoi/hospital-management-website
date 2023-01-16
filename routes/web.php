@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\backend\BranchController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -124,6 +125,12 @@ Route::resource('social_links', SocialLinkController::class);
 
 // Social Links Route
 Route::resource('clients_reviews', ClientReviewController::class);
+
+//branch
+Route::group(['middleware' => 'AdminLogin', 'prefix' => 'website-cms', 'as' => 'website.'], function () {
+    Route::resource('branch',             BranchController::class);
+});
+
 
 //department CRUD
 Route::get('/departmentCreate',[DepartmentController::class, "DepartmentCreateForm"])->name("departmentCreate")->middleware("AdminLogin");

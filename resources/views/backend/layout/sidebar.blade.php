@@ -44,6 +44,15 @@
             <b class="arrow"></b>
         </li>
 
+        {{-- Branch Information --}}
+        <li class="nav-link {{ request()->is('branch*') ? 'active' : '' }}">
+            <a href="{{ route('website.branch.index') }}">
+                <i class="menu-icon fa fa-user-md"></i>
+                <span class="menu-text">Branch</span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+
         {{-- Doctor Department --}}
         <li class="nav-link {{ request()->is('department*') ? 'active' : '' }}">
             <a href="#" class="dropdown-toggle">

@@ -19,6 +19,7 @@ class CreateDoctorsTable extends Migration
                 $table -> string('name');
                 $table -> string('degree');
                 $table -> string('image')->nullable();
+                $table -> string('branch');
                 $table -> string('department');
                 $table -> string('position');
                 $table -> string('visit_start_time')->nullable();

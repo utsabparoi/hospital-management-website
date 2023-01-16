@@ -68,7 +68,7 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody>
+                                            <tbody align="center">
                                                 @forelse ($doctors as $item)
                                                     <tr>
                                                         <td class="hide-in-sm"><span class="span">{{ $loop->iteration }}</span></td>
