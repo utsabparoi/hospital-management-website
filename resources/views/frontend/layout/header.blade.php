@@ -16,8 +16,7 @@
                             <!-- <i class="flaticon-hospital-1"></i> -->
                             <lord-icon src="{{ asset('frontend/json/zzcjjxew.json') }}" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
                             </lord-icon>
-                            152/2/N Road, Panthapath, Dhaka
-                            <br>Dhaka 1200, Bangladesh.
+                            {{$WebsiteInformation->primary_address}}
                         </li>
                         <li class="top-img">
                             <img src="{{ asset('frontend/images/hopeline1.png') }}" alt="" title="">
@@ -52,7 +51,7 @@
                             <!-- <img src="images/logo/icon-name.png" class="not-rotate" alt="" title=""> -->
 
                             <!-- <img src="images/logo/aah-logo.png" class="rotate" alt="" title=""> -->
-                            <img src="{{ asset('frontend/images/logo/new-logo.png') }}" class="" alt="" title="">
+                            <img src="{{ asset($WebsiteInformation->company_logo) }}" class="{{$WebsiteInformation->name}}" alt="" title="">
                             <p class="logo-text">we create hope</p>
                         </div>
                     </a>
