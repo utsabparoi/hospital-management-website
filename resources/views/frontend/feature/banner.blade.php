@@ -1,38 +1,31 @@
 <!-- Bnner Section -->
 <section class="banner-section">
     <div class="banner-carousel owl-carousel owl-theme default-arrows dark">
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide4.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
+        @foreach ($sliders as $item)
+            <div class="slide-item" style="background-image: url({{ asset( $item->image )}});">
+                <div class="auto-container">
+                    <div class="content-outer">
+                        <div class="content-box">
+                            <span class="title"> {{$item->title}} </span>
+                            <h2>{{ $item->subtitle }}</h2>
+                            <div>{!! $item->description !!}</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/test/1.jpg" )}});">
+        {{-- <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/test/1.jpg" )}});">
             <div class="auto-container">
                 <div class="content-outer">
                     <div class="content-box">
                         <span class="title">Consultants</span>
                         <h2>We are dedicated to the <span>Ultimate Care</span> of our patients</h2>
                         <div class="text">while improving performance and achieving compliance.</div>
-
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-
+        </div> --}}
 
 
         <!-- New -->
@@ -57,8 +50,6 @@
             </div>
         </div> -->
 
-
-
         <!-- Slide Item -->
         {{-- <div class="slide-item" id="vdo-slider">
             <div class="auto-container">
@@ -73,140 +64,6 @@
                 </div>
             </div>
         </div> --}}
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/test/4.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">Covid Test for Traveller</span>
-                        <h2>Get a rapid COVID test <span>COVID Test</span> for same day</h2>
-                        <div class="text">results, or a molecular lab test (PCR) for results within 24-hours.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/test/3.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">Covid Test Facility</span>
-                        <h2>Within 24 Hour Report, <span>Online Report,</span> Home Sample Collection</h2>
-                        <div class="text">Comprehensive facilities for COVID-test.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide Item -->
-        <!-- <div class="slide-item" style="background-image: url(images/main-slider/s5.jpg);">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">Highly Disinfected Modular OT</span>
-                        <h2>Our Modular Operation Theatre <span>Technology </span> Ensures</h2>
-                        <div class="text">advanced safety, precision and efficiency during Surgery.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/test/2.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide1.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide2.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide3.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide4.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide5.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide Item -->
-        <div class="slide-item" style="background-image: url({{asset( "frontend/images/main-slider/slide6.jpg" )}});">
-            <div class="auto-container">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <span class="title">24/7 Accident & Emergency Service</span>
-                        <h2>For any serious accidents <span>Injuries or </span> Conditions,</h2>
-                        <div class="text">we are ready with our 24/7 Accident & Emergency team.</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <!-- End Bnner Section -->

@@ -78,10 +78,10 @@
                                                     <td class="text-center">
                                                         @if (file_exists($item->image) && $item->image == './default-slider.webp')
                                                             <img src="{{ asset('default-slider.webp') }}" alt="{{ $item->title }}"
-                                                                width="300" height="100">
+                                                                width="300" height="200">
                                                         @elseif (file_exists($item->image) && $item->image != './default-slider.webp')
                                                                 <img src="{{ asset($item->image) }}" alt="{{ $item->title }}"
-                                                                    width="300" height="100">
+                                                                    width="300" height="200">
                                                         @endif
                                                     </td>
                                                     <td><span class="span">{{ $item->title }}</span></td>

@@ -50,19 +50,15 @@ class SliderController extends Controller
             'image'          => 'required',
         ]);
 
-        $this->storeOrUpdate($request);
+        try {
+            $this->storeOrUpdate($request);
 
-        return redirect()->route('sliders.index')->with('success','Added Success');
+            return redirect()->route('sliders.index')->with('success','Added Success');
 
-        // try {
-        //     $this->storeOrUpdate($request);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
 
-        //     return redirect()->route('sliders.index')->with('success','Added Success');
-
-        // } catch (\Throwable $th) {
-        //     return redirect()->back()->with('error',$th->getMessage());
-
-        // }
+        }
     }
 
     /**
@@ -134,7 +130,7 @@ class SliderController extends Controller
                 'status'         => $request->status ? 1 : 0,
             ]);
 
-            $this->uploadFileWithResize($request->image, $slider, 'image', 'images/slider', 1050, 480);
+            $this->uploadFileWithResize($request->image, $slider, 'image', 'images/slider', 1920, 1080);
 
         } catch (\Throwable $th) {
             throw $th;

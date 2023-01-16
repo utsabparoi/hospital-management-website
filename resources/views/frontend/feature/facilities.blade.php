@@ -37,7 +37,7 @@
                                                         </div>
                                                         <div class="text-holder">
                                                             <h3>{{$i->title}}</h3>
-                                                            <p>{!! Str::limit(strip_tags($i->description), 150) !!}</p>
+                                                            <p>{!! Str::limit(strip_tags($i->description), 110) !!}</p>
                                                         </div>
                                                     </a>
 
