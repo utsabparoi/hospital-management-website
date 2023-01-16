@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\backend\Branchmodel;
 use Illuminate\Http\Request;
 use App\Traits\FileSaver;
 use App\Models\backend\Doctor;
@@ -35,6 +36,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
+        $data['branch'] = Branchmodel::all();
         $data['departments'] = DepartmentModel::orderBy('id','desc')->paginate(20);
         try {
             return view('backend/page/doctor.create', $data);
@@ -80,6 +82,7 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
+        $doctors['branch'] = Branchmodel::all();
         $doctors['departments'] = DepartmentModel::orderBy('id','desc')->paginate(20);
         $doctors['doctors']        = Doctor::find($id);
         return view('backend/page/doctor/edit', $doctors);
@@ -143,6 +146,7 @@ class DoctorController extends Controller
         ],[
             'name'                 => $request->name,
             'degree'               => $request->degree,
+            'branch'               => $request->branch,
             'department'           => $request->department,
             'position'             => $request->position,
             'visit_start_time'     => $request->visit_start_time,

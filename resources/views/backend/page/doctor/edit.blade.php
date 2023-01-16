@@ -113,6 +113,24 @@
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
                                                                     <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Branch <sup class="text-danger">*</sup><span class="label-required"></span>
+                                                                    </span>
+                                                                    <select class="form-control @error('branch') has-error @enderror" name="branch" id="branch" >
+                                                                        @foreach ($branch as $branches)
+                                                                            <option value="{{$branches->name}}"
+                                                                                    @if($branches->name == $doctors->branch) selected @endif>{{$branches->name}}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    {{-- <input type="text" class="form-control @error('department') has-error @enderror"
+                                                                        name="department" id="department" value="{{ old('department') }}"> --}}
+
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Department -->
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
                                                                         Department <sup class="text-danger">*</sup><span class="label-required"></span>
                                                                     </span>
                                                                     <select class="form-control @error('department') has-error @enderror" name="department" id="department" >
