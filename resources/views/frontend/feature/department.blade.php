@@ -8,7 +8,7 @@
                 <hr>
             </div>
         </div>
-        @foreach ($departments->chunk(12) as $items)
+        @foreach ($departments->chunk(8) as $items)
             <div class="row">
                 @foreach($items->chunk(12) as $item)
                     <div class="col-lg-12 col-md-12">
@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="text-holder">
                                         <h3>{{$i->department_name}}</h3>
-                                        <p>{!! Str::limit(strip_tags($i->department_description), 150) !!}</p>
+                                        <p>{!! Str::limit(strip_tags($i->department_description), 110) !!}</p>
                                     </div>
                                     <a class="readmore" href="{{ route('department') }}">Read More</a>
                                 </div>

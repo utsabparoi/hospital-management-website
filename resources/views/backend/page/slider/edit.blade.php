@@ -105,14 +105,14 @@
                                                                     </div>
                                                                     <div class="input-group width-100 mb-1">
                                                                         <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                        <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                        <small style="margin-left: 13px;"><b>Image size '1920 X 1-80'. </b><b style="color: red"> (NB: Slider "height" must be 1080px)</b></small>
                                                                     </div>
                                                                 </div>
 
                                                                 {{-- Previous Image --}}
                                                                 <div class="input-group width-100 mb-3">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important; text-align: left">Previous Image:</span>
-                                                                    <img class="pt-1" src="{{ asset($slider->image) }}" width="300" height="100" style="margin-left: 13px;">
+                                                                    <img class="pt-1" src="{{ asset($slider->image) }}" width="300" height="200" style="margin-left: 13px;">
                                                                 </div><br>
 
                                                                 <!-- Description -->

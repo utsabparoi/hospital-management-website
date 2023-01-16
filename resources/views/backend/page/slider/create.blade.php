@@ -93,7 +93,7 @@
                                                                 </div>
                                                                 <div class="input-group width-100 mb-1">
                                                                     <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                    <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
+                                                                    <small style="margin-left: 13px;"><b>Image size '1920 X 1080'px. </b><b style="color: red"> (NB: Slider "height" must be 1080px)</b></small>
                                                                 </div>
                                                             </div>
 

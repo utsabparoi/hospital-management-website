@@ -26,6 +26,14 @@ class HomeController extends Controller
         $data['facilities']   = Facility::where('status', '1')->take(24)->get();
         // dd($data);
         // $data['slider']   = Slider::where('status', '1')->get();
+        $data['partner']        = Partner::where('status', '1')->take(7)->get();
+        $data['review']         = ClientReview::where('status', '1')->take(5)->get();
+        $data['departments']    = DepartmentModel::where('status', '1')->take(15)->get();
+        // $data['aboutus']        = AboutUs::where('status', '1')->get();
+        $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
+        // $data['doctor']         = Doctor::where('status', '1')->get();
+        $data['facilities']     = Facility::where('status', '1')->take(18)->get();
+        $data['sliders']        = Slider::where('status', '1')->get();
 
         return view('frontend.page.home', $data);
     }

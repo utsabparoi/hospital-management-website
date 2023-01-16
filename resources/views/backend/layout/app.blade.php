@@ -156,7 +156,7 @@
     <script src="{{ asset('/backend/js/jquery-ui.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-          $( "#datepicker" ).datepicker();
+          $( "#datepicker" ).datepicker({ dateFormat: 'd M, yy' });
         } );
     </script>
 

@@ -133,9 +133,10 @@ class ArticleandNewsController extends Controller
             'id'                    =>$id,
         ],[
             'title'                 =>$request->title,
-            'url'                  => $request->url,
+            'url'                   => $request->url,
             'icon'                  => $request->icon,
             'description'           =>$request->description,
+            'date'                  =>$request->date,
             'status'                =>!empty($request->status) ? 1 : 0,
         ]);
 
