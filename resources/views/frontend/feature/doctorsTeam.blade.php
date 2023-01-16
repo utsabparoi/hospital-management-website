@@ -36,310 +36,308 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="medical-departments-carousel">
+                @foreach($doctor as $doctors)
+                    <!--Start single item-->
+                        <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
+                            <div class="inner-box  ">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img src="{{ asset($doctors->image) }}" alt=""></a></figure>
+                                </div>
+                                <div class="info-box">
+                                    <h5 class="name"><a href="#">{{$doctors->name}}</a></h5>
+                                    <div class="des-div"><span class="designation">{{$doctors->position}}</span></div>
+                                    <p class="text-center info-box-dept-name">{{$doctors->department}}</p>
+                                    <p class="app-time text-center" style="text-transform:uppercase;">
+                                        @php
+                                            $created_at = new DateTime($doctors->visit_start_time);
+                                            echo date_format($created_at,'h:ia');@endphp
+                                        to
+                                    @php
+                                        $created_at = new DateTime($doctors->visit_end_time);
+                                        echo date_format($created_at,'h:ia');@endphp
+                                    <div class="text-center">
+                                        <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1674" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
+                                        <button type="button" class="btn btn-info btn-sm">Doctor Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                @endforeach
+                <!--End single item-->
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-2.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Prof. Dr. A.K.M. Mokhlesuzzaman</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Tue</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1175" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-3.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Dr. Samira Yasmeen Ahmed</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1578" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-4.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Dr. Md Abdul Halim</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Tue</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=3473" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-5.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Prof. Dr. Zabrul SM Haque</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Senior Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Paediatrics, Neonatology, PICU, NICU</p>--}}
+                    {{--                                <!-- <div>--}}
 
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-1.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Dr. A B M Sarwar-E-Alam</a></h5>
-                                <div class="des-div"><span class="designation">Senior Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-danger">Tue</a>
-                                    <a href="#" class="badge badge-secondary">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1674" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-2.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Prof. Dr. A.K.M. Mokhlesuzzaman</a></h5>
-                                <div class="des-div"><span class="designation">Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-secondary">Mon</a>
-                                    <a href="#" class="badge badge-danger">Tue</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1175" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-3.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Dr. Samira Yasmeen Ahmed</a></h5>
-                                <div class="des-div"><span class="designation">Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-secondary">Mon</a>
-                                    <a href="#" class="badge badge-danger">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1578" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-4.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Dr. Md Abdul Halim</a></h5>
-                                <div class="des-div"><span class="designation">Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-secondary">Mon</a>
-                                    <a href="#" class="badge badge-danger">Tue</a>
-                                    <a href="#" class="badge badge-secondary">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=3473" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-5.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Prof. Dr. Zabrul SM Haque</a></h5>
-                                <div class="des-div"><span class="designation">Senior Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Paediatrics, Neonatology, PICU, NICU</p>
-                                <!-- <div>
+                    {{--                                    <a href="#" class="badge badge-secondary">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1479" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                </div>--}}
+                    {{--                <div class="medical-departments-carousel med-carosel2">--}}
 
-                                    <a href="#" class="badge badge-secondary">Mon</a>
-                                    <a href="#" class="badge badge-danger">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/selecteddoctor?docid=1479" target="_blank"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                </div>
-                <div class="medical-departments-carousel med-carosel2">
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-1.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Dr. A B M Sarwar-E-Alam</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Senior Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-2.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Prof. Dr. A.K.M. Mokhlesuzzaman</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
 
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-1.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Dr. A B M Sarwar-E-Alam</a></h5>
-                                <div class="des-div"><span class="designation">Senior Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-danger">Sun</a>
-                                    <a href="#" class="badge badge-secondary">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-2.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Prof. Dr. A.K.M. Mokhlesuzzaman</a></h5>
-                                <div class="des-div"><span class="designation">Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
+                    {{--                                    <a href="#" class="badge badge-secondary">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Tue</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
 
-                                    <a href="#" class="badge badge-secondary">Mon</a>
-                                    <a href="#" class="badge badge-danger">Tue</a>
-                                    <a href="#" class="badge badge-secondary">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-4.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Dr. Md Abdul Halim</a></h5>
-                                <div class="des-div"><span class="designation">Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-danger">Tue</a>
-                                    <a href="#" class="badge badge-secondary">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-3.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Dr. Samira Yasmeen Ahmed</a></h5>
-                                <div class="des-div"><span class="designation">Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Internal Medicine</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-danger">Mon</a>
-                                    <a href="#" class="badge badge-secondary">Tue</a>
-                                    <a href="#" class="badge badge-secondary">Wed</a>
-                                    <a href="#" class="badge badge-secondary">Thu</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
-                    <!--Start single item-->
-                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">
-                        <div class="inner-box  ">
-                            <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-5.jpg') }}" alt=""></a></figure>
-                                <!--<ul class="social-links">-->
-                                <!--    <li><a href="#">Appointment</a></li>-->
-                                <!--    <li><a href="#">Doctor Details</a></li>-->
-                                <!--</ul>-->
-                            </div>
-                            <div class="info-box">
-                                <h5 class="name"><a href="#">Prof. Dr. Zabrul SM Haque</a></h5>
-                                <div class="des-div"><span class="designation">Senior Consultant</span></div>
-                                <p class="text-center info-box-dept-name">Paediatrics, Neonatology, PICU, NICU</p>
-                                <!-- <div>
-                                    <a href="#" class="badge badge-secondary">Sat</a>
-                                    <a href="#" class="badge badge-secondary">Sun</a>
-                                    <a href="#" class="badge badge-secondary">Mon</a>
-                                    <a href="#" class="badge badge-secondary">Tue</a>
-                                    <a href="#" class="badge badge-danger">Wed</a>
-                                </div> -->
-                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>
-                                <div class="text-center">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End single item-->
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-4.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Dr. Md Abdul Halim</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Tue</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-3.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Dr. Samira Yasmeen Ahmed</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Internal Medicine</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Tue</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Wed</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Thu</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
+                    {{--                    <!--Start single item-->--}}
+                    {{--                    <div class="single-item text-center team-block-two wow fadeInUp animated animated animated">--}}
+                    {{--                        <div class="inner-box  ">--}}
+                    {{--                            <div class="image-box">--}}
+                    {{--                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-5.jpg') }}" alt=""></a></figure>--}}
+                    {{--                                <!--<ul class="social-links">-->--}}
+                    {{--                                <!--    <li><a href="#">Appointment</a></li>-->--}}
+                    {{--                                <!--    <li><a href="#">Doctor Details</a></li>-->--}}
+                    {{--                                <!--</ul>-->--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="info-box">--}}
+                    {{--                                <h5 class="name"><a href="#">Prof. Dr. Zabrul SM Haque</a></h5>--}}
+                    {{--                                <div class="des-div"><span class="designation">Senior Consultant</span></div>--}}
+                    {{--                                <p class="text-center info-box-dept-name">Paediatrics, Neonatology, PICU, NICU</p>--}}
+                    {{--                                <!-- <div>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sat</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Sun</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Mon</a>--}}
+                    {{--                                    <a href="#" class="badge badge-secondary">Tue</a>--}}
+                    {{--                                    <a href="#" class="badge badge-danger">Wed</a>--}}
+                    {{--                                </div> -->--}}
+                    {{--                                <p class="app-time text-center">6:00 PM to 8:00 PM</p>--}}
+                    {{--                                <div class="text-center">--}}
+                    {{--                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>--}}
+                    {{--                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <!--End single item-->--}}
                 </div>
 
 

@@ -51,7 +51,7 @@
                             <!-- <img src="images/logo/icon-name.png" class="not-rotate" alt="" title=""> -->
 
                             <!-- <img src="images/logo/aah-logo.png" class="rotate" alt="" title=""> -->
-                            <img src="{{ asset($WebsiteInformation->company_logo) }}" class="{{$WebsiteInformation->name}}" alt="" title="">
+                            <img src="{{ asset($WebsiteInformation->company_logo) }}" class="" alt="{{$WebsiteInformation->name}}" title="" >
                             <p class="logo-text">we create hope</p>
                         </div>
                     </a>
