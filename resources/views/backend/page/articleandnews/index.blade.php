@@ -65,7 +65,6 @@
                                             <th width="25%" class="text-center">Image</th>
                                             <th width="20%" class="text-center">Title</th>
                                             <th width="15%" class="text-center">Url</th>
-                                            {{-- <th width="5%" class="text-center">Icon</th> --}}
                                             <th width="20%" class="text-center">Description</th>
                                             <th width="5%" class="text-center">Status</th>
                                             <th width="10%" class="text-center" style="width: 120px">Action</th>

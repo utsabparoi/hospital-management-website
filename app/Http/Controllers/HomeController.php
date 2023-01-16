@@ -21,7 +21,7 @@ class HomeController extends Controller
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
         $data['departments']    = DepartmentModel::where('status', '1')->take(15)->get();
         // $data['aboutus']        = AboutUs::where('status', '1')->get();
-        // $data['artciles']       = ArticleandNews::where('status', '1')->get();
+        $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(4)->get();
         // $data['doctor']         = Doctor::where('status', '1')->get();
         $data['facilities']     = Facility::where('status', '1')->take(18)->get();
         $data['sliders']        = Slider::where('status', '1')->get();

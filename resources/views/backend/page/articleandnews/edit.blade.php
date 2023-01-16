@@ -139,6 +139,18 @@
                                                                 @enderror
                                                             </div>
 
+                                                            <!-- Date -->
+                                                            <div class="form-group">
+                                                                <div class="input-group width-100 mb-1">
+                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                        Date
+                                                                    </span>
+                                                                    <input type="text" class="form-control @error('date') has-error @enderror"
+                                                                        name="date" id="datepicker" value="{{ old('date',$articles_news->date) }}">
+
+                                                                </div><br>
+                                                            </div>
+
                                                             <!-- Edit Status -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">

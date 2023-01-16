@@ -78,8 +78,13 @@
 {{--<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>--}}
 <script src="{{ asset('frontend/js/lottie-player.js') }}"></script>
 
-
-<script>
+{{-- <script src="{{ asset('/backend/js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $( "#datepicker" ).datepicker({ dateFormat: 'DD-Mon-YYYY' });
+        } );
+    </script>
+<script> --}}
     jQuery(document).ready(function() {
         $(".dropdown").hover(
             function() {

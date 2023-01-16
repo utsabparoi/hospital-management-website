@@ -63,7 +63,7 @@
                                                             <!-- Title -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Title <sup class="text-danger">*</sup><span class="label-required"></span><br>
                                                                     </span>
                                                                     <input type="text" class="form-control @error('title') has-error @enderror"
@@ -75,7 +75,7 @@
                                                             <!-- SLUG -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">Url <sup class="text-danger">*</sup></span>
+                                                                    <span class="input-group-addon width-20" style="text-align: left">Url <sup class="text-danger">*</sup></span>
                                                                         <input class="form-control slug" id="url" type="text" name="url" autocomplete="off"
                                                                             value="{{ old('url') }}" placeholder="http:// or https://" required />
                                                                 </div>
@@ -84,7 +84,7 @@
                                                             <!-- Icon -->
                                                             {{-- <div class="form-group pr">
                                                                 <div class="input-group width-100  mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Icon
                                                                         <i class="me-1 mr-1"></i>
                                                                     </span>
@@ -113,7 +113,7 @@
                                                             <!-- Date -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Date
                                                                     </span>
                                                                     <input type="text" class="form-control @error('date') has-error @enderror"
@@ -125,14 +125,14 @@
                                                             <!-- Image -->
                                                             <div class="form-group">
                                                                 <div class="col-sm-12 col-md-6 input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Image
                                                                     </span>
                                                                     <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
 
                                                                 </div>
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
+                                                                    <span class="input-group-addon width-20" style="background-color: transparent !important; border:none !important;"></span>
                                                                     <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
                                                                 </div>
                                                             </div>
@@ -141,7 +141,7 @@
 
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Status
                                                                     </span>
                                                                     <label style="margin: 5px 0 0 8px">
