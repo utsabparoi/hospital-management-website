@@ -19,7 +19,7 @@ class SliderSeeder extends Seeder
         ],
         [
             'title'          => '24/7 Accident &amp; Emergency Service',
-            'image'           => '/assets/images/slider/2023/Jan/11673865518-847832.webp',
+            'image'           => '/assets/slider_photos/11673865518-847832.webp',
             'description'          => 'we are ready with our 24/7 Accident &amp; Emergency team.',
             'subtitle'          => 'For any serious accidents Injuries or Conditions,',
             'status'        => 1,
