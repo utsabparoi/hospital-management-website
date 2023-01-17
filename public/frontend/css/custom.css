@@ -1,3 +1,41 @@
-.summernote-text ul,.summernote-text li {
-    list-style: unset !important;
+.featureList ul li{
+    font-weight: 500;
+    color: #111;
+    padding: 5px 0;
+    position: relative;
 }
+.featureList ul li:before {
+    /* content: "\f0a9"; */
+    content: "\21FE";
+    font-family: 'FontAwesome';
+    /* float: left; */
+    /* margin-left: 0.5em; */
+    color: #fff;
+    /* padding-right: 5px; */
+    text-align: center;
+    border-radius: 50%;
+    background: #1ca288;
+    position: absolute;
+    top: 15%;
+    left: -13px;
+    transform: translate(-50%, 0);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+  /* .featureBorder ul li:before{
+    content: "\f013";
+    font-family: 'FontAwesome';
+  } */
+
+  .featureBorder ul li{
+      border-bottom: 1px solid #eee;
+  }
+  .featureBorder ul li:last-child{
+      border-bottom: 0px solid #eee;
+  }
+
+  /* .text-left{text-align:left !important;} */
