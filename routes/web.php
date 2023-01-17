@@ -39,6 +39,8 @@ Route::get('/', [HomeController::class,'home'])->name('home');
 
 Route::get('partner', [HomeController::class,'partner'])->name('partner');
 
+Route::get('/single-department/{id}', [HomeController::class,'single_department'])->name('single-department');
+
 Route::get('/consultants', function () {
     return view('frontend.page.consultants');
 });
@@ -51,12 +53,7 @@ Route::get('/allFacilities', function () {
 Route::get('/singleFacilities', function () {
     return view('frontend.page.singleFacilities');
 })->name('singleFacility');
-Route::get('/departments', function () {
-    return view('frontend.page.allDepartment');
-})->name('department');
-Route::get('/singleDepartment', function () {
-    return view('frontend.page.singleDepartment');
-});
+
 Route::get('/allHealthPackage', function () {
     return view('frontend.page.allHealthPackage');
 });

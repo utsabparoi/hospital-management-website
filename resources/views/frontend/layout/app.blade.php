@@ -9,6 +9,7 @@
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/css/menu-style.css') }}">
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
 
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet">
     <!--Color Themes-->

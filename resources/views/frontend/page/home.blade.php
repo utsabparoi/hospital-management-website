@@ -9,7 +9,7 @@
     @include('frontend.feature.healthPackage')
     @include('frontend.feature.facilities')
     @include('frontend.feature.articlesNews')
-    @include('frontend.feature.clientComment')  
+    @include('frontend.feature.clientComment')
     @include('frontend.feature.partner')
     @include('frontend.feature.map')
     @include('frontend.layout.footer')

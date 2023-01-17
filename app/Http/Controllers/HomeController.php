@@ -37,4 +37,13 @@ class HomeController extends Controller
     //         return redirect()->back()->with('error',$th->getMessage());
     //     }
     // }
+
+    public function single_department($id){
+        try {
+            $department  = DepartmentModel::find($id);
+            return view('frontend.page.singleDepartment', compact('department'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+    }
 }

@@ -19,7 +19,7 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Vascular Surgery</h5>
+                            <h5 class="card-title">{{ $department->department_name }}</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <a href="department.php" class="btn btn-primary">See Details</a>
                         </div>
