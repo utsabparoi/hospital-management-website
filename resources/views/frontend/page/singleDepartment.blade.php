@@ -8,11 +8,12 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="inner-sec-title-exception text-center">
-                        <h2>Vascular Surgery</h2>
+                        <h2>{{$department->department_name}}</h2>
                         <!-- <span class="divider"></span> -->
                     </div>
                 </div>
-                <!-- <div class="col-sm-6 dept">
+                {{-- Department Searche Options --}}
+                {{-- <div class="col-sm-6 dept">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Select Department</label>
@@ -25,19 +26,19 @@
                         </select>
                     </div>
 
-                </div> -->
-
+                </div> --}}
             </div>
             <hr>
             <div class="row">
                 <div class="col-sm-6 department">
-                    <img src="{{ asset('frontend/images/dept/old/vs.jpg') }}" alt="">
+                    <img src="{{ asset($department->department_image) }}" alt="">
                 </div>
-                <div class="col-sm-6">
-                    <p class="text-justify">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                <div class="col-sm-6 summernote_text">
+                    <p class="text-justify ">
+                        {{-- {!! strip_tags($department->department_description) !!} --}}
+                        {!! $department->department_description!!}
                     </p>
-                    <div class="row dept-desc">
+                    {{-- <div class="row dept-desc">
                         <div class="col-sm-4">
                             <ul>
                                 <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
@@ -59,7 +60,7 @@
                             </ul>
                         </div>
                         <div class="col-sm-4"></div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="row">

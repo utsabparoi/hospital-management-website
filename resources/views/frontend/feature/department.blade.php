@@ -25,7 +25,7 @@
                                         <h3>{{$i->department_name}}</h3>
                                         <p>{!! Str::limit(strip_tags($i->department_description), 110) !!}</p>
                                     </div>
-                                    <a class="readmore" href="{{ route('department') }}">Read More</a>
+                                    <a class="readmore" href="{{ route('single-department',$i->id) }}">Read More</a>
                                 </div>
                             @endforeach
                             <!--End single item-->

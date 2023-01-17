@@ -19,7 +19,6 @@ class HomeController extends Controller
     public function home(){
         $data['partner']   = Partner::where('status', '1')->take(7)->get();
         $data['review']    = ClientReview::where('status', '1')->take(5)->get();
-        $data['departments']   = DepartmentModel::where('status', '1')->take(24)->get();
         // $data['aboutus']   = AboutUs::where('status', '1')->get();
         // $data['artciles']   = ArticleandNews::where('status', '1')->get();
         $data['doctor']   = Doctor::where('status', '1')->paginate();
@@ -28,7 +27,7 @@ class HomeController extends Controller
         // $data['slider']   = Slider::where('status', '1')->get();
         $data['partner']        = Partner::where('status', '1')->take(7)->get();
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
-        $data['departments']    = DepartmentModel::where('status', '1')->take(15)->get();
+        $data['departments']    = DepartmentModel::where('status', '1')->paginate();
         // $data['aboutus']        = AboutUs::where('status', '1')->get();
         $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
         // $data['doctor']         = Doctor::where('status', '1')->get();
@@ -46,4 +45,13 @@ class HomeController extends Controller
     //         return redirect()->back()->with('error',$th->getMessage());
     //     }
     // }
+
+    public function single_department($id){
+        try {
+            $department  = DepartmentModel::find($id);
+            return view('frontend.page.singleDepartment', compact('department'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+    }
 }

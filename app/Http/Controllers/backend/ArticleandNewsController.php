@@ -140,7 +140,7 @@ class ArticleandNewsController extends Controller
             'status'                =>!empty($request->status) ? 1 : 0,
         ]);
 
-        $this->uploadFileWithResize($request->image, $articles_news, 'image', 'images/articles_news', 550, 350);
+        $this->uploadFileWithResize($request->image, $articles_news, 'image', 'images/articles_news', 840, 310);
 
 
        } catch (\Throwable $th) {
