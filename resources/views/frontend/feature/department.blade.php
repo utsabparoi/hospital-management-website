@@ -9,7 +9,8 @@
             </div>
         </div>
         @foreach ($departments->chunk(8) as $items)
-            <div class="row">
+            <br>
+            <div class="row mt-4">
                 @foreach($items->chunk(12) as $item)
                     <div class="col-lg-12 col-md-12">
                         <div class="medical-departments-carousel">

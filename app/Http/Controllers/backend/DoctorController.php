@@ -156,7 +156,7 @@ class DoctorController extends Controller
             'status'               => $request->status ? 1: 0,
         ]);
 
-        $this->uploadFileWithResize($request->image, $doctors, 'image', 'images/doctors', 100, 60);
+        $this->uploadFileWithResize($request->image, $doctors, 'image', 'images/doctors', 162, 205);
 
        } catch (\Throwable $th) {
         throw $th;
