@@ -13,15 +13,15 @@
 
         <div class="row">
             <!--Start single item-->
-            <div class="col-sm-12">
-                <div class="testimonial-carousel">
+            <div class="col-sm-12" >
+                <div class="testimonial-carousel" >
                     <!--Start single testimonial item-->
                     @foreach ($articles as $item)
-                        <div class="single-testimonial news-block shadow">
-                            <div class="inner-box">
+                        <div class="single-testimonial news-block shadow" >
+                            <div class="inner-box" {{route('news-details', $item->id)}}>
                                 <div class="image-box">
                                     <figure class="image">
-                                        <a href="news-details.php">
+                                        <a href="{{route('news-details', $item->id)}}">
                                             <img src="{{ asset($item->image) }}" alt="" style="width: 300px; height: 200px;">
                                         </a>
                                         <a href="{{route('news-details', $item->id)}}" class="date"> {{ $item->date }} </a>

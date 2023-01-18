@@ -36,6 +36,6 @@
     </div>
 </main>
     <footer>
-    @include('frontend.layout.footerInner')
+        @include('frontend.layout.footer')
     </footer>
 @endsection

@@ -24,14 +24,15 @@
                                             <!--Start single item-->
                                             <div class="col-md-4">
                                                 <div class="single-item">
-                                                    <a href="{{ route('singleFacility')}}">
+                                                    <a href="{{ route('singleFacility', $i->id)}}">
                                                         <div class="icon-holder">
                                                             <div class="icon-box">
                                                                 <div class="icon">
-                                                                    {{-- <lord-icon src="https://cdn.lordicon.com/mdksbrtj.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
-                                                                    </lord-icon> --}}
-                                                                    <img src="{{ asset($i->image) }}" alt="{{ $i->name }}"
-                                                                        style="width: 50px;height: 50px;">
+                                                                    {{-- <img src="{{ asset($i->icon) }}" alt="{{ $i->name }}"
+                                                                        style="width: 50px;height: 50px;"> --}}
+                                                                    <lord-icon src="{{asset($i->icon)}}" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
+                                                                    </lord-icon>
+                                                                    {{-- <i class="fa fa-group"></i> --}}
                                                                 </div>
                                                             </div>
                                                         </div>

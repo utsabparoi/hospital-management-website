@@ -1,5 +1,6 @@
 .custom_entity ul,.custom_entity li {
     list-style: unset !important;
     margin: 25px;
+    /* padding: 0 0 0 14px; */
     line-height: 1.6;
 }

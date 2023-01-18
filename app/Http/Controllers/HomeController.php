@@ -17,21 +17,17 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        $data['partner']   = Partner::where('status', '1')->take(7)->get();
-        $data['review']    = ClientReview::where('status', '1')->take(5)->get();
+        $data['sliders']        = Slider::where('status', '1')->get();
+        $data['doctor']         = Doctor::where('status', '1')->get();
+        $data['partner']        = Partner::where('status', '1')->take(7)->get();
+        $data['review']         = ClientReview::where('status', '1')->take(8)->get();
         // $data['aboutus']   = AboutUs::where('status', '1')->get();
-        // $data['artciles']   = ArticleandNews::where('status', '1')->get();
-        $data['doctor']   = Doctor::where('status', '1')->get();
-        $data['facilities']   = Facility::where('status', '1')->take(24)->get();
-        // $data['slider']   = Slider::where('status', '1')->get();
+        $data['facilities']   = Facility::where('status', '1')->take(12)->get();
         $data['partner']        = Partner::where('status', '1')->take(7)->get();
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
         $data['departments']    = DepartmentModel::where('status', '1')->paginate();
-        // $data['aboutus']        = AboutUs::where('status', '1')->get();
         $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
-        // $data['doctor']         = Doctor::where('status', '1')->get();
-        $data['facilities']     = Facility::where('status', '1')->take(18)->get();
-        $data['sliders']        = Slider::where('status', '1')->get();
+        // $data['facilities']     = Facility::where('status', '1')->take(18)->get();
 
         return view('frontend.page.home', $data);
     }
@@ -52,6 +48,16 @@ class HomeController extends Controller
             $data['news']  = ArticleandNews::find($id);
             $data['recent_news']  = ArticleandNews::latest()->take(4)->get();
             return view('frontend.page.news-details', $data);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+    }
+
+    // Single Facility Page
+    public function single_facility($id){
+        try {
+            $data  = Facility::find($id);
+            return view('frontend.page.singleFacilities', compact('data'));
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }

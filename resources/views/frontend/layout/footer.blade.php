@@ -104,8 +104,9 @@
                 <div class="col-sm-4 last-div">
                     <h4>Watch Our Videos</h4>
                     <div>
-                        <a href="https://www.youtube.com/c/AsgarAliHospital" target="_blank"><img class="image-center" src="{{ asset('frontend/images/footer/yt-channel.png') }}" alt=""></a>
-                    </div>
+                        Insert a video your hospital!!
+                        {{-- <a href="https://www.youtube.com/c/AsgarAliHospital" target="_blank"><img class="image-center" src="{{ asset('frontend/images/footer/yt-channel.png') }}" alt=""></a> --}}
+                    </div><br>
                     <div class="footer-logo">
                         <img src="{{ asset('frontend/images/footer/footer-logo.png') }}" alt="">
                     </div>
