@@ -30,7 +30,7 @@
                                                                 <div class="icon">
                                                                     {{-- <img src="{{ asset($i->icon) }}" alt="{{ $i->name }}"
                                                                         style="width: 50px;height: 50px;"> --}}
-                                                                    <lord-icon src="{{asset($i->icon)}}" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:50px;height:50px">
+                                                                    <lord-icon src="{{asset($i->icon)}}" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:70px;height:70px">
                                                                     </lord-icon>
                                                                     {{-- <i class="fa fa-group"></i> --}}
                                                                 </div>

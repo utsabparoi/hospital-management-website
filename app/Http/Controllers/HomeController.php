@@ -18,28 +18,14 @@ class HomeController extends Controller
 {
     public function home(){
         $data['sliders']        = Slider::where('status', '1')->get();
-        $data['doctor']         = Doctor::where('status', '1')->get();
         $data['partner']        = Partner::where('status', '1')->take(7)->get();
         $data['review']         = ClientReview::where('status', '1')->take(8)->get();
-        // $data['aboutus']   = AboutUs::where('status', '1')->get();
-<<<<<<< HEAD
-        $data['facilities']   = Facility::where('status', '1')->take(12)->get();
-        $data['partner']        = Partner::where('status', '1')->take(7)->get();
+        $data['aboutus']        = AboutUs::where('status', '1')->get();
+        $data['facilities']     = Facility::where('status', '1')->take(12)->get();
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
-        $data['departments']    = DepartmentModel::where('status', '1')->paginate();
-=======
-        // $data['artciles']   = ArticleandNews::where('status', '1')->get();
-        $data['doctor']   = Doctor::where('status', '1')->paginate();
-        $data['facilities']   = Facility::where('status', '1')->take(24)->get();
-        // dd($data);
-        // $data['slider']   = Slider::where('status', '1')->get();
-        $data['partner']        = Partner::where('status', '1')->take(7)->get();
-        $data['review']         = ClientReview::where('status', '1')->take(5)->get();
+        $data['doctor']         = Doctor::where('status', '1')->paginate();
         $data['departments']    = DepartmentModel::where('status', 'true')->paginate();
-        // $data['aboutus']        = AboutUs::where('status', '1')->get();
->>>>>>> 9bfba17e7a8a16c1e82bbaa127bfa21de55306e0
         $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
-        // $data['facilities']     = Facility::where('status', '1')->take(18)->get();
 
         return view('frontend.page.home', $data);
     }
