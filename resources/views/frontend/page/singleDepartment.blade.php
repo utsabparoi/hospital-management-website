@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="inner-sec-title-exception text-center">
-                        <h2>{{$department->department_name}}</h2>
+                        <h2>{{ $department->department_name }}</h2>
                         <!-- <span class="divider"></span> -->
                     </div>
                 </div>
@@ -31,36 +31,12 @@
             <hr>
             <div class="row">
                 <div class="col-sm-6 department">
-                    <img src="{{ asset($department->department_image) }}" alt="">
+                    <img src="{{ asset($department->department_image) }}" alt="{{ asset($department->department_name) }}">
                 </div>
-                <div class="col-sm-6 department_text">
+                <div class="col-sm-6 custom_entity">
                     <p class="text-justify ">
-                        {{-- {!! strip_tags($department->department_description) !!} --}}
-                        {!! $department->department_description!!}
+                        {!! $department->department_description !!}
                     </p>
-                    {{-- <div class="row dept-desc">
-                        <div class="col-sm-4">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-                                <li><i class="fas fa-check-circle"></i> Lorem Ipsum</li>
-
-                            </ul>
-                        </div>
-                        <div class="col-sm-4"></div>
-                    </div> --}}
                 </div>
             </div>
             <div class="row">
@@ -74,7 +50,9 @@
                     <div class="single-item text-center team-block-two">
                         <div class="inner-box  ">
                             <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-4.jpg') }}" alt=""></a></figure>
+                                <figure class="image"><a href="#"><img
+                                            src="{{ asset('frontend/images/doctors/team-4.jpg') }}" alt=""></a>
+                                </figure>
                                 <!--<ul class="social-links">-->
                                 <!--    <li><a href="#">Appointment</a></li>-->
                                 <!--    <li><a href="#">Doctor Details</a></li>-->
@@ -93,8 +71,10 @@
                                 </div>
                                 <p class="app-time text-center">6:00 PM to 8:00 PM</p>
                                 <div class="text-center mt-2">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
+                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button"
+                                            class="btn btn-primary btn-sm">Appointment</button></a>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                        data-target=".bd-example-modal-lg">Doctor Details</button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +86,9 @@
                     <div class="single-item text-center team-block-two">
                         <div class="inner-box  ">
                             <div class="image-box">
-                                <figure class="image"><a href="#"><img src="{{ asset('frontend/images/doctors/team-3.jpg') }}" alt=""></a></figure>
+                                <figure class="image"><a href="#"><img
+                                            src="{{ asset('frontend/images/doctors/team-3.jpg') }}" alt=""></a>
+                                </figure>
                                 <!--<ul class="social-links">-->
                                 <!--    <li><a href="#">Appointment</a></li>-->
                                 <!--    <li><a href="#">Doctor Details</a></li>-->
@@ -126,8 +108,10 @@
                                 </div>
                                 <p class="app-time text-center">6:00 PM to 8:00 PM</p>
                                 <div class="text-center mt-2">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Appointment</button></a>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Doctor Details</button>
+                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button"
+                                            class="btn btn-primary btn-sm">Appointment</button></a>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                        data-target=".bd-example-modal-lg">Doctor Details</button>
                                 </div>
                             </div>
                         </div>
@@ -135,12 +119,13 @@
                     <!--End single item-->
                     <!-- Modal -->
 
-                    <div class="doc-profile-modal modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="doc-profile-modal modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <!-- <h5 class="modal-title" id="exampleModalLongTitle">Dr. Md. Jilhaj Uddin
-                            </h5> -->
+                                </h5> -->
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -148,24 +133,38 @@
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-sm-4">
-                                            <img class="doc-img" src="{{ asset('frontend/images/doctors/demo-doc.png') }}" alt="">
+                                            <img class="doc-img" src="{{ asset('frontend/images/doctors/demo-doc.png') }}"
+                                                alt="">
                                             <h3 class="doc-name">Dr. Md. Jilhaj Uddin</h3>
                                         </div>
                                         <div class="col-sm-8 doc-details">
                                             <p>MBBS, BCS (Health)</p>
                                             <p>MS (Cardiovascular)</p>
                                             <p>Specialist – Vascular Surgery</p>
-                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}" alt=""> Dr. Md. Jilhaj Uddin obtained his MBBS degree from Rajshahi Medical College.</p>
-                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}" alt=""> He received Trainings on Surgery from ‘Dhaka Medical College Hospital’, ‘Shaheed Suhrawardy Medical College Hospital’ and ‘BSMMU’.</p>
-                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}" alt=""> Dr. Jilhaj successfully completed his MS degree in ‘Cardiovascular Surgery’ from ‘National Institute of Cardiovascular Diseases’ (NICVD) and joined in Govt. service through BCS Health.</p>
-                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}" alt=""> Later he worked in Vascular Surgery Department of NICVD and enriched himself with Advanced Training on Vascular Surgery, LASER and Endovascular Intervention till June, 2020.</p>
+                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}"
+                                                    alt=""> Dr. Md. Jilhaj Uddin obtained his MBBS degree from
+                                                Rajshahi Medical College.</p>
+                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}"
+                                                    alt=""> He received Trainings on Surgery from ‘Dhaka Medical
+                                                College Hospital’, ‘Shaheed Suhrawardy Medical College Hospital’ and
+                                                ‘BSMMU’.</p>
+                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}"
+                                                    alt=""> Dr. Jilhaj successfully completed his MS degree in
+                                                ‘Cardiovascular Surgery’ from ‘National Institute of Cardiovascular
+                                                Diseases’ (NICVD) and joined in Govt. service through BCS Health.</p>
+                                            <p><img src="{{ asset('frontend/images/footer/hc-icon.png') }}"
+                                                    alt=""> Later he worked in Vascular Surgery Department of NICVD
+                                                and enriched himself with Advanced Training on Vascular Surgery, LASER and
+                                                Endovascular Intervention till June, 2020.</p>
                                             <!-- <p><img src="images/footer/hc-icon.png" alt=""> Presently Dr. Md. Jilhaj Uddin is at Asgar Ali Hospital as Specialist-Vascular Surgery and serving patients regularly.</p> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button" class="btn btn-primary btn-sm">Make An Appointment</button></a>
-                                    <button type="button" class="btn btn-secondary doc-close" data-dismiss="modal">Close</button>
+                                    <a href="https://web.asgaralihospital.com/appointment"><button type="button"
+                                            class="btn btn-primary btn-sm">Make An Appointment</button></a>
+                                    <button type="button" class="btn btn-secondary doc-close"
+                                        data-dismiss="modal">Close</button>
 
                                 </div>
                             </div>

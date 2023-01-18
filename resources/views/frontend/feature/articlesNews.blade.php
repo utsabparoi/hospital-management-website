@@ -24,13 +24,13 @@
                                         <a href="news-details.php">
                                             <img src="{{ asset($item->image) }}" alt="" style="width: 300px; height: 200px;">
                                         </a>
-                                        <a href="{{asset($item->url)}}" class="date"> {{ $item->date }} </a>
+                                        <a href="{{route('news-details', $item->id)}}" class="date"> {{ $item->date }} </a>
                                     </figure>
                                 </div>
                                 <div class="lower-content">
-                                    <h6><a href="{{asset($item->url)}}">{{ $item->title }}</a></h6>
+                                    <h6><a href="{{route('news-details', $item->id)}}">{{ $item->title }}</a></h6>
                                     <div class="text">{!! Str::limit(strip_tags($item->description), 110) !!}</div>
-                                    <a class="readmore" href="{{asset($item->url)}}">Read More</a>
+                                    <a class="readmore" href="{{route('news-details', $item->id)}}">Read More</a>
                                 </div>
 
                             </div>

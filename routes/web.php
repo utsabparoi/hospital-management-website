@@ -40,6 +40,7 @@ Route::get('/', [HomeController::class,'home'])->name('home');
 Route::get('partner', [HomeController::class,'partner'])->name('partner');
 
 Route::get('/single-department/{id}', [HomeController::class,'single_department'])->name('single-department');
+Route::get('/news-details/{id}', [HomeController::class,'news_detail'])->name('news-details');
 
 Route::get('/consultants', function () {
     return view('frontend.page.consultants');

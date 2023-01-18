@@ -23,7 +23,6 @@ class HomeController extends Controller
         // $data['artciles']   = ArticleandNews::where('status', '1')->get();
         $data['doctor']   = Doctor::where('status', '1')->get();
         $data['facilities']   = Facility::where('status', '1')->take(24)->get();
-        // dd($data);
         // $data['slider']   = Slider::where('status', '1')->get();
         $data['partner']        = Partner::where('status', '1')->take(7)->get();
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
@@ -37,19 +36,22 @@ class HomeController extends Controller
         return view('frontend.page.home', $data);
     }
 
-    // public function partner(){
-    //     try {
-    //         $data['partner']  = Partner::latest()->get();
-    //         return view('frontend.feature.partner',$data);
-    //     } catch (\Throwable $th) {
-    //         return redirect()->back()->with('error',$th->getMessage());
-    //     }
-    // }
-
+    // Single Department Page
     public function single_department($id){
         try {
             $department  = DepartmentModel::find($id);
             return view('frontend.page.singleDepartment', compact('department'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+    }
+
+    // Single News Detail Page
+    public function news_detail($id){
+        try {
+            $data['news']  = ArticleandNews::find($id);
+            $data['recent_news']  = ArticleandNews::latest()->take(4)->get();
+            return view('frontend.page.news-details', $data);
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
