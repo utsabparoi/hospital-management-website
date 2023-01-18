@@ -1,4 +1,4 @@
-.summernote_text ul li{
+.department_text ul li{
     font-weight: 500;
     color: #111;
     padding: 2px 0;
@@ -6,7 +6,7 @@
     margin: 0;
     position: relative;
 }
-.summernote_text ul li:before {
+.department_text ul li:before {
     /* content: "\f0a9"; */
     content: "\21FE";
     font-family: 'FontAwesome';
@@ -28,15 +28,10 @@
     text-align: center;
 }
 
-  /* .featureBorder ul li:before{
-    content: "\f013";
-    font-family: 'FontAwesome';
-  } */
-
-  .summernote_text ul li{
+  .department_text ul li{
       border-bottom: 1px solid #eee;
       line-height: 1.5em;
   }
-  .summernote_text ul li:last-child{
+  .department_text ul li:last-child{
       border-bottom: 0px solid #eee;
   }

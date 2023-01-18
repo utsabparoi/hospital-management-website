@@ -33,7 +33,7 @@
                 <div class="col-sm-6 department">
                     <img src="{{ asset($department->department_image) }}" alt="">
                 </div>
-                <div class="col-sm-6 summernote_text">
+                <div class="col-sm-6 department_text">
                     <p class="text-justify ">
                         {{-- {!! strip_tags($department->department_description) !!} --}}
                         {!! $department->department_description!!}
