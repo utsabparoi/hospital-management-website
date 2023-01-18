@@ -18,9 +18,9 @@
                         All Department
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Internal Medicine</a>
-                        <a class="dropdown-item" href="#">Respiratory Medicine</a>
-                        <a class="dropdown-item" href="#">Gyne & Obs</a>
+                        @foreach($departments as $department)
+                        <a class="dropdown-item" href="#">{{ $department->department_name }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>

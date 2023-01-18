@@ -27,7 +27,7 @@ class HomeController extends Controller
         // $data['slider']   = Slider::where('status', '1')->get();
         $data['partner']        = Partner::where('status', '1')->take(7)->get();
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
-        $data['departments']    = DepartmentModel::where('status', '1')->paginate();
+        $data['departments']    = DepartmentModel::where('status', 'true')->paginate();
         // $data['aboutus']        = AboutUs::where('status', '1')->get();
         $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
         // $data['doctor']         = Doctor::where('status', '1')->get();
