@@ -6,7 +6,7 @@
             <div class="hr-div">
                 <hr>
             </div>
-            <p>we provide high-quality <b>full body health check-up package at lowest price</b> ( Call for details: <b>01787683067</b> / <b>01787683387</b> )</p>
+            <p>we provide high-quality <b>full body health check-up package at lowest price</b> ( Call for details: <b>{{$WebsiteInformation->phone_one}}</b> / <b>{{$WebsiteInformation->phone_two}}</b> )</p>
             <!-- <span class="divider"></span> -->
 
         </div>

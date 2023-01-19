@@ -43,6 +43,7 @@ Route::get('/single-department/{id}', [HomeController::class,'single_department'
 Route::get('/news-details/{id}', [HomeController::class,'news_detail'])->name('news-details');
 
 Route::get('/singleFacilities/{id}', [HomeController::class,'single_facility'])->name('singleFacility');
+Route::get('/about-us', [HomeController::class,'about_us'])->name('about_us');
 
 Route::get('/consultants', function () {
     return view('frontend.page.consultants');

@@ -157,7 +157,8 @@
                             <!-- <img src="images/logo/icon-name.png" class="not-rotate" alt="" title=""> -->
 
                             <!-- <img src="images/logo/aah-logo.png" class="rotate" alt="" title=""> -->
-                            <img src="{{ asset('frontend/images/logo/new-logo.png') }}" class="" alt="" title="">
+                            {{-- <img src="{{ asset('frontend/images/logo/new-logo.png') }}" class="" alt="" title=""> --}}
+                            <img src="{{ asset($WebsiteInformation->company_logo) }}" class="" alt="{{$WebsiteInformation->name}}" title="" style="margin:40px 0 0 -2px; ">
                             <p class="logo-text">we create hope</p>
                         </div>
                     </a>

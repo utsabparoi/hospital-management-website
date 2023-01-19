@@ -5,30 +5,82 @@
     </header>
 <main>
     <div class="container inner-cont">
+        <!-- Hospital Fact Section Two-->
+        <section class="fun-fact-section-two" style="margin-top:-20px;">
+            <div class="auto-container">
+                <div class="row">
+                    <!--Column-->
+                    <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                        <div class="count-box">
+                            <div class="icon-box">
+                                <!-- <span class="icon flaticon-user-experience"></span> -->
+                                <lord-icon src="/frontend/lord-icon/yearofexperinece.json" trigger="loop"
+                                    colors="primary:#121331,secondary:#08a88a" style="width:80px;height:80px">
+                                </lord-icon>
+                            </div>
+                            <h4 class="counter-title">Years of Experience</h4>
+                            <span class="count-text" data-speed="3000" data-stop="25">0</span>
+                        </div>
+                    </div>
+
+                    <!--Column-->
+                    <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="count-box">
+                            <div class="icon-box">
+                                <!-- <span class="icon flaticon-team"></span> -->
+                                <lord-icon src="/frontend/lord-icon/medical-specialist.json" trigger="loop"
+                                    colors="primary:#121331,secondary:#08a88a" style="width:80px;height:80px">
+                                </lord-icon>
+                            </div>
+                            <h4 class="counter-title">Medical Specialties</h4>
+                            <span class="count-text" data-speed="3000" data-stop="470">0</span>
+                        </div>
+                    </div>
+
+                    <!--Column-->
+                    <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
+                        <div class="count-box">
+                            <div class="icon-box">
+                                <!-- <span class="icon flaticon-hospital"></span> -->
+                                <lord-icon src="/frontend/lord-icon/consultaion-room.json" trigger="loop"
+                                    colors="primary:#121331,secondary:#08a88a" style="width:80px;height:80px">
+                                </lord-icon>
+                            </div>
+                            <h4 class="counter-title">Consultation Rooms</h4>
+                            <span class="count-text" data-speed="3000" data-stop="689">0</span>
+                        </div>
+                    </div>
+
+                    <!--Column-->
+                    <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
+                        <div class="count-box">
+                            <div class="icon-box">
+                                <!-- <span class="icon flaticon-add-friend"></span> -->
+                                <lord-icon src="/frontend/lord-icon/happy-patients.json" trigger="loop"
+                                    colors="primary:#121331,secondary:#08a88a" style="width:80px;height:80px">
+                                </lord-icon>
+                            </div>
+                            <h4 class="counter-title">Happy Patients</h4>
+                            <span class="count-text" data-speed="3000" data-stop="9036">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+        <!-- Hospital Fact Section Two -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="inner-sec-title-common text-center">
-                    <h2>Default Page</h2>
+                    <h2>{{$data->title}}</h2>
                     <hr>
                     <!-- <span class="divider"></span> -->
                 </div>
             </div>
             <div class="col-sm-6">
-                <p>Asgar Ali Hospital is the Best Hospital in Bangladesh. We are a 250 bedded multi-disciplinary
-                    tertiary-care Hospital, situated at Gandaria, Dhaka. It is a concern of the ‘City Group’ (www.citygroup.com.bd)
-                    which is one of the top Conglomerates in Bangladesh, started its journey back in 1972 and in a span of four decades,
-                    it has grown-up as one of the largest Industrial & Commercial Icons.
-                    <br><br>
-                    Asgar Ali Hospital offers all-inclusive state-of-the-art medical & healthcare services with up-to-date
-                    facilities which are exclusively managed by well-reputed medical professionals, skilled nurses and technicians
-                    from home and abroad. It`s main focus is to provide affordable Healthcare Services of International Standard
-                    through continuous innovation and improvement of facilities and convenience.
-                    <br> <br>
-                    In Asgar Ali Hospital, we do believe in ‘Human Touch’ which comes as cherished gift not from our Consultants only but also from every staff around.
-                </p>
+                <p>{!!$data->description!!}</p>
             </div>
             <div class="col-sm-6 cafeteria1">
-                <img src="{{ asset('frontend/images/default.jpg') }}" alt="">
+                <img src="{{ asset($data->image) }}" alt="{{$data->title}}">
             </div>
         </div>
 

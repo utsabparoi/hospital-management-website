@@ -370,7 +370,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="/about">About Us</a>
+                                <a href="{{ route('about_us')}}">About Us</a>
                             </li>
                             <!-- Small Device Search Bar -->
                             <div class="rou-sc">

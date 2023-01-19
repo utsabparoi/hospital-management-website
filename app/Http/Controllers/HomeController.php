@@ -20,12 +20,13 @@ class HomeController extends Controller
         $data['sliders']        = Slider::where('status', '1')->get();
         $data['partner']        = Partner::where('status', '1')->take(7)->get();
         $data['review']         = ClientReview::where('status', '1')->take(8)->get();
-        $data['aboutus']        = AboutUs::where('status', '1')->get();
+        $data['aboutus']        = AboutUs::latest()->get();
         $data['facilities']     = Facility::where('status', '1')->take(12)->get();
         $data['review']         = ClientReview::where('status', '1')->take(5)->get();
         $data['doctor']         = Doctor::where('status', '1')->paginate();
         $data['departments']    = DepartmentModel::where('status', 'true')->paginate();
         $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
+        $data['social_link']    = SocialLink::where('status', '1')->get();
 
         return view('frontend.page.home', $data);
     }
@@ -56,6 +57,16 @@ class HomeController extends Controller
         try {
             $data  = Facility::find($id);
             return view('frontend.page.singleFacilities', compact('data'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+    }
+
+    // Aboutus Page
+    public function about_us(){
+        try {
+            $data  = AboutUs::find(1);
+            return view('frontend.page.about', compact('data'));
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());
         }
