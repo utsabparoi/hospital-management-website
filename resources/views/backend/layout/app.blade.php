@@ -56,6 +56,8 @@
     <script src="{{asset('backend/js/html5shiv.min.js')}}"></script>
     <script src="{{asset('backend/js/respond.min.js')}}"></script>
     <![endif]-->
+    {{-- lord-icon js --}}
+    <script src="{{ asset('frontend/js/lord-icon-2.1.0.js') }}"></script>
 
     @yield('css')
 </head>

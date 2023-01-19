@@ -50,7 +50,7 @@ class FacilitySeeder extends Seeder
         );
 
         foreach ($all_facilities as $key => $item) {
-            Facility::OrCreate(
+            Facility::firstOrCreate(
                 [ 'id'                => $item['id'] ],
                 [
                     'title'           => $item['title'],

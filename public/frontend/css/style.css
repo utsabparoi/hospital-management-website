@@ -1947,7 +1947,10 @@ margin-left: 0px;
   /* position: relative; */
   /* font-family: sans-serif; */
   overflow: hidden;
-  background: linear-gradient(90deg, #2ea267, #fff, #2ea267);
+  /* default */
+  /* background: linear-gradient(90deg, #2ea267, #fff, #2ea267);*/
+  /* custom */
+  background: linear-gradient(90deg, #C54362, #0060AE, #C54362);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 3s linear infinite;

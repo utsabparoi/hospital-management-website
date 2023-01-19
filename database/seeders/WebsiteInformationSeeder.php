@@ -16,8 +16,8 @@ class WebsiteInformationSeeder extends Seeder
     {
         WebsiteInformationModel::insertOrIgnore([
             'id' => '1',
-            'favicon' => 'https://source.unsplash.com/random',
-            'company_logo' => 'https://source.unsplash.com/random',
+            'favicon' => '/frontend/favicon/love.ico',
+            'company_logo' => '/frontend/images/logo/prime-logo.png',
             'name' => 'Company Name',
             'title' => 'Website Title',
             'phone_one' => 'Phone No.1',

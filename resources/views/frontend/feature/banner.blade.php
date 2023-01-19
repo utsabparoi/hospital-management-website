@@ -8,7 +8,7 @@
                         <div class="content-box">
                             <span class="title"> {{$item->title}} </span>
                             <h2>{{ $item->subtitle }}</h2>
-                            <div>{!! $item->description !!}</div>
+                            <div class="customlogo-text">{!! $item->description !!}</div>
                         </div>
                     </div>
                 </div>

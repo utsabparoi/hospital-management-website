@@ -4,3 +4,24 @@
     /* padding: 0 0 0 14px; */
     line-height: 1.6;
 }
+
+.customlogo-text {
+    /* position: relative; */
+    /* font-family: sans-serif; */
+    overflow: hidden;
+    /* default */
+    /* custom */
+    background: linear-gradient(90deg, #84C599, #4e43c5, #84C599);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 5s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    /* top: 65px;
+    left: 184px;
+    font-size: 11px; */
+    /* color: #2ea267; */
+    /* font-weight: 600; */
+    width: 100%;
+  }

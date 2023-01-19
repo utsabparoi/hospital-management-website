@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hospital project</title>
+    <title>{{$WebsiteInformation->title}}</title>
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ asset($WebsiteInformation->favicon) }}" type="image/x-icon">
 
     <!-- Stylesheets -->
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
@@ -19,7 +21,6 @@
     <link href="{{ asset('frontend/css/color-switcher-design.css') }}" rel="stylesheet">
 
     <link rel="shortcut icon" href="{{ asset('frontend/images/logo/title-logo.png') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('frontend/images/logo/title-logo.png') }}" type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
