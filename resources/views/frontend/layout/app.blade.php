@@ -31,11 +31,6 @@
 <body>
 @yield("content")
 
-
-
-
-
-
 <!-- all js link -->
 <script src="{{ asset('frontend/js/jquery.js') }}"></script>
 <script src="{{ asset('frontend/s/popper.min.js') }}j"></script>
@@ -124,6 +119,19 @@
         console.log(arguments);
     });
 </script>
+<script>
+    $(window).scroll(function(){
+
+
+    var couting_scroll = $(window).scrollTop()
+
+    if(couting_scroll<=509){
+        $(".left-sticky-box").addClass("active").siblings().removeClass("active")
+    }
+
+    })
+</script>
+
 </body>
 
 </html>

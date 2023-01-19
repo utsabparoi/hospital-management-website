@@ -1887,8 +1887,9 @@ margin-left: 0px;
 } */
 /* new left sticky box ends */
 .left-sticky-box {
-  position: absolute;
-  top: 158px;
+  /* position: absolute; */
+  position: fixed;
+  top: 500px;
   z-index: 2;
   left: 36px;
   width: 100%;
