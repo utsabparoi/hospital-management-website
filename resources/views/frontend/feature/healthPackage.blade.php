@@ -17,56 +17,17 @@
                     <div class="common-health-box">
                         <p>{{$item->name}}</p>
                         <ul>
-                            {{-- @foreach ($hlth_pkg_facility as $fac)
-                                <li><i class="fas fa-check"></i> {{$fac->name}}</li>
-                            @endforeach --}}
-                            <li><i class="fas fa-check"></i> Free Consultation</li>
-                            <li><i class="fas fa-check"></i> Fast & Accurate Report</li>
-                            <li><i class="fas fa-check"></i> Better Health Care</li>
-                            <li><i class="fas fa-check"></i> Complimentary Breakfast</li>
-                            <li><i class="fas fa-check"></i> Dedicated Customer Service</li>
-                            <li><i class="fas fa-check"></i> Consultation with Physicion</li>
-                            <li><i class="fas fa-check"></i> On Time Sample Collection</li>
-                            <li><i class="fas fa-check"></i> Diet Consultancy</li>
+                            @foreach ($hlth_pkg_facility as $fac)
+                                @if ($item->name == $fac->pkg_category)
+                                    <li><i class="fas fa-check"></i> {{$fac->name}}</li>
+                                @endif
+                            @endforeach
                         </ul>
-                        <button><a href="{{asset('/frontend/page/regular-health-package.php')}}">view all items</a></button>
+                        <button><a href="{{ route('health_package', $item->id) }}">view all items</a></button>
 
                     </div>
                 </div>
             @endforeach
-            {{-- <div class="col-md-2"></div>
-            <div class="col-md-4 mt-2">
-                <div class="common-health-box">
-                    <p>Regular Health Screening</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Free Consultation</li>
-                        <li><i class="fas fa-check"></i> Fast & Accurate Report</li>
-                        <li><i class="fas fa-check"></i> Better Health Care</li>
-                        <li><i class="fas fa-check"></i> Complimentary Breakfast</li>
-                        <li><i class="fas fa-check"></i> Dedicated Customer Service</li>
-                        <li><i class="fas fa-check"></i> Consultation with Physicion</li>
-                        <li><i class="fas fa-check"></i> On Time Sample Collection</li>
-                        <li><i class="fas fa-check"></i> Diet Consultancy</li>
-                    </ul>
-                    <button><a href="{{asset('/frontend/page/regular-health-package.php')}}">view all items</a></button>
-
-                </div>
-            </div>
-            <div class="col-md-4 mt-2">
-                <div class="common-health-box">
-                    <p>Home Health Screening</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> On Time Sample Collection</li>
-                        <li><i class="fas fa-check"></i> Fast & Accurate Report</li>
-                        <li><i class="fas fa-check"></i> Online report view</li>
-                        <li><i class="fas fa-check"></i> Skilled Phlebotomist</li>
-                        <li><i class="fas fa-check"></i> Covid-19 negetive sample callector</li>
-                    </ul>
-                    <button><a href="home-health-package.php">view all items</a></button>
-
-                </div>
-            </div>
-            <div class="col-md-2"></div> --}}
         </div>
     </div>
 </section>

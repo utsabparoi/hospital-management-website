@@ -1,14 +1,12 @@
 <?php
 
 
-use App\Http\Controllers\backend\BranchController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\backend\BranchController;
 use App\Http\Controllers\backend\DoctorController;
-use App\Http\Controllers\backend\HealthPackageCategoryController;
-use App\Http\Controllers\backend\HealthPackageFacilityController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\AboutUsController;
 use App\Http\Controllers\backend\PartnerController;
@@ -21,6 +19,8 @@ use App\Http\Controllers\backend\ClientReviewController;
 use App\Http\Controllers\backend\HealthPackageController;
 use App\Http\Controllers\backend\ArticleandNewsController;
 use App\Http\Controllers\backend\WebsiteInformationController;
+use App\Http\Controllers\backend\HealthPackageCategoryController;
+use App\Http\Controllers\backend\HealthPackageFacilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +46,8 @@ Route::get('/news-details/{id}', [HomeController::class,'news_detail'])->name('n
 
 Route::get('/singleFacilities/{id}', [HomeController::class,'single_facility'])->name('singleFacility');
 Route::get('/about-us', [HomeController::class,'about_us'])->name('about_us');
+
+Route::get('/health-package/{id}', [HomeController::class,'health_pkg_category'])->name('health_package');
 
 Route::get('/consultants', function () {
     return view('frontend.page.consultants');

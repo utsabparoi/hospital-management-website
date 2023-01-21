@@ -29,7 +29,8 @@ class HomeController extends Controller
         $data['doctor']             = Doctor::where('status', '1')->paginate();
         // $data['health_pkg']     = HealthPackageModel::where('status', '1')->take(3)->get();
         $data['health_pkg_cat']     = HealthPackageCategory::where('status', '1')->take(4)->get();
-        // $data['hlth_pkg_facility']  = HealthPackageFacility::where(['pkg_category', $data['health_pkg_cat']])->get();
+        $data['hlth_pkg_facility']  = HealthPackageFacility::where('status', 1)->get();
+        // dd($data['hlth_pkg_facility']);
         $data['departments']        = DepartmentModel::where('status', 'true')->paginate();
         $data['articles']           = ArticleandNews::latest()->where('status', '1')->take(10)->get();
         $data['social_link']        = SocialLink::where('status', '1')->get();
@@ -78,13 +79,13 @@ class HomeController extends Controller
         }
     }
 
-    // Health Package Page
-    // public function health_package($id){
-    //     try {
-    //         $data  = HealthPackageModel::find($id);
-    //         return view('frontend.page.about', compact('data'));
-    //     } catch (\Throwable $th) {
-    //         return redirect()->back()->with('error',$th->getMessage());
-    //     }
-    // }
+    //Health Package Page
+    public function health_pkg_category($id){
+        try {
+            $data  = HealthPackageCategory::find($id);
+            return view('frontend.page.singleHealthPackage', compact('data'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+    }
 }
