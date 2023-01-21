@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\DoctorController;
+use App\Http\Controllers\backend\HealthPackageCategoryController;
+use App\Http\Controllers\backend\HealthPackageFacilityController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\AboutUsController;
 use App\Http\Controllers\backend\PartnerController;
@@ -169,4 +171,9 @@ Route::post('/updatePackage',[HealthPackageController::class, "UpdatePackage"]);
 Route::post('/packageStatusChange', [HealthPackageController::class, "PackageStatusChange"]);
 Route::get('/healthPackageDelete/{id}', [HealthPackageController::class, "HealthPackageDelete"]);
 
+//Health Package Category Route
+Route::resource('health_package_category', HealthPackageCategoryController::class);
+
+//Health Package Facility Route
+Route::resource('health_package_facility', HealthPackageFacilityController::class);
 

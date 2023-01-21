@@ -6,7 +6,10 @@ use App\Models\backend\AboutUs;
 use App\Models\backend\ArticleandNews;
 use App\Models\backend\ClientReview;
 use App\Models\backend\Doctor;
+use App\Models\HealthPackageModel;
 use App\Models\backend\Facility;
+use App\Models\backend\HealthPackageCategory;
+use App\Models\backend\HealthPackageFacility;
 use App\Models\backend\Partner;
 use App\Models\backend\Slider;
 use App\Models\backend\SocialLink;
@@ -17,16 +20,19 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        $data['sliders']        = Slider::where('status', '1')->get();
-        $data['partner']        = Partner::where('status', '1')->take(7)->get();
-        $data['review']         = ClientReview::where('status', '1')->take(8)->get();
-        $data['aboutus']        = AboutUs::latest()->get();
-        $data['facilities']     = Facility::where('status', '1')->take(12)->get();
-        $data['review']         = ClientReview::where('status', '1')->take(5)->get();
-        $data['doctor']         = Doctor::where('status', '1')->paginate();
-        $data['departments']    = DepartmentModel::where('status', 'true')->paginate();
-        $data['articles']       = ArticleandNews::latest()->where('status', '1')->take(10)->get();
-        $data['social_link']    = SocialLink::where('status', '1')->get();
+        $data['partner']            = Partner::where('status', '1')->take(7)->get();
+        $data['sliders']            = Slider::where('status', '1')->get();
+        $data['review']             = ClientReview::where('status', '1')->take(8)->get();
+        $data['aboutus']            = AboutUs::latest()->get();
+        $data['facilities']         = Facility::where('status', '1')->take(12)->get();
+        $data['review']             = ClientReview::where('status', '1')->take(5)->get();
+        $data['doctor']             = Doctor::where('status', '1')->paginate();
+        // $data['health_pkg']     = HealthPackageModel::where('status', '1')->take(3)->get();
+        $data['health_pkg_cat']     = HealthPackageCategory::where('status', '1')->take(4)->get();
+        // $data['hlth_pkg_facility']  = HealthPackageFacility::where(['pkg_category', $data['health_pkg_cat']])->get();
+        $data['departments']        = DepartmentModel::where('status', 'true')->paginate();
+        $data['articles']           = ArticleandNews::latest()->where('status', '1')->take(10)->get();
+        $data['social_link']        = SocialLink::where('status', '1')->get();
 
         return view('frontend.page.home', $data);
     }
@@ -71,4 +77,14 @@ class HomeController extends Controller
             return redirect()->back()->with('error',$th->getMessage());
         }
     }
+
+    // Health Package Page
+    // public function health_package($id){
+    //     try {
+    //         $data  = HealthPackageModel::find($id);
+    //         return view('frontend.page.about', compact('data'));
+    //     } catch (\Throwable $th) {
+    //         return redirect()->back()->with('error',$th->getMessage());
+    //     }
+    // }
 }

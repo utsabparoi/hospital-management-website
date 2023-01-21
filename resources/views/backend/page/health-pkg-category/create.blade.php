@@ -12,18 +12,9 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="#">Home</a>
                 </li>
-                <li class="active">Create New Facility</li>
+                <li class="active">Create New Package Category</li>
             </ul><!-- /.breadcrumb -->
 
-            <div class="nav-search" id="nav-search">
-                <form class="form-search">
-                <span class="input-icon">
-                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
-                           autocomplete="off" />
-                    <i class="ace-icon fa fa-search nav-search-icon"></i>
-                </span>
-                </form>
-            </div><!-- /.nav-search -->
         </div>
         {{-- main content start from here --}}
         <div class="page-content no-print">
@@ -36,12 +27,12 @@
                                     <div class="widget-box">
                                         <div class="widget-header">
                                             <h4 class="widget-title">
-                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Facility</span>
+                                                <i class="fa fa-plus-circle"></i> <span class="hide-in-sm">Create New Package Category</span>
                                             </h4>
 
                                             <span class="widget-toolbar">
                                                 <!--------------- Slider List---------------->
-                                                <a href="{{ route('facilities.index') }}" class="">
+                                                <a href="{{ route('health_package_category.index') }}" class="">
                                                     <i class="fa fa-list"></i> Facility <span class="hide-in-sm">List</span>
                                                 </a>
                                             </span>
@@ -51,7 +42,7 @@
                                         <div class="widget-body">
                                             <div class="widget-main">
 
-                                                <form action="{{ route('facilities.store') }}" id="Form" method="post" enctype="multipart/form-data">
+                                                <form action="{{ route('health_package_category.store') }}" id="Form" method="post" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="row">
@@ -60,42 +51,14 @@
 
                                                         <div class="col-md-10 col-md-offset-1">
 
-                                                            <!-- Title -->
+                                                            <!-- Category Name -->
                                                             <div class="form-group">
                                                                 <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
-                                                                        Title <sup class="text-danger">*</sup><span class="label-required"></span>
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
+                                                                       Package Category Name <sup class="text-danger">*</sup><span class="label-required"></span>
                                                                     </span>
-                                                                    <input type="text" class="form-control @error('title') has-error @enderror"
-                                                                        name="title" id="title" value="{{ old('title') }}">
-
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Image -->
-                                                            <div class="firm-group">
-                                                                <div class="col-sm-12 col-md-6 input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
-                                                                        Image
-                                                                    </span>
-                                                                    <input type="file" class="form-control @error('image') has-error @enderror" name="image" id="image">
-
-                                                                </div>
-                                                                <div class="input-group width-100 mb-1">
-                                                                    <span class="input-group-addon width-30" style="background-color: transparent !important; border:none !important;"></span>
-                                                                    <small style="margin-left: 13px;"><b>Image size '1350 X 680'. </b><b style="color: red"> (NB: Slider "height" must be 680px)</b></small>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Icon -->
-                                                            <div class="form-group pr">
-                                                                <div class="input-group width-100  mb-1">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
-                                                                        Icon
-                                                                        <i class="me-1 mr-1"></i>
-                                                                    </span>
-                                                                    <input type="text" class="form-control fontawesome" id=""
-                                                                        name="icon" autocomplete="off" value="{{ old('icon') }}" placeholder="Icon" />
+                                                                    <input type="text" class="form-control @error('name') has-error @enderror"
+                                                                        name="name" id="name" value="{{ old('name') }}">
                                                                 </div>
                                                             </div>
 
@@ -103,7 +66,7 @@
                                                             <div class="form-group">
                                                                 <div>
                                                                     <span class="input-group-addon" style="text-align: left">
-                                                                        Description
+                                                                        Package Category Description
                                                                     </span>
                                                                     <textarea name="description" class="form-control summernote"
                                                                     placeholder="Description">{{ old('description') }}</textarea>
@@ -119,7 +82,7 @@
                                                             {{-- Status --}}
                                                             <div class="form-group">
                                                                 <div class="input-group width-100">
-                                                                    <span class="input-group-addon width-30" style="text-align: left">
+                                                                    <span class="input-group-addon width-20" style="text-align: left">
                                                                         Status
                                                                     </span>
                                                                     <label style="margin: 5px 0 0 8px">

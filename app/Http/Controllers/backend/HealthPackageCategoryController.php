@@ -2,84 +2,132 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use App\Traits\FileSaver;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\backend\HealthPackageCategory;
+use App\Models\backend\HealthPackageFacility;
 
 class HealthPackageCategoryController extends Controller
 {
+    use FileSaver;
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * INDEX METHOD
+     * =============================================
+     **/
     public function index()
     {
-        //
+        try {
+            $data['pkg_category'] = HealthPackageCategory::orderBy('id','desc')->paginate(20);
+            $data['table']      = HealthPackageCategory::getTableName();
+            return view('backend/page/health-pkg-category.index',$data);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
+
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * Created Method
+     * =============================================
+     **/
     public function create()
     {
-        //
+        try {
+            return view('backend/page/health-pkg-category.create');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * Store Method
+     * =============================================
+     **/
     public function store(Request $request)
     {
-        //
+        try {
+            $this->storeOrUpdate($request);
+
+            return redirect()->route('health_package_category.index')->with('success','Package Category Create Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * Show Method
+     * =============================================
+     **/
     public function show($id)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * Edit Method
+     * =============================================
+     **/
     public function edit($id)
     {
-        //
+        $data['pkg_category']  = HealthPackageCategory::find($id);
+        $data['pkg_category_name'] = HealthPackageCategory::where('id', '=', $id)->first()->name;
+        $data['pkg_facility_name'] = HealthPackageFacility::where('pkg_category', '=', $data['pkg_category_name'])->get();
+        return view('backend/page/health-pkg-category/edit', $data);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * Update Method
+     * =============================================
+     **/
     public function update(Request $request, $id)
     {
-        //
+
+        try {
+            $this->storeOrUpdate($request, $id);
+
+            return redirect()->route('health_package_category.index')->with('success','Package Category Update Success');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error',$th->getMessage());
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * =============================================
+     * Destroy Method
+     * =============================================
+     **/
     public function destroy($id)
     {
-        //
+        $data['pkg_category'] = HealthPackageCategory::find($id);
+        $data['pkg_category_name'] = HealthPackageCategory::where('id', '=', $id)->first()->name;
+        $data['pkg_facility_name'] = HealthPackageFacility::where('pkg_category', '=', $data['pkg_category_name'])->delete();
+        $data['pkg_category']->delete();
+        return redirect()->back()->withMessage('Success');
+    }
+
+    /*
+     |--------------------------------------------------------------------------
+     | STORE OR UPDATE  METHOD
+     |--------------------------------------------------------------------------
+    */
+    public function storeOrUpdate($request, $id = null)
+    {
+        // HealthPackageFacility::where('pkg_category', '=', 'Home Health Screening')->update(['pkg_category' => 'test']);
+        $data['pkg_category_name'] = HealthPackageCategory::where('id', '=', $id)->first()->name;
+        $data['pkg_facility_name'] = HealthPackageFacility::where('pkg_category', '=', $data['pkg_category_name'])->update(['pkg_category' => $request->name]);
+        return HealthPackageCategory::updateOrCreate([
+            'id'    => $id,
+        ], [
+            'name'  => $request->name,
+            'description'   => $request->description,
+            'status'                =>$request->status ? 1: 0,
+        ]);
     }
 }

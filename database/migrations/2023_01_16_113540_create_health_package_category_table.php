@@ -15,7 +15,6 @@ class CreateHealthPackageCategoryTable extends Migration
     {
         Schema::create('health_package_category', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('facility_id')->nullable();
             $table->string('name');
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(1);
@@ -23,7 +22,7 @@ class CreateHealthPackageCategoryTable extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
 
-            $table->foreign('facility_id')->references('id')->on('health_package_facility')->onDelete('set null');;
+            // $table->foreign('facility_id')->references('id')->on('health_package_facility')->onDelete('set null');;
         });
     }
 

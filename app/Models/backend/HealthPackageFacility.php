@@ -5,12 +5,12 @@ namespace App\Models\backend;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\AutoCreatedUpdated;
 
-class HealthPackageCategory extends Model
+class HealthPackageFacility extends Model
 {
     use AutoCreatedUpdated;
 
 
-    protected $table = 'health_package_category';
+    protected $table = 'health_package_facility';
 
     protected $guarded = [];
 

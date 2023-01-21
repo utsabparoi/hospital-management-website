@@ -16,7 +16,10 @@ class CreateHealthPackageFacilityTable extends Migration
         Schema::create('health_package_facility', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('pkg_category')->nullable();
             $table->tinyInteger('status')->default(1);
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
     }

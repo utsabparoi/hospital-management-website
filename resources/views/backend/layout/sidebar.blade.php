@@ -104,12 +104,42 @@
         </li>
 
         {{-- Health Package --}}
-        <li class="nav-link {{ request()->is('healthPackage*') ? 'active' : '' }}">
-            <a href="{{ route('healthPackage') }}">
-                <i class="menu-icon fa fa-archive"></i>
+        <li class="nav-link">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list-alt" aria-hidden="true"></i>
                 <span class="menu-text">Health Package</span>
+
+                <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="nav-link {{ request()->is('/healthPackage*') ? 'active' : '' }}">
+                    <a href="{{ route('healthPackage') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        All Health Packages
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="nav-link {{ request()->is('health_package_category*') ? 'active' : '' }}">
+                    <a href="{{ route('health_package_category.index') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Package Category
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="nav-link {{ request()->is('health_package_facility*') ? 'active' : '' }}">
+                    <a href="{{ route('health_package_facility.index') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Package Facility
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+            </ul>
         </li>
 
         {{-- Facilities --}}
