@@ -7,6 +7,7 @@ use App\Models\backend\ArticleandNews;
 use App\Models\backend\ClientReview;
 use App\Models\backend\Doctor;
 use App\Models\HealthPackageModel;
+use App\Models\HealthPackageAvailableTestModel;
 use App\Models\backend\Facility;
 use App\Models\backend\HealthPackageCategory;
 use App\Models\backend\HealthPackageFacility;
@@ -27,7 +28,7 @@ class HomeController extends Controller
         $data['facilities']         = Facility::where('status', '1')->take(12)->get();
         $data['review']             = ClientReview::where('status', '1')->take(5)->get();
         $data['doctor']             = Doctor::where('status', '1')->paginate();
-        // $data['health_pkg']     = HealthPackageModel::where('status', '1')->take(3)->get();
+        $data['health_packages']    = HealthPackageModel::get();
         $data['health_pkg_cat']     = HealthPackageCategory::where('status', '1')->take(4)->get();
         $data['health_pkg_fac']     = HealthPackageFacility::where('status', 1)->get();
         // dd($data['hlth_pkg_facility']);
@@ -82,8 +83,14 @@ class HomeController extends Controller
     //Health Package Single Page details
     public function health_pkg_details($id){
         try {
+            $data['health_packages'] = HealthPackageModel::paginate();
+            $data['health_avl_pkg1'] = HealthPackageAvailableTestModel::get();
+            $data['health_avl_pkg2'] = HealthPackageAvailableTestModel::orderBy('id','asc')->take(10)->get();
+            // dd($data['health_avl_pkg2']);
+            // dd($data['health_avl_pkg']);
             $data['health_pkg_cat']  = HealthPackageCategory::find($id);
-            $data['health_pkg_fac']  = HealthPackageFacility::find($id);
+            $data['health_pkg_fac']  = HealthPackageFacility::paginate();
+
             return view('frontend.page.singleHealthPackage', $data);
         } catch (\Throwable $th) {
             return redirect()->back()->with('error',$th->getMessage());

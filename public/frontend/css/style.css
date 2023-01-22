@@ -16231,6 +16231,8 @@ Consultant Page Design
   display: block;
   padding: 30px 30px 20px;
   border: 1px solid #f0f0f0;
+  border-radius: 5%;
+  height: 100%;
 }
 
 .single-testimonial-item .img-box {

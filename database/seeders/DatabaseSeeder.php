@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             DoctorInfoSeeder::class,
             DoctorDepartmentSeeder::class,
             HealthPackageFacilitySeeder::class,
+            SocialLinkSeeder::class,
+            HealthTestSeeder::class,
         ]);
         $this->call([
             UserSeeder::class,
