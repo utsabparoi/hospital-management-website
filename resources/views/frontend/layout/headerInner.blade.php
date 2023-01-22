@@ -1,5 +1,5 @@
 <!-- Left Sticky Box For Desktop Start -->
-<div id="myID" class="bottomMenu hide">
+{{-- <div id="myID" class="bottomMenu hide">
     <div class="left-sticky-box-new animated slideInDown">
         <div class="row">
             <div class="col-md-5">
@@ -32,7 +32,7 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 <div class="left-sticky-box">
     <div class="row">
         <div class="col-md-5">

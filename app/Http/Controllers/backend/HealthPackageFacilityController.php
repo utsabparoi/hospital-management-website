@@ -132,7 +132,7 @@ class HealthPackageFacilityController extends Controller
                 'pkg_category'  => $request->pkg_category,
                 'status'=> $request->status ? 1: 0,
             ]);
-            dd('test');
+            // dd('test');
         } catch (\Throwable $th) {
             throw $th;
         }

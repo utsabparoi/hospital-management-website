@@ -17,13 +17,13 @@
                     <div class="common-health-box">
                         <p>{{$item->name}}</p>
                         <ul>
-                            @foreach ($hlth_pkg_facility as $fac)
+                            @foreach ($health_pkg_fac as $fac)
                                 @if ($item->name == $fac->pkg_category)
                                     <li><i class="fas fa-check"></i> {{$fac->name}}</li>
                                 @endif
                             @endforeach
                         </ul>
-                        <button><a href="{{ route('health_package', $item->id) }}">view all items</a></button>
+                        <button><a href="{{ route('health_pkg_details', $item->id) }}">view details</a></button>
 
                     </div>
                 </div>

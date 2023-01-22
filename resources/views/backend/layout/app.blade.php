@@ -459,7 +459,7 @@
             let item_id = $(this).attr("item-id");
 
             let url = $(this).attr("item-url");
-            console.log(status, item_id, url);
+            // console.log(status, item_id, url);
 
             $.ajax({
                 type: 'POST',
