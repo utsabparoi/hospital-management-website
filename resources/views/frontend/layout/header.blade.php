@@ -375,15 +375,18 @@
                             <!-- Small Device Search Bar -->
                             <div class="rou-sc">
                                 <div class="round-btn" id="show-search-box">
-                                    <i class="fa fa-search"></i>
+                                    {{-- <i class="fa fa-search"></i> --}}
+                                    <lottie-player src="{{ asset('/frontend/lord-icon/search.json') }}" background="transparent" speed="1" style="width: 50px; height: 50px; margin:-6px 0 0 -6px;" loop autoplay></lottie-player>
                                 </div>
 
                                 <form id="hidden-search-box" class="navbar-form hidden-search-box" role="search">
                                     <div class="traingle"></div>
                                     <div class="input-group add-on">
                                         <input class="form-control addon-text-box" placeholder="Search" name="s" type="text">
+
                                         <button type="submit" class="input-group-btn addon-btn">
-                                            <i class="fa fa-search flip-icon"></i>
+                                            {{-- <i class="fa fa-search flip-icon"></i> --}}
+
                                         </button>
                                     </div>
                                 </form>

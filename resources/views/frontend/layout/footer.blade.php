@@ -6,10 +6,10 @@
 
         <div class="row">
             <div class="col-6">
-                <img src="{{ asset('frontend/images/logo/c1.png') }}" alt="">
+                <img src="{{ asset('frontend/images/prime.jpeg') }}" style="width:76px; height: 90px;" alt="">
             </div>
             <div class="col-6">
-                <img src="{{ asset('frontend/images/logo/c2.png') }}" alt="">
+                <img src="{{ asset('frontend/images/prime2.jpg') }}" style="width:76px; height: 90px;" alt="">
             </div>
         </div>
     </div>
@@ -22,10 +22,12 @@
             <!-- <div class="col-1"></div> -->
             <!-- Add target="_blank" target="_blank" target="_blank" target="_blank" for new tab page -->
             <div class="col-5">
-                <a href=""> <i class="fab fa-facebook-square"></i></a>
+                {{-- <a href="{{ route($social_link->name) }}"> <i class="fab fa-facebook-square"></i></a> --}}
+                <a href="https://www.facebook.com/PrimeHospitalsLtd/"> <i class="fab fa-facebook-square"></i></a>
             </div>
             <div class="col-5">
-                <a href=""> <i class="fab fa-twitter-square"></i></a>
+                {{-- <a href=""> <i class="fab fa-twitter-square"></i></a> --}}
+                <a href=""> <i class="fab fa-linkedin-in"></i></a>
             </div>
 
 
@@ -104,13 +106,12 @@
                 <div class="col-sm-4 last-div">
                     <h4>Watch Our Videos</h4>
                     <div>
-                        Insert a video your hospital!!
-                        {{-- <a href="https://www.youtube.com/c/AsgarAliHospital" target="_blank"><img class="image-center" src="{{ asset('frontend/images/footer/yt-channel.png') }}" alt=""></a> --}}
+                        <a href="#" target="_blank"><img class="image-center" src="{{ asset('frontend/images/prime2.jpg') }}" style="width: 160px; height:120px;" alt=""></a>
                     </div><br>
                     <div class="footer-logo">
-                        <img src="{{ asset('frontend/images/footer/footer-logo.png') }}" alt="">
+                        <img src="{{ asset('frontend/images/prime.jpeg') }}" style="width:300px; height:200px;" alt="">
                     </div>
-                    <p>152/2/N Panthapath, Dhaka 1200, Bangladesh</p>
+                    <p>{{$WebsiteInformation->primary_address}}</p>
                 </div>
             </div>
         </div>
@@ -133,7 +134,7 @@
                   </div> -->
 
                 <div class="copyright-text">
-                    <p>Copyright © 2022 <a href="#">Smart Software Limited</a>, All Rights Reserved.</p>
+                    <p>Copyright &copy; {{ date('Y') }} <a href="#">{{$WebsiteInformation->name}}</a>, All Rights Reserved.</p>
                 </div>
             </div>
         </div>

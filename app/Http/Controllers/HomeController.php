@@ -34,7 +34,7 @@ class HomeController extends Controller
         // dd($data['hlth_pkg_facility']);
         $data['departments']        = DepartmentModel::where('status', 'true')->paginate();
         $data['articles']           = ArticleandNews::latest()->where('status', '1')->take(10)->get();
-        $data['social_link']        = SocialLink::where('status', '1')->get();
+        $data['social_link']        = SocialLink::first();
 
         return view('frontend.page.home', $data);
     }

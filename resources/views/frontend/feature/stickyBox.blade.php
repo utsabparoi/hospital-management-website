@@ -43,7 +43,7 @@
                         <!--<img src="images/icons/24hour.png" alt="">-->
                     </div>
                     <div class="col-md-10 mt-5 pt-2">
-                        <p style="margin-top: 13px;margin-left: 30px;">Hopeline 10602</p>
+                        <p style="margin-top: 13px;margin-left: 30px;">Hopeline {{$WebsiteInformation->hot_line}}</p>
                     </div>
                 </a>
             </div>
@@ -62,7 +62,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 <!-- Left Sticky Box For Desktop Ends -->
@@ -74,11 +73,11 @@
             <div class="row">
                 <a href="tel:10602">
                     <div class="col-md-2">
-                        <lottie-player src="{{ asset('/frontend/lord-icon/helpline.json') }}" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+                        <lottie-player src="{{ asset('/frontend/lord-icon/helpline.json') }}" background="transparent" speed="1" style="width: 90px; height: 90px; margin:0 0 -20px -26px;" loop autoplay></lottie-player>
                         <!--<img src="images/icons/24hour.png" alt="">-->
                     </div>
                     <div class="col-md-10">
-                        <p>Hopeline 10602</p>
+                        <p>{{$WebsiteInformation->hot_line}}</p>
                     </div>
                 </a>
             </div>
@@ -89,11 +88,11 @@
         <div class="col-md-5">
             <div class="row">
                 <div class="col-md-2">
-                    <lottie-player src="{{ asset('/frontend/lord-icon/chat.json') }}" background="transparent" speed="1" style="width: 60px; height: 60px;" loop autoplay></lottie-player>
+                    <lottie-player src="{{ asset('/frontend/lord-icon/chat.json') }}" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
                     <!--<img src="images/icons/chat-icon.png" alt="">-->
                 </div>
                 <div class="col-md-10">
-                    <p>Chat With Us</p>
+                    <p>Chat</p>
                 </div>
             </div>
         </div>

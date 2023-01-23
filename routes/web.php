@@ -48,6 +48,7 @@ Route::get('/singleFacilities/{id}', [HomeController::class,'single_facility'])-
 Route::get('/about-us', [HomeController::class,'about_us'])->name('about_us');
 
 Route::get('/health-package-details/{id}', [HomeController::class,'health_pkg_details'])->name('health_pkg_details');
+// Route::get('/social-link/{id}', [HomeController::class,'social_link'])->name('sociak-link');
 
 Route::get('/consultants', function () {
     return view('frontend.page.consultants');
