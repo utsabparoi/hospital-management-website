@@ -15,7 +15,7 @@
                 <div class="testimonial-carousel">
                     <!--Start single testimonial item-->
                     @foreach ($review as $item)
-                        <div class="single-testimonial-item text-center">
+                        <div class="single-testimonial-item text-center shadow" style="height:350px;">
                             <div class="img-box">
                                 <div class="img-holder">
                                     <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"

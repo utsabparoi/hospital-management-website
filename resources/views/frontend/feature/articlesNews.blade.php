@@ -18,7 +18,7 @@
                     <!--Start single testimonial item-->
                     @foreach ($articles as $item)
                         <div class="single-testimonial news-block shadow" >
-                            <div class="inner-box" {{route('news-details', $item->id)}}>
+                            <div class="inner-box" style="height:425px">
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="{{route('news-details', $item->id)}}">
