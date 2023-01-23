@@ -133,8 +133,16 @@
                       </ul>
                   </div> -->
 
-                <div class="copyright-text">
+                {{-- <div class="copyright-text">
                     <p>Copyright &copy; {{ date('Y') }} <a href="#">{{$WebsiteInformation->name}}</a>, All Rights Reserved.</p>
+                </div> --}}
+                <p class="col-sm-6">
+                    Copyright &copy; {{ date('Y') }} <a href="#">{{$WebsiteInformation->name}}</a>, All Rights Reserved.
+                </p>
+                <div class="copyright-text">
+                    <p class="col-sm-6 text-right">
+                        Developed by: <a href="#">Smart Softoware Ltd.</a>
+                    </p>
                 </div>
             </div>
         </div>

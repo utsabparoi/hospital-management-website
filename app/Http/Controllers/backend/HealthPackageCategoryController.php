@@ -88,7 +88,8 @@ class HealthPackageCategoryController extends Controller
      **/
     public function update(Request $request, $id)
     {
-
+        $data['pkg_category_name'] = HealthPackageCategory::where('id', '=', $id)->first()->name;
+        $data['pkg_facility_name'] = HealthPackageFacility::where('pkg_category', '=', $data['pkg_category_name'])->update(['pkg_category' => $request->name]);
         try {
             $this->storeOrUpdate($request, $id);
 
@@ -119,9 +120,6 @@ class HealthPackageCategoryController extends Controller
     */
     public function storeOrUpdate($request, $id = null)
     {
-        // HealthPackageFacility::where('pkg_category', '=', 'Home Health Screening')->update(['pkg_category' => 'test']);
-        $data['pkg_category_name'] = HealthPackageCategory::where('id', '=', $id)->first()->name;
-        $data['pkg_facility_name'] = HealthPackageFacility::where('pkg_category', '=', $data['pkg_category_name'])->update(['pkg_category' => $request->name]);
         return HealthPackageCategory::updateOrCreate([
             'id'    => $id,
         ], [
