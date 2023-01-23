@@ -376,7 +376,7 @@
                             <div class="rou-sc">
                                 <div class="round-btn" id="show-search-box">
                                     {{-- <i class="fa fa-search"></i> --}}
-                                    <lottie-player src="{{ asset('/frontend/lord-icon/search.json') }}" background="transparent" speed="1" style="width: 50px; height: 50px; margin:-6px 0 0 -6px;" loop autoplay></lottie-player>
+                                    <lord-icon src="{{ asset('/frontend/lord-icon/search.json') }}" background="transparent" speed="0.3" style="width: 50px; height: 50px; margin:-6px 0 0 -6px;" trigger="morph"></lord-icon>
                                 </div>
 
                                 <form id="hidden-search-box" class="navbar-form hidden-search-box" role="search">

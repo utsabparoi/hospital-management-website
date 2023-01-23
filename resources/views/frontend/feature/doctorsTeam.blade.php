@@ -17,9 +17,9 @@
                             aria-haspopup="true" aria-expanded="false">
                         All Department
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @foreach($departments as $department)
-                        <a class="dropdown-item" href="#">{{ $department->department_name }}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: 320px; overflow: scroll;">
+                        @foreach($dpt_drop_down as $department)
+                            <a class="dropdown-item" href="#">{{ $department->department_name }}</a>
                         @endforeach
                     </div>
                 </div>

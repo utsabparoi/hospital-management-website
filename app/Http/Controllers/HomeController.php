@@ -33,6 +33,7 @@ class HomeController extends Controller
         $data['health_pkg_fac']     = HealthPackageFacility::where('status', 1)->get();
         // dd($data['hlth_pkg_facility']);
         $data['departments']        = DepartmentModel::where('status', 'true')->paginate();
+        $data['dpt_drop_down']        = DepartmentModel::where('status', 'true')->get();
         $data['articles']           = ArticleandNews::latest()->where('status', '1')->take(10)->get();
         $data['social_link']        = SocialLink::first();
 
