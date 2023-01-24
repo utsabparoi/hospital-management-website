@@ -132,9 +132,10 @@
                           <li><a href="#">Supplier</a></li>
                       </ul>
                   </div> -->
-
-                <div class="copyright-text">
+                <div class="copyright-text row">
                     <p>Copyright &copy; {{ date('Y') }} <a href="#">{{$WebsiteInformation->name}}</a>, All Rights Reserved.</p>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <p>Developed by:<a href="https://www.smartsoftware.com.bd/" target="_blank"> Smart Software Ltd.</a></p>
                 </div>
             </div>
         </div>
