@@ -90,8 +90,13 @@
                             <br>Dhaka 1200, Bangladesh. --}}
                             {{$WebsiteInformation->primary_address}}
                         </li>
-                        <li class="top-img">
+                        {{-- <li class="top-img">
                             <img src="{{ asset('frontend/images/hopeline1.png') }}" alt="" title="">
+                        </li> --}}
+                        <li>
+                            {{-- <img src="{{ asset('frontend/images/hopeline1.png') }}" alt="" title=""> --}}
+                            <lottie-player src="{{ asset('/frontend/lord-icon/helpline.json') }}" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+                            <p class="btn-primary rounded-pill">&nbsp;&nbsp;<strong>Hopeline {{$WebsiteInformation->hot_line}}</strong>&nbsp;&nbsp;</p>
                         </li>
                     </ul>
                 </div>
@@ -262,7 +267,7 @@
                                 </div>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="/allDepartment">Departments <i class="fa fa-angle-down"></i></a>
+                                <a href="#">Departments <i class="fa fa-angle-down"></i></a>
                                 <div class="sub-menu mega-menu mega-menu-column-4">
                                     <div class="list-item text-center">
                                         <ul>
@@ -414,16 +419,16 @@
                                 <a href="#">Online Services <i class="fas fa-angle-down"></i></a>
                                 <div class="sub-menu single-column-menu">
                                     <ul>
-                                        <li><a href="/onlineAppointment">Online Appointment</a>
+                                        <li><a href="#">Online Appointment</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/onlinePayment">Online Payment</a>
+                                        <li><a href="#">Online Payment</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/onlineRegistration">Online Registration</a>
+                                        <li><a href="#">Online Registration</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/onlineDiagnosticReport">Online Diagnostics Report</a>
+                                        <li><a href="#">Online Diagnostics Report</a>
                                             <hr>
                                         </li>
                                     </ul>
@@ -433,10 +438,10 @@
                                 <a href="/allHealthPackage">Health Package <i class="fas fa-angle-down"></i></a>
                                 <div class="sub-menu single-column-menu">
                                     <ul>
-                                        <li><a href="/singleHealthPackage">Regular Health Package</a>
+                                        <li><a href="#">Regular Health Package</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/singleHealthPackage">Home Health Package</a>
+                                        <li><a href="#">Home Health Package</a>
                                             <hr>
                                         </li>
                                     </ul>

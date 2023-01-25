@@ -31,7 +31,7 @@
             <hr>
             <div class="row">
                 <div class="col-sm-6 department">
-                    <img src="{{ asset($department->department_image) }}" alt="{{ asset($department->department_name) }}">
+                    <img src="{{ asset($department->department_image) }}" style="max-height: 450px;" alt="{{ asset($department->department_name) }}">
                 </div>
                 <div class="col-sm-6 custom_entity">
                     <p class="text-justify ">

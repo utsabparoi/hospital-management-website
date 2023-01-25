@@ -18,21 +18,13 @@
                             </lord-icon>
                             {{$WebsiteInformation->primary_address}}
                         </li>
-                        <li class="top-img">
-                            <img src="{{ asset('frontend/images/hopeline1.png') }}" alt="" title="">
+                        <li>
+                            {{-- <img src="{{ asset('frontend/images/hopeline1.png') }}" alt="" title=""> --}}
+                            <lottie-player src="{{ asset('/frontend/lord-icon/helpline.json') }}" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+                            <p class="btn-primary rounded-pill">&nbsp;&nbsp;<strong>Hopeline {{$WebsiteInformation->hot_line}}</strong>&nbsp;&nbsp;</p>
                         </li>
                     </ul>
                 </div>
-                <!-- <div class="top-right"> -->
-                <!-- <ul class="social-icon-one">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                            </ul> -->
-                <!-- <div class="btn-box">
-                                <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-three"><span class="btn-title">Appointment</span></a>
-                            </div> -->
             </div>
         </div>
     </div>
@@ -189,7 +181,7 @@
                                 </div>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#dept-id">Departments <i class="fa fa-angle-down"></i></a>
+                                <a href="#">Departments <i class="fa fa-angle-down"></i></a>
                                 <div class="sub-menu mega-menu mega-menu-column-4">
                                     <div class="list-item text-center">
                                         <ul>
@@ -341,29 +333,29 @@
                                 <a href="#">Online Services <i class="fas fa-angle-down"></i></a>
                                 <div class="sub-menu single-column-menu">
                                     <ul>
-                                        <li><a href="/onlineAppointment">Online Appointment</a>
+                                        <li><a href="#">Online Appointment</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/onlinePayment">Online Payment</a>
+                                        <li><a href="#">Online Payment</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/onlineRegistration">Online Registration</a>
+                                        <li><a href="#">Online Registration</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/onlineDiagnosticReport">Online Diagnostics Report</a>
+                                        <li><a href="#">Online Diagnostics Report</a>
                                             <hr>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#health-package">Health Package <i class="fas fa-angle-down"></i></a>
+                                <a href="#">Health Package <i class="fas fa-angle-down"></i></a>
                                 <div class="sub-menu single-column-menu">
                                     <ul>
-                                        <li><a href="/singleHealthPackage">Regular Health Package</a>
+                                        <li><a href="#">Regular Health Package</a>
                                             <hr>
                                         </li>
-                                        <li><a href="/singleHealthPackage">Home Health Package</a>
+                                        <li><a href="#">Home Health Package</a>
                                             <hr>
                                         </li>
                                     </ul>

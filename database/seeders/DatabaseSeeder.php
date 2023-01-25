@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             HealthPackageFacilitySeeder::class,
             SocialLinkSeeder::class,
             HealthTestSeeder::class,
+            AboutUsSeeder::class,
         ]);
         $this->call([
             UserSeeder::class,

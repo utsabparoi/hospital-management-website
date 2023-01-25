@@ -15,14 +15,14 @@ class DoctorDepartmentSeeder extends Seeder
     public function run()
     {
         $all_departments = array(
-            array('id' => '1','department_name' => 'Vascular Surgery', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '1','department_name' => 'Vascular Surgery', 'department_image' => '/backend/images/department/vascular.png',
                 'department_description' =>'The Department of Vascular Surgery provides comprehensive services for patients with all types of peripheral vascular disorders, including the new technology of catheter-based intervention as well as traditional surgical treatments.
 
 
                 Our staff provides dialysis access to allow those individuals with end-stage renal disease to begin treatment. Many patients are also treated for cerebrovascular disease to reduce the risk of stroke.' ,
                 'status' => 'true'),
 
-            array('id' => '2','department_name' => 'Thoracic Surgery', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '2','department_name' => 'Thoracic Surgery', 'department_image' => '/backend/images/department/Thoracic.png',
             'department_description' =>'Department of Thoracic Surgery encompasses the emergency and routine procedures of chest diseases. Emergency procedures include chest trauma and its consequences pleural effusion, pneumothorax, accidental inhalation of foreign body in aero digestive tract.
 
 
@@ -38,12 +38,12 @@ class DoctorDepartmentSeeder extends Seeder
             ==> Special and advanced procedures video bronchoscopy, cryobiopsy, laser ablation of tomour, pleuroscopy, video assisted thoracic surgery (vats).' ,
             'status' => 'true'),
 
-            array('id' => '3','department_name' => 'Pain Clinic', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '3','department_name' => 'Pain Clinic', 'department_image' => '/backend/images/department/Pain.png',
             'department_description' =>'
             The primary goal of the pain clinic is to help patients achieve the highest functional capacity possible within their medical and psychosocial limits by reducing narcotic medication, attempting to reduce pain, increasing activity level, and modifying pain-reinforcing behaviour.' ,
             'status' => 'true'),
 
-            array('id' => '4','department_name' => 'Psychiatry', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '4','department_name' => 'Psychiatry', 'department_image' => '/backend/images/department/Psychiatry.png',
             'department_description' =>'The Department of Psychiatry at Bangladesh Specialized Hospital, treats adults and children with mental and behavioral disorders.  It is rich in both clinical and research areas with current focuses on addiction, brain aging, trauma, schizophrenia, and obesity.The department provides innovative psychiatric evaluations, treatment and follow-up care for the spectrum of behavioral, learning and emotional problems.
 
             Among the many conditions that the average psychiatrist encounters in private practice are Personality-maladjustments, Phobias and Morbid fears, Marital troubles, Sexual problems, Mental depression, Alcoholism, Feeling of inferiority and inadequacy, Health complaints that fail to respond to medication, "Nervous breakdowns," and Psychoses.The duration of treatment, just as in physical disturbances, depends upon each individual case. Some conditions respond to relatively short treatment.
@@ -62,11 +62,11 @@ class DoctorDepartmentSeeder extends Seeder
             Clients also benefit from Specific Therapies as Cognitive Behavior Therapy, Client Centered Approaches, Psycho Analysis, Hypnotherapy, Play Therapy etc.' ,
             'status' => 'true'),
 
-            array('id' => '5','department_name' => 'Accident and Emergency', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '5','department_name' => 'Accident and Emergency', 'department_image' => '/backend/images/department/Emergency.png',
             'department_description' =>'An accident and emergency department (A&E), emergency room (ER), emergency ward (EW) or casualty department, is a medical treatment facility specializing in emergency medicine, the acute care of patients who present without prior appointment; either by their own means or by that of an ambulance. The emergency department is usually found in a hospital or other primary care center. ' ,
             'status' => 'true'),
 
-            array('id' => '6','department_name' => 'Anaesthesiology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '6','department_name' => 'Anaesthesiology','department_image' => '/backend/images/department/Anaesthesiology.png',
             'department_description' =>'Department of Anesthesiology is one of the busiest departments, which has over the years expanded from simple and traditional to complex and advanced services.
 
             Over the years, along with the development of medical sciences, the department has set up its own high standards in patient care. All clinical departments are anchored to this specialty. The department follows an integrated approach and standard protocols for patient care and research.
@@ -78,127 +78,127 @@ class DoctorDepartmentSeeder extends Seeder
             The department has a 24 hours peri-operative service, apt enough to handle any kind of surgical emergencies and critical care of the patients and is committed to evidence based practice and continuous quality improvement. ' ,
             'status' => 'true'),
 
-            array('id' => '7','department_name' => 'Cardiac Surgery','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '7','department_name' => 'Cardiac Surgery','department_image' => '/backend/images/department/Cardiac.png',
             'department_description' =>'The department of cardiac surgery functions with a core team of best cardiac/ heart surgeons, interventional cardiologists, electrophysiologists in Dhaka, Bangladesh. They are further supported by a team of the best clinical cardiologists, cardiac anesthesiologists, interventional radiologists, cardiac intensivists and rehabilitation therapists.' ,
             'status' => 'true'),
 
-            array('id' => '8','department_name' => 'Cardiology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '8','department_name' => 'Cardiology','department_image' => '/backend/images/department/Cardiology.png',
             'department_description' =>'The Cardiology Department of Evercare Hospital Dhaka has gained reputation for its dynamic and innovation in the diagnosis, investigation and treatment of patients with all forms of heart diseases, both generally encountered and complex cases. We have a dedicated unit of full-time Consultants, and a team of junior doctors, nurses, and technicians trained to the highest standard in cardiac assessment. Our specialists diagnose and manage full range of heart conditions, and we are fully equipped with state-of-the-art facilities and complete range of services – from cardiac investigations to Interventional Cardiology procedures in ultramodern Catheterization Lab (Cath Lab). Cardio-pulmonary rehabilitation program is offered to patients through our Physical Medicine & Rehabilitation Centre. The hospital offers a multidisciplinary in-patient program, and also has complete Coronary Care Unit and Cardiothoracic ICU for critical cardiac patients. For emergency patients, we have 24-hour Accident & Emergency Centre and specialized team for stabilization and treatment of the patient.' ,
             'status' => 'true'),
 
-            array('id' => '9','department_name' => 'Child Development Center','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '9','department_name' => 'Child Development Center','department_image' => '/backend/images/department/Child.png',
             'department_description' =>'The children, who have come for the first time, are taken to our ‘Walk-In-Clinic’, the already diagnosed epilepsy children to ‘Epilepsy Clinic, the ‘High Risk Baby’ to ‘Multiple disability clinic: We always encourage and welcome parents to accompany their children as we strongly believe that parents are the ones who know their children the best and without their active participation it is impossible to make any changes for these affected children.' ,
             'status' => 'true'),
 
-            array('id' => '10','department_name' => 'Critical Care','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '10','department_name' => 'Critical Care','department_image' => '/backend/images/department/Critical.png',
             'department_description' =>'Critical care units (CCUs) are specialist hospital department that treat patients who are seriously ill and need constant monitoring. These patients might, for example, have problems with one or more vital organ or be unable to breathe without support' ,
             'status' => 'true'),
 
-            array('id' => '11','department_name' => 'Dental and Maxillofacial Surgery','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '11','department_name' => 'Dental and Maxillofacial Surgery','department_image' => '/backend/images/department/Dental.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '12','department_name' => 'Endocrinology and Diabetology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '12','department_name' => 'Endocrinology and Diabetology','department_image' => '/backend/images/department/Endocrinology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '13','department_name' => 'Dermatology and Venereology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '13','department_name' => 'Dermatology and Venereology','department_image' => '/backend/images/department/Dermatology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '14','department_name' => 'Dietetics and Nutrition','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '14','department_name' => 'Dietetics and Nutrition','department_image' => '/backend/images/department/Dietetics.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '15','department_name' => 'ENT, Head and Neck Surgery','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '15','department_name' => 'ENT, Head and Neck Surgery','department_image' => '/backend/images/department/ENT.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '16','department_name' => 'Gastroenterology and Hepatology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '16','department_name' => 'Gastroenterology and Hepatology','department_image' => '/backend/images/department/Gastroenterology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '17','department_name' => 'General and Laparoscopic Surgery','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '17','department_name' => 'General and Laparoscopic Surgery','department_image' => '/backend/images/department/Laparoscopic.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '18','department_name' => 'Haematology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '18','department_name' => 'Haematology','department_image' => '/backend/images/department/Haematology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '19','department_name' => 'Internal Medicine','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '19','department_name' => 'Internal Medicine','department_image' => '/backend/images/department/Medicine.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '20','department_name' => 'Laboratory Medicine','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '20','department_name' => 'Laboratory Medicine','department_image' => '/backend/images/department/Laboratory.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '21','department_name' => 'Neonatology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '21','department_name' => 'Neonatology','department_image' => '/backend/images/department/Neonatology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '22','department_name' => 'Nephrology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '22','department_name' => 'Nephrology','department_image' => '/backend/images/department/Nephrology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '23','department_name' => 'Neurology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '23','department_name' => 'Neurology','department_image' => '/backend/images/department/Neurology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '24','department_name' => 'Neurosurgery','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '24','department_name' => 'Neurosurgery','department_image' => '/backend/images/department/Neurosurgery.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '25','department_name' => 'Obstetrics and Gynaecology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '25','department_name' => 'Obstetrics and Gynaecology','department_image' => '/backend/images/department/Gynaecology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '26','department_name' => 'Oncology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '26','department_name' => 'Oncology','department_image' => '/backend/images/department/Oncology.png',
             'department_description' =>'Write some dscription' ,
             'status' => 'true'),
 
-            array('id' => '27','department_name' => 'Ophthalmology','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '27','department_name' => 'Ophthalmology','department_image' => '/backend/images/department/Ophthalmology.png',
             'department_description' =>'Write some dscription' ,
             'status' => 'true'),
 
-            array('id' => '28','department_name' => 'Orthopaedics and Trauma','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '28','department_name' => 'Orthopaedics and Trauma','department_image' => '/backend/images/department/Orthopaedics.png',
             'department_description' =>'Write some dscription' ,
             'status' => 'true'),
 
-            array('id' => '29','department_name' => 'Paediatrics','department_image' => '/backend/images/department/department.jpg',
+            array('id' => '29','department_name' => 'Paediatrics','department_image' => '/backend/images/department/Paediatrics.png',
             'department_description' =>'Write some dscription' ,
             'status' => 'true'),
 
-            array('id' => '30','department_name' => 'Paediatric Surgery', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '30','department_name' => 'Paediatric Surgery', 'department_image' => '/backend/images/department/PaediatricSurgery.png',
             'department_description' =>'Write some dscription' ,
             'status' => 'true'),
 
-            array('id' => '31','department_name' => 'Physical Medicine and Rehabilitation', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '31','department_name' => 'Physical Medicine and Rehabilitation', 'department_image' => '/backend/images/department/Physical.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '32','department_name' => 'Plastic, Reconstructive and Cosmetic Surgery', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '32','department_name' => 'Plastic, Reconstructive and Cosmetic Surgery', 'department_image' => '/backend/images/department/Plastic.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '33','department_name' => 'Radiology and Imaging', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '33','department_name' => 'Radiology and Imaging', 'department_image' => '/backend/images/department/Radiology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '43','department_name' => 'Respiratory Medicine', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '34','department_name' => 'Respiratory Medicine', 'department_image' => '/backend/images/department/Medicine.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '35','department_name' => 'TRANSFUSION MEDICINE', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '35','department_name' => 'TRANSFUSION MEDICINE', 'department_image' => '/backend/images/department/Medicine.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '36','department_name' => 'Urology and Andrology', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '36','department_name' => 'Urology and Andrology', 'department_image' => '/backend/images/department/Urology.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 
-            array('id' => '37','department_name' => 'Vaccination', 'department_image' => '/backend/images/department/department.jpg',
+            array('id' => '37','department_name' => 'Vaccination', 'department_image' => '/backend/images/department/Vaccination.png',
             'department_description' =>'Write some description' ,
             'status' => 'true'),
 

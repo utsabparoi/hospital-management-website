@@ -125,17 +125,9 @@
 
         <div class="auto-container">
             <div class="inner-container clearfix">
-                <!-- <div class="footer-nav">
-                      <ul class="clearfix">
-                          <li><a href="#">Privacy Policy</a></li>
-                          <li><a href="#">Contact</a></li>
-                          <li><a href="#">Supplier</a></li>
-                      </ul>
-                  </div> -->
-                <div class="copyright-text row">
-                    <p>Copyright &copy; {{ date('Y') }} <a href="#">{{$WebsiteInformation->name}}</a>, All Rights Reserved.</p>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <p>Developed by:<a href="https://www.smartsoftware.com.bd/" target="_blank"> Smart Software Ltd.</a></p>
+                <div class="copyright-text">
+                    <p>Copyright &copy; {{ date('Y') }} <a href="#">{{$WebsiteInformation->name}}</a>, All Rights Reserved.</p><br>
+                    <p style="font-family:'Franklin Gothic Medium'">Developed by:<a href="https://www.smartsoftware.com.bd/" target="_blank"> Smart Software Ltd.</a></p>
                 </div>
             </div>
         </div>
